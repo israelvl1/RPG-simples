@@ -121,7 +121,6 @@ marcos agora tem 44 de vida.
 
 ---
 
----
 
 ## 👨‍💻 Autor
 
