@@ -125,7 +125,3 @@ marcos agora tem 44 de vida.
 ## 👨‍💻 Autor
 
 Feito com 💻 por [Israel](https://github.com/israelvl1)
-
-## 👨‍💻 Autor
-
-Feito com 💻 por [Israel](https://github.com/israelvl1)
