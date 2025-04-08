@@ -17,3 +17,4 @@ Ex: "Um jogo de RPG em Python onde você cria um personagem e enfrenta inimigos 
 2. Baixe o projeto ou clone com:
    ```bash
    git clone https://github.com/seuuser/nome-do-repo.git
+https://chatgpt.com/c/67f52292-5e04-8009-ac08-a3b5e900fd76#:~:text=python%20rpg_basico.py
