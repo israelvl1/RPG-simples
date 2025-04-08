@@ -296,3 +296,11 @@ elif heroi.sexo == "Masculino":
     print(f"Você fez algo incrivel, grandioso {heroi.nome}!")
 heroi.tentar_ganhar_pocao()
 print(f'"Mas finalmente estamos chegando no nosso destino!"')
+print("Continuamos nos aprofundando na caverna até que finalmente nos aproximávamos de um grande portão feito de ouro.")
+print(f'"Finalmente chegamos no nosso destino!"'"O meu companheiro transparencia um sorriso grande.")
+print(f"{heroi.nome} firmou as mãos sobre a porta e empurrava as portas e no mesmo momento abria o portão.")
+print("Entravamos dentro da sala do tesouro, enquanto entrava dava para ver montes de dinheiro.")
+escolha = 0
+while escolha != 1:
+    escolha = int(input('"Olha ali!"'"Ele se escondia atrás de uma pilastra e olhava para o dragão que estava adormecido."'"O que você quer fazer antes dele acordar? "'))
+    if escolha == 1
