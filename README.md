@@ -59,14 +59,6 @@ marcos agora tem 44 de vida.
 - Vários inimigos diferentes
 - Salvamento de progresso
 
----
-
-## 🔗 Versão Avançada
-
-Se você quer ver o RPG com mais funcionalidades e complexidade, veja o repositório [rpg-complexo](https://github.com/israelvl1/rpg-complexo)
-
----
-
 ## 👨‍💻 Autor
 
 Feito com 💻 por [Israel](https://github.com/israelvl1)
