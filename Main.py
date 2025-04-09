@@ -271,7 +271,7 @@ while heroi.esta_vivo() and necromante.esta_vivo():
                         print(f"{heroi.nome} desviou do ataque de {esqueleto.nome}!")
                     else:
                         heroi.vida -= dano # diminuir  a vida do heroi 
-                        print(f"Goblin atacou {heroi.nome} e causou {dano} de dano!")
+                        print(f"Esqueleto atacou {heroi.nome} e causou {dano} de dano!")
                         print(f'{heroi.nome} agora tem {heroi.vida} de vida.\n')
                     
                 turno1 += 1
@@ -300,7 +300,61 @@ print("Continuamos nos aprofundando na caverna até que finalmente nos aproximá
 print(f'"Finalmente chegamos no nosso destino!"'"O meu companheiro transparencia um sorriso grande.")
 print(f"{heroi.nome} firmou as mãos sobre a porta e empurrava as portas e no mesmo momento abria o portão.")
 print("Entravamos dentro da sala do tesouro, enquanto entrava dava para ver montes de dinheiro.")
-escolha = 0
-while escolha != 1:
-    escolha = int(input('"Olha ali!"'"Ele se escondia atrás de uma pilastra e olhava para o dragão que estava adormecido."'"O que você quer fazer antes dele acordar? "'))
-    if escolha == 1
+dragao = Personagem("Dragão",600,"monstro")
+dragao_dormindo = 0
+while dragao_dormindo < 100:
+    escolha = int(input('"Olha ali!"'"Ele se                           escondia atrás de uma pilastra e olhava para o dragão que estava adormecido."'"O que você quer fazer antes dele acordar? 1° Procurar uma nova espada| 2° Procurar poção| 3° Atacar o dragão | 4° Afiar a espada | 5° Treinar agilidade| 6° Desistir"'))
+    
+    if escolha == 1:
+        heroi.encontrar_espada()
+        dragao_dormindo += 10
+        
+    elif escolha ==2: 
+        heroi.tentar_ganhar_pocao()
+        dragao_dormindo += 5
+        
+    elif escolha == 3:
+        print('"O QUE VOCÊ FEZ?"')
+        dragao_dormindo += 100
+        dragao_vida -= heroi.dano_max
+        print(f"{heroi.nome} atacou {dragao.nome} e causou {dano} de dano!")
+        
+    elif escolha == 4:
+        print(f"{heroi.nome} se sentar é começar a afiar a espada")
+        heroi.dano_max += 2
+        dragao_dormindo += 2
+        
+    elif escolha == 5:
+        print(f"{heroi.nome} começar a treinar")
+        chance_esquiva += 5
+        dragao_dormindo += 5
+        
+    elif escolha == 6:
+        print("Meu companheiro parava na minha frente com os braços estendidos"'"VOCÊ NÃO VAI FUGIR!"')
+        dragao_dormindo += 20
+print("De repente, um rugido profundo e estrondoso ecoou pela caverna, como um trovão que se aproximava. As paredes tremiam, e o ar ao nosso redor parecia vibrar com a força do som. Com um enorme estalo, as asas do dragão bateram, criando um vento tão forte que quase fomos derrubados. O monstro estava acordando.")
+print(f'O dragão abriu seus olhos, e sua voz, como o eco de uma montanha, preencheu a caverna.')
+print(f'"Quem ousa invadir meu domínio?!" Sua voz ressoava como um trovão distante, carregada de raiva e poder.Logo {heroi.nome} erguia a sua espada. "Vocês realmente acreditam que podem me enfrentar?"')
+print(f'Com um movimento lento, ele se levantou, suas escamas brilhando de forma ameaçadora, e olhou diretamente para nós, seu olhar cortante como fogo.')
+print(f'"Vocês estão no meu território agora. Não haverá misericórdia."')
+turno = 1
+while heroi.esta_vivo() and dragao.esta_vivo():
+    acao = int(input("Deseja atacar (1) ou tomar poção (2)? "))
+    if acao == 1: # atacar o dragão
+        print(f"\n--- Turno {turno} ---")
+        heroi.atacar(dragao)
+
+    elif acao == 2: # beber poção
+        heroi.tomar_pocao()
+        
+         # orc ataca, se estiver vivo
+    if dragao.esta_vivo():
+        dano = random.randint(1, 100)
+        tentativa = random.randint(1, 100)
+        if tentativa <= chance_esquiva:
+            print(f"{heroi.nome} desviou do ataque de {dragao.nome}!")
+        else:
+            heroi.vida -= dano
+            print(f"Dragão atacou {heroi.nome} e causou {dano} de dano!")
+            print(f'{heroi.nome} agora tem {heroi.vida} de vida.\n')    
+    turno += 1
