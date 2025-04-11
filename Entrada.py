@@ -1,6 +1,6 @@
-import time
-import sys
-def Assinatura():
+import time # importa para usar time
+import sys # importa para usar o sys
+def Assinatura():## assinatura do criador
     frase = r"""
                                                                                                                                                                                              
                                                         .oPYo.  .oPYo. .oPYo.    ooooo .oPYo. o ooooo .oPYo.    .oPYo. .oPYo.  .oPYo.                                                             
@@ -53,7 +53,7 @@ def Assinatura():
                                                            @@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@    @@    @@@@@@@@@@@@@@@@@@@@@@@@    
                                                            @@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@  @@@@@@    @@@@@@@@@@@@@@@@@@@@@@    
                                                            @@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@    @@@@@@@@    @@@@@@@@@@@@@@@@@@@@    
-                                                           @@@@@@@@@@@@@@@@@@@@@@    @@@@@@    @@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@  
+                                                         @@@@@@@@@@@@@@@@@@@@@@@@    @@@@@@    @@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@  
                                                          @@@@@@@@@@@@@@@@@@@@@@@@@@    @@@@  @@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@@@@@  
                                                          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@@@  
                                                          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  
@@ -65,7 +65,7 @@ def Assinatura():
         sys.stdout.flush()  # força a saída imediata
         time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
 
-def play():
+def play(): # perguntar antes do começo
     frase = r"""
     
                                                .%%%%%%..%%..%%..%%%%%%...%%%%...%%%%%%...%%%%...%%%%%...........%%%%%...%%%%%....%%%%....%%%%..
@@ -98,7 +98,7 @@ def play():
             sys.stdout.flush()  # força a saída imediata
             time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
 
-def obs():
+def obs(): # aviso importante
     frase= r"""
                                                        
 ....................................................................................................................................................                                                         
@@ -134,7 +134,7 @@ def obs():
         sys.stdout.flush()  # força a saída imediata
         time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
     
-def avisei():
+def avisei(): #lembrando aviso
     frase=r"""
 
 ................................................................%%%%%%.%%..%%........%%%%%%.%%%%%%.........%%%%..%%..%%.%%%%%%..%%%%..%%%%%%.%%%%%%.                                                         
@@ -174,7 +174,7 @@ def avisei():
         sys.stdout.flush()  # força a saída imediata
         time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
         
-def final():
+def final(): # se terminar o jogo
     frase=r"""
     
                                    ______   .______   .______       __    _______      ___       _______   ______                
@@ -194,7 +194,7 @@ def final():
 
     
 """
-   for letra in frase:
+    for letra in frase:
         sys.stdout.write(letra)  # escreve o caractere sem pular linha
         sys.stdout.flush()  # força a saída imediata
         time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
