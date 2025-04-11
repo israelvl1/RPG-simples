@@ -1,17 +1,7 @@
-import time
-import sys
-def Assinatura():
+import time # importa para usar time
+import sys # importa para usar o sys
+def Assinatura():## assinatura do criador
     frase = r"""
-                                                                                                                                                                                             
-     .oPYo.     ooo.                                       o                      8                 ooo.                                        .oPYo.                8             o               
-     8    8     8  `8.                                     8                      8                 8  `8.                                      8                     8                             
-     8    8     8   `8 .oPYo. .oPYo. .oPYo. .oPYo. oPYo.  o8P .oPYo. oPYo.   .oPYo8 .oPYo. .oPYo.   8   `8 .oPYo. o    o .oPYo. .oPYo. .oPYo.   `Yooo. .oPYo. ooYoYo. 8oPYo. oPYo. o8 .oPYo. .oPYo. 
-     8    8     8    8 8oooo8 Yb..   8    8 8oooo8 8  `'   8  .oooo8 8  `'   8    8 8    8 Yb..     8    8 8oooo8 8    8 Yb..   8oooo8 Yb..         `8 8    8 8' 8  8 8    8 8  `'  8 8    8 Yb..   
-     8    8     8   .P 8.       'Yb. 8    8 8.     8       8  8    8 8       8    8 8    8   'Yb.   8   .P 8.     8    8   'Yb. 8.       'Yb.        8 8    8 8  8  8 8    8 8      8 8    8   'Yb. 
-     `YooP'     8ooo'  `Yooo' `YooP' 8YooP' `Yooo' 8       8  `YooP8 8       `YooP' `YooP' `YooP'   8ooo'  `Yooo' `YooP' `YooP' `Yooo' `YooP'   `YooP' `YooP' 8  8  8 `YooP' 8      8 `YooP' `YooP' 
-     :.....:::.....:::.....::.....:8 ....::.....:..::::::..::.....:..:::::::.....::.....::.....:::.....:::.....::.....::.....::.....::.....::::.....::.....:..:..:..:.....:..:::::..:.....::.....:
-     ::::::::::::::::::::::::::::::8 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-     ::::::::::::::::::::::::::::::..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                                                                                                                                                                                              
                                                         .oPYo.  .oPYo. .oPYo.    ooooo .oPYo. o ooooo .oPYo.    .oPYo. .oPYo.  .oPYo.                                                             
                                                         8   `8  8    8 8    8    8     8.     8   8   8    8    8    8 8    8  8   `8                                                             
@@ -23,7 +13,7 @@ def Assinatura():
                                                         ::::::::::::::::::::8 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::                                                            
                                                         ::::::::::::::::::::..::::::::::::::::::::::::::::::::::::::::::::::::::::::::                                                            
                                                                                                                                                                                              
-                                                       
+                                                           
                                           .%%%%%%...%%%%...%%%%%....%%%%...%%%%%%..%%...........%%..%%..%%%%%%..%%......%%%%%%..%%.......%%%%..
                                           ...%%....%%......%%..%%..%%..%%..%%......%%...........%%..%%....%%....%%......%%......%%......%%..%%.
                                           ...%%.....%%%%...%%%%%...%%%%%%..%%%%....%%...........%%..%%....%%....%%......%%%%....%%......%%%%%%.
@@ -74,7 +64,8 @@ def Assinatura():
         sys.stdout.write(letra)  # escreve o caractere sem pular linha
         sys.stdout.flush()  # força a saída imediata
         time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
-def play():
+
+def play(): # perguntar antes do começo
     frase = r"""
     
                                                .%%%%%%..%%..%%..%%%%%%...%%%%...%%%%%%...%%%%...%%%%%...........%%%%%...%%%%%....%%%%....%%%%..
@@ -82,16 +73,19 @@ def play():
                                                ...%%....%%.%%%....%%....%%........%%....%%%%%%..%%%%%...........%%%%%...%%%%%...%%.%%%.....%%..
                                                ...%%....%%..%%....%%....%%..%%....%%....%%..%%..%%..%%..........%%..%%..%%......%%..%%....%%...
                                                .%%%%%%..%%..%%..%%%%%%...%%%%...%%%%%%..%%..%%..%%..%%..........%%..%%..%%.......%%%%.....%%...
+
                                                                                     .%%%%...%%%%%%..%%...%%.
                                                                                     %%........%%....%%%.%%%.
                                                                                     .%%%%.....%%....%%.%.%%.
                                                                                     ....%%....%%....%%...%%.
                                                                                     .%%%%...%%%%%%..%%...%%.
+
                                                                                        .%%%%...%%..%%. 
                                                                                        %%..%%..%%..%%. 
                                                                                        %%..%%..%%..%%. 
                                                                                        %%..%%..%%..%%. 
                                                                                        .%%%%....%%%%.. 
+
                                                                                     %%..%%...%%%%....%%%%.. 
                                                                                     %%%.%%..%%..%%..%%..%%. 
                                                                                     %%.%%%..%%%%%%..%%..%%. 
@@ -103,7 +97,8 @@ def play():
             sys.stdout.write(letra)  # escreve o caractere sem pular linha
             sys.stdout.flush()  # força a saída imediata
             time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
-def obs():
+
+def obs(): # aviso importante
     frase= r"""
                                                        
 ....................................................................................................................................................                                                         
@@ -131,14 +126,17 @@ def obs():
 .........................................................%%..%%.%%..%%.%%..%%.%%..%%.%%..%%.%%..%%........%%..%%.%%..%%.%%................%%.                                                                
 .........................................................%%%%%..%%..%%.%%..%%..%%%%...%%%%..%%..%%........%%..%%..%%%%..%%%%%%........%%%%%..                                                                
 .............................................................................................................................................
+
+
 """
     for letra in frase:
         sys.stdout.write(letra)  # escreve o caractere sem pular linha
         sys.stdout.flush()  # força a saída imediata
         time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
     
-def avisei():
+def avisei(): #lembrando aviso
     frase=r"""
+
 ................................................................%%%%%%.%%..%%........%%%%%%.%%%%%%.........%%%%..%%..%%.%%%%%%..%%%%..%%%%%%.%%%%%%.                                                         
 ................................................................%%.....%%..%%..........%%...%%............%%..%%.%%..%%...%%...%%.....%%.......%%...                                                         
 ................................................................%%%%...%%..%%..........%%...%%%%..........%%%%%%.%%..%%...%%....%%%%..%%%%.....%%...                                                         
@@ -169,437 +167,35 @@ def avisei():
 .........................................................%%..%%.%%..%%.%%..%%.%%..%%.%%..%%.%%..%%........%%..%%.%%..%%.%%................%%.                                                                
 .........................................................%%%%%..%%..%%.%%..%%..%%%%...%%%%..%%..%%........%%..%%..%%%%..%%%%%%........%%%%%..                                                                
 .............................................................................................................................................                                                                
+
 """
     for letra in frase:
         sys.stdout.write(letra)  # escreve o caractere sem pular linha
         sys.stdout.flush()  # força a saída imediata
         time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
-
-def homem():
+        
+def final(): # se terminar o jogo
     frase=r"""
     
-                                                                _______  _______  _______      _______  _______  _______  _______  _                 _______            
-                                                      |\     /|(  ___  )(  ____ \(  ____ \    (  ____ \(  ____ \(  ____ \(  ___  )( \      |\     /|(  ____ \|\     /|  
-                                                      | )   ( || (   ) || (    \/| (    \/    | (    \/| (    \/| (    \/| (   ) || (      | )   ( || (    \/| )   ( |  
-                                                      | |   | || |   | || |      | (__        | (__    | (_____ | |      | |   | || |      | (___) || (__    | |   | |  
-                                                      ( (   ) )| |   | || |      |  __)       |  __)   (_____  )| |      | |   | || |      |  ___  ||  __)   | |   | |  
-                                                       \ \_/ / | |   | || |      | (          | (            ) || |      | |   | || |      | (   ) || (      | |   | |  
-                                                        \   /  | (___) || (____/\| (____/\    | (____/\/\____) || (____/\| (___) || (____/\| )   ( || (____/\| (___) |  
-                                                         \_/   (_______)(_______/(_______/    (_______/\_______)(_______/(_______)(_______/|/     \|(_______/(_______)  
-                                                                                                                                                                      
-                                                                                         _______  _______  _______                                                                                      
-                                                                                        (  ____ \(  ____ \(  ____ )                                                                                     
-                                                                                        | (    \/| (    \/| (    )|                                                                                     
-                                                                                        | (_____ | (__    | (____)|                                                                                     
-                                                                                        (_____  )|  __)   |     __)                                                                                     
-                                                                                              ) || (      | (\ (                                                                                        
-                                                                                        /\____) || (____/\| ) \ \__                                                                                     
-                                                                                        \_______)(_______/|/   \__/                                                                                     
-                                                                                                                                                                      
-                                                                            _    _ __  __      _    _  ____  __  __ ______ __  __ 
-                                                                           | |  | |  \/  |    | |  | |/ __ \|  \/  |  ____|  \/  |
-                                                                           | |  | | \  / |    | |__| | |  | | \  / | |__  | \  / |
-                                                                           | |  | | |\/| |    |  __  | |  | | |\/| |  __| | |\/| |
-                                                                           | |__| | |  | |    | |  | | |__| | |  | | |____| |  | |
-                                                                            \____/|_|  |_|    |_|  |_|\____/|_|  |_|______|_|  |_|
-                                  
+                                   ______   .______   .______       __    _______      ___       _______   ______                
+                                  /  __  \  |   _  \  |   _  \     |  |  /  _____|    /   \     |       \ /  __  \               
+                                 |  |  |  | |  |_)  | |  |_)  |    |  | |  |  __     /  ^  \    |  .--.  |  |  |  |              
+                                 |  |  |  | |   _  <  |      /     |  | |  | |_ |   /  /_\  \   |  |  |  |  |  |  |              
+                                 |  `--'  | |  |_)  | |  |\  \----.|  | |  |__| |  /  _____  \  |  '--'  |  `--'  |              
+                                  \______/  |______/  | _| `._____||__|  \______| /__/     \__\ |_______/ \______/               
+                                                                                                                                 
+                                 .______     ______   .______                __    ______     _______      ___      .______      
+                                 |   _  \   /  __  \  |   _  \              |  |  /  __  \   /  _____|    /   \     |   _  \     
+                                 |  |_)  | |  |  |  | |  |_)  |             |  | |  |  |  | |  |  __     /  ^  \    |  |_)  |    
+                                 |   ___/  |  |  |  | |      /        .--.  |  | |  |  |  | |  | |_ |   /  /_\  \   |      /     
+                                 |  |      |  `--'  | |  |\  \----.   |  `--'  | |  `--'  | |  |__| |  /  _____  \  |  |\  \----.
+                                 | _|       \______/  | _| `._____|    \______/   \______/   \______| /__/     \__\ | _| `._____|
+                                                                                                                                 
+
+    
 """
     for letra in frase:
         sys.stdout.write(letra)  # escreve o caractere sem pular linha
         sys.stdout.flush()  # força a saída imediata
         time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
-
-def mulher():
-    frase=r"""
     
-                                                                _______  _______  _______      _______  _______  _______  _______  _                 _______            
-                                                      |\     /|(  ___  )(  ____ \(  ____ \    (  ____ \(  ____ \(  ____ \(  ___  )( \      |\     /|(  ____ \|\     /|  
-                                                      | )   ( || (   ) || (    \/| (    \/    | (    \/| (    \/| (    \/| (   ) || (      | )   ( || (    \/| )   ( |  
-                                                      | |   | || |   | || |      | (__        | (__    | (_____ | |      | |   | || |      | (___) || (__    | |   | |  
-                                                      ( (   ) )| |   | || |      |  __)       |  __)   (_____  )| |      | |   | || |      |  ___  ||  __)   | |   | |  
-                                                       \ \_/ / | |   | || |      | (          | (            ) || |      | |   | || |      | (   ) || (      | |   | |  
-                                                        \   /  | (___) || (____/\| (____/\    | (____/\/\____) || (____/\| (___) || (____/\| )   ( || (____/\| (___) |  
-                                                         \_/   (_______)(_______/(_______/    (_______/\_______)(_______/(_______)(_______/|/     \|(_______/(_______)  
-                                                                                                                                                                      
-                                                                                         _______  _______  _______                                                                                      
-                                                                                        (  ____ \(  ____ \(  ____ )                                                                                     
-                                                                                        | (    \/| (    \/| (    )|                                                                                     
-                                                                                        | (_____ | (__    | (____)|                                                                                     
-                                                                                        (_____  )|  __)   |     __)                                                                                     
-                                                                                              ) || (      | (\ (                                                                                        
-                                                                                        /\____) || (____/\| ) \ \__                                                                                     
-                                                                                        \_______)(_______/|/   \__/                                                                                     
-                                                                                                                                                                      
-                                                                           
-                                                     ___    _ ,---.    ,---.   ____            ,---.    ,---.  ___    _   .---.     .---.  .---.     .-''-.  .-------.     
-                                                   .'   |  | ||    \  /    | .'  __ `.         |    \  /    |.'   |  | |  | ,_|     |   |  |_ _|   .'_ _   \ |  _ _   \    
-                                                   |   .'  | ||  ,  \/  ,  |/   '  \  \        |  ,  \/  ,  ||   .'  | |,-./  )     |   |  ( ' )  / ( ` )   '| ( ' )  |    
-                                                   .'  '_  | ||  |\_   /|  ||___|  /  |        |  |\_   /|  |.'  '_  | |\  '_ '`)   |   '-(_{;}_). (_ o _)  ||(_ o _) /    
-                                                   '   ( \.-.||  _( )_/ |  |   _.-`   |        |  _( )_/ |  |'   ( \.-.| > (_)  )   |      (_,_) |  (_,_)___|| (_,_).' __  
-                                                   ' (`. _` /|| (_ o _) |  |.'   _    |        | (_ o _) |  |' (`. _` /|(  .  .-'   | _ _--.   | '  \   .---.|  |\ \  |  | 
-                                                   | (_ (_) _)|  (_,_)  |  ||  _( )_  |        |  (_,_)  |  || (_ (_) _) `-'`-'|___ |( ' ) |   |  \  `-'    /|  | \ `'   / 
-                                                    \ /  . \ /|  |      |  |\ (_ o _) /        |  |      |  | \ /  . \ /  |        \(_{;}_)|   |   \       / |  |  \    /  
-                                                     ``-'`-'' '--'      '--' '.(_,_).'         '--'      '--'  ``-'`-''   `--------`'(_,_) '---'    `'-..-'  ''-'   `'-'                                                      
-                                  
- """
-    for letra in frase:
-        sys.stdout.write(letra)  # escreve o caractere sem pular linha
-        sys.stdout.flush()  # força a saída imediata
-        time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
-
-def puro():
-    frase=r"""
-    
- 
-                                          ____   ____   ___      ______  ________      ________   ______     ______    ___   _____     ____  ____  ________  _____  _____  
-                                         |_  _| |_  _|.'   `.  .' ___  ||_   __  |    |_   __  |.' ____ \  .' ___  | .'   `.|_   _|   |_   ||   _||_   __  ||_   _||_   _| 
-                                           \ \   / / /  .-.  \/ .'   \_|  | |_ \_|      | |_ \_|| (___ \_|/ .'   \_|/  .-.  \ | |       | |__| |    | |_ \_|  | |    | |   
-                                            \ \ / /  | |   | || |         |  _| _       |  _| _  _.____`. | |       | |   | | | |   _   |  __  |    |  _| _   | '    ' |   
-                                             \ ' /   \  `-'  /\ `.___.'\ _| |__/ |     _| |__/ || \____) |\ `.___.'\\  `-'  /_| |__/ | _| |  | |_  _| |__/ |   \ \__/ /    
-                                              \_/     `.___.'  `.____ .'|________|    |________| \______.' `.____ .' `.___.'|________||____||____||________|    `.__.'     
-                                                                                                                                  
-                                                             _______  _______  _______                            _______  _______  _        _______ 
-                                                            (  ____ \(  ____ \(  ____ )        |\     /||\     /|(       )(  ___  )( (    /|(  ___  )
-                                                            | (    \/| (    \/| (    )|        | )   ( || )   ( || () () || (   ) ||  \  ( || (   ) |
-                                                            | (_____ | (__    | (____)|        | (___) || |   | || || || || (___) ||   \ | || |   | |
-                                                            (_____  )|  __)   |     __)        |  ___  || |   | || |(_)| ||  ___  || (\ \) || |   | |
-                                                                  ) || (      | (\ (           | (   ) || |   | || |   | || (   ) || | \   || |   | |
-                                                            /\____) || (____/\| ) \ \__        | )   ( || (___) || )   ( || )   ( || )  \  || (___) |
-                                                            \_______)(_______/|/   \__/        |/     \|(_______)|/     \||/     \||/    )_)(_______) 
-"""
-
-
-    frase_lenta=r"""                                                               
-                                                                    Ó jovem aventureiro, que caminha com os passos da humanidade, lembre-se: 
-                                                                   a raça humana, em sua essência, é uma chama incansável, forjada pelo fogo 
-                                                                      das adversidades e alimentada pela busca constante por significado. 
-                                                                   Em cada escolha, em cada desafio que enfrentar, saiba que, mesmo sendo 
-                                                                   vulnerável e efêmero, a grandeza do homem reside não em sua força bruta, 
-                                                                   mas em sua capacidade de se reerguer, de aprender e de transcender o próprio
-                                                                   destino. Pois, no fim, são nossas escolhas que nos tornam imortais, não 
-                                                                                 o que somos, mas o que nos tornamos
-"""
-    for letra in frase:
-        sys.stdout.write(letra)  # escreve o caractere sem pular linha
-        sys.stdout.flush()  # força a saída imediata
-        time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
-
-    # Digita a parte lenta
-    for letra in frase_lenta:
-        sys.stdout.write(letra)
-        sys.stdout.flush()
-        time.sleep(0.02)  # Digitação lenta (ajuste o tempo como preferir)
-
-def cavaleiro():
-    frase=r"""
-    
-                          _______  _        _______  _______  _______  _______      _______  _______           _______  _        _______ _________ _______  _______ 
-                         (  ____ \( \      (  ___  )(  ____ \(  ____ \(  ____ \    (  ____ \(  ___  )|\     /|(  ___  )( \      (  ____ \\__   __/(  ____ )(  ___  )
-                         | (    \/| (      | (   ) || (    \/| (    \/| (    \/    | (    \/| (   ) || )   ( || (   ) || (      | (    \/   ) (   | (    )|| (   ) |
-                         | |      | |      | (___) || (_____ | (_____ | (__        | |      | (___) || |   | || (___) || |      | (__       | |   | (____)|| |   | |
-                         | |      | |      |  ___  |(_____  )(_____  )|  __)       | |      |  ___  |( (   ) )|  ___  || |      |  __)      | |   |     __)| |   | |
-                         | |      | |      | (   ) |      ) |      ) || (          | |      | (   ) | \ \_/ / | (   ) || |      | (         | |   | (\ (   | |   | |
-                         | (____/\| (____/\| )   ( |/\____) |/\____) || (____/\    | (____/\| )   ( |  \   /  | )   ( || (____/\| (____/\___) (___| ) \ \__| (___) |
-                         (_______/(_______/|/     \|\_______)\_______)(_______/    (_______/|/     \|   \_/   |/     \|(_______/(_______/\_______/|/   \__/(_______)
-                         
-                         
-                                              MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNXKKXXNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                                              MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWXOxollllllllldOXWWMMMMMMMMMMMMMMMMMMWMMMMMWNKOO0XWWMMM
-                                              MMMMWWMMMWWMMMWMMMMWMMMMWWMMMWMWNkolccok0KXXXXKKOdccxNWWMMMMWMMMMWWMMWWWMWNKOxollllllldkKW
-                                              MMMMMMMWMMMMWMMMWWMMMMWMMMWWMMNkccl;;xXNNNNNNNNNNNXx:oXMMWWMMMWWMMMWWNXOxolllox0KK0xc,''oN
-                                              MMMMMMMMMMMMMMMWMMMWMMMMWMMMMXd:o0X0l:oOXNNNNNNNNNNXx;dNMMMMWMMWNX0xollldxOKXKOxoc:;;;'cKM
-                                              MMMMMMMMMMMMMMMMMMMMMMMMWMMMNd;dXNNNXkl:ldO0KXXXNNNNKl:0MMWNX0xdllloxOKXXKkdlc;;:cllc,:0WM
-                                              MMMMMMMWMMMWWMMMMWMMMWMMMMMW0:cKNNNNNNX0xlc:::lxKNNNXo;d0xollloxOKXXKOxoc:;:cllllc:;co0WMM
-                                              MMMMWMMMMWWMMMWWMMMWWMMMWWMMk;lOOxolo0NNKxxd;.,dKNNN0c';:lxOKXNX0kdl::;:clolc:::cok0XWMMMM
-                                              MMMMMMMWMMMMWMMMMMMMMWWMMMWWk,,,''..;kNNXOd:;;lOXNNKo,:ld0XK0xoc:;:cloolc:;:cokKNWWMMMMMMM
-                                              MMMMMMMMMMMMMMMMMMMWMMMMMMMWk,...',:dKNNKd;:xOKNNNXo,:lllol::;:cloolc:;:cdk0NWMMMMMMMWMMMM
-                                              MMMMMMMMMMMMMMWNNWMMMMMMMMMWk;':lx0XNNNNx;:ONNNNNXk:';;;;:clooolc:;:cdkKNWMMMMMMMMMMMMMMMM
-                                              MMMMMMMWMWNKOxocl0WMMMWMMMMWO;c0NNNNNNNKl,lkOkxolcc,';clooolc:;:ldkKNWMMMWMMMMMMMMMWMMMMMM
-                                              MMMMWWMMW0l:cldo;c0WWMMWXKOdc,:0NNNNNWNk;';:cc:'cOKd;;llc:;:ldOKNWMMMWWMMMWWMMMMWMMMMWMMMM
-                                              MMMMMMMWWKl;d000d;l0KOdlc:::c;,oXNNX0ko;,lxOKX0c:ONXd;,;ldOXWWMWMMMWWMMMWWMMMWWMMMWWMMMMMM
-                                              MMMMMMMMMW0c:x000d;;;::clooool;;oxoc:;,'l0NNNNNk:c0NXkc;d0KKXNWMWWMMMMMMMMMMMMMMMMMMMMMMMM
-                                              MMMMMMMMMWXd;:k00Oo,;looooolc:,,,::clc,:ONNNNNNXxcxKkdkd;;cllldxO0KXXNNWWMMMMMMMMMMMMMMMMM
-                                              MMMMMWX0xoll:,ck00Ol,:llc:;;;:clooolc;;xXNNNNNNNNKkl,ckd;o0XKOxoollllllookKNWMMMMMMMMMMMMM
-                                              MWN0xoclox0XKd;ck00Ol,,;;:clolc:::;,':kXNNNNNNNXOo:cc::;oKNNNNNNNXXXKK0OxoclOWMMWMMMWWMMMM
-                                              Wkccox0XNN0OKXo,ckOOxc,:oolc;;coxo:',o0NNNXX0OxlcoOXXx,;ONNNNNNNNNNNNNNNNN0l:xNMMMWWMMMMMM
-                                              Kc:ONXkkXXd;dX0c,cdxxd;,::;:d0XXx:lxdlcloolccclx0XNNKo,:0NNNNNNNNNNNNNNNXK0d,lXMWMMMMWMMMM
-                                              No;kNXo;xKk;;cc;,,cdxxo;';oKNNN0c,dXNX0Okkk0KXNNXKkoc;,,dXNNNNNNNNNNNXOdc::;,:0WMMMMMMMMMM
-                                              M0cck0o,,::;:cll:',oxxd:,dKKK0kl,,;coxO0000Okxxoc:;:cll;;xXNNNXKKNNXkl;;cdxOd;oNMMMMMMMMMM
-                                              MWKo;,;:;,;llc:;:c;;oxo;,oxddoc,cdoc;',:::::;;::clodxxdl:;lOXNKxkX0o;;okKXNNO;lXWMMMMWMMMM
-                                              MMMNx;:xkl,',;,,lKk:;lc,';looc,cOXKOo,;oooodxxxkOOKKXX0xl;';lxkkOx:';xXNNNNN0:cXMMWWMMMMMM
-                                              MMMMNkc;::;:loo:;xXk::oxd:,;;,;kNNNNk;cOKKKKXXXNNNNNNNNKd;,::;,,,;;;,ckKK0Oko,cKMMMMMWMMMM
-                                              MMMMMW0:,cooodkOl:kNXXWWO:,:;'lKNNNXd,:kNNNNNNNNNNNNNNNNx;cxdol;,:lol:;;:::c:,lXMMMMMMMMMM
-                                              MMMMMMNd,coox0XNKl:kWMWO:;lo:,xNNN0o:cc:oOXNNNNNNNNNNNN0c:OXOdol;,;lool,,o0KOc:0MMWMMMMMMM
-                                              MMMMMMW0:;ldkXNNNKo:okd:;ldo;,dOxlclk0Kkl:lx0XXNNNNNNNKl;xXNXkooc'';oxxl;:llc;'oXMMMWMMMMM
-                                              MMMMMMMNx,:odONNNNKo'..':ooo;':lox0XOcdXN0dcccldk0XNNKl;dXNNXkol;..'c0X0xooooo::OWWWMMWWMM
-                                              MMMMMWMMXl,cox0XNNNd,..':ooo:,oXNNNNO;lKNNNX0Oxolllloc,:xOOOxlc;'...'oKNNXXXNNx;l0NWMMMMMM
-                                              MMMMMMMMW0:;lodOXNXo'..':oooc,lKNNNN0:cKNNNNNNNNXK0kxdooolc:;,'......,xXNNNNNNx;;clONMMMMM
-                                              MMMMMMMMMWO:;lodkKO:'..':oodo;,xXNNNKl:ONNNNNNNNNNNNKxkXNXkdl;'.......:0NNNNNO::O0o:dNMMMM
-                                              MMMMWWMMMMWk:;loodc'...':oolc,';kNNNNx;oXNNNNNNNNNNNO;lKN0dl;'........'oOOOOd:cONNXo;xWMMM
-                                              MMMMMMMWMMMWk;,;;;,....';:;,'..';lddoc,,ldodddddddddc,;ooc:,'..........'''''',xNNNNO:cKMMM
-                                              MMMMWWMMMWMWk;;ccc::::::::,'..........,lool;'................................,o0XNNKc:0MMM
-                                              MMMMMMMMMMMWO:;cooooooool:'......'....ck0kxl,..........................',,,,,,:ok0Kk:lXMMM
-                                              MMMMMMMMMMMMW0dc::::::;;,'.......''''',cc::;'''''''''''..'''...........'lkkkd:,;clc;,xWMMM
-                                              MMMMMMMMMWWWMMWNKkc'..........';okkkkkkkkkkkkkkkkkkkkkxo,,ll:,'........'oXNNXx,';;;';OMMMM
-                                              MMMMMMMWMMMWWWMMXd;...'......,o0NNNNNNNX0kxxxxOKXNNNNNNXk::xko:,'......'lKNNNO;;lol;:0MMMM
-                                              MMMMWWMMMWWMMMW0l'..........':dkkkOOOOxc,'..''';ok000000Od;;ol:;'.......lKNNNO;;lol;cKMMMM
-                                              MMMMMMMWMMMMWNx;'..........,looollllc;'.........',:lllllllllllc::,'.....c0NNNk;;ooc,lXMMMM
-                                              MMMMMMMMMMMW0l,...........'lKNNNNNNXx;............:OXXXXXXNKxxkdoc,.....:0NNNd,:ooc,dWMMMM
-                                              MMMMMWMMMWNx;'............'lxxxxkxxxc'............,lxkxxxxkd;,llc:,.....;oxxxc';::,;OWMMMM
-                                              MMMMMMMMMMNkdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddkNMMMMM
-                                              MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-""" 
-    frase_lenta=r"""
-                                              
-                                                   Como Cavaleiro, você carrega a honra em seu coração e a coragem em suas ações. 
-                                                    Sua espada será seu guia, e suas escolhas definirão seu destino. Lembre-se, 
-                                                     a verdadeira força vem da justiça e do valor que você demonstra em cada 
-                                                         batalha. Mas cuidado, se deixar a escuridão dominar, até o mais 
-                                                                     nobre cavaleiro pode se perder.
- """
-    for letra in frase:
-        sys.stdout.write(letra)  # escreve o caractere sem pular linha
-        sys.stdout.flush()  # força a saída imediata
-        time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
-
-    # Digita a parte lenta
-    for letra in frase_lenta:
-        sys.stdout.write(letra)
-        sys.stdout.flush()
-        time.sleep(0.02)  # Digitação lenta (ajuste o tempo como preferir)
-def mal():
-    frase=r"""
-    
-                                                                                        
-                                                                                        
-                                                       MMMMMMMM               MMMMMMMM               AAA               LLLLLLLLLLL             
-                                                       M:::::::M             M:::::::M              A:::A              L:::::::::L             
-                                                       M::::::::M           M::::::::M             A:::::A             L:::::::::L             
-                                                       M:::::::::M         M:::::::::M            A:::::::A            LL:::::::LL             
-                                                       M::::::::::M       M::::::::::M           A:::::::::A             L:::::L               
-                                                       M:::::::::::M     M:::::::::::M          A:::::A:::::A            L:::::L               
-                                                       M:::::::M::::M   M::::M:::::::M         A:::::A A:::::A           L:::::L               
-                                                       M::::::M M::::M M::::M M::::::M        A:::::A   A:::::A          L:::::L               
-                                                       M::::::M  M::::M::::M  M::::::M       A:::::A     A:::::A         L:::::L               
-                                                       M::::::M   M:::::::M   M::::::M      A:::::AAAAAAAAA:::::A        L:::::L               
-                                                       M::::::M    M:::::M    M::::::M     A:::::::::::::::::::::A       L:::::L               
-                                                       M::::::M     MMMMM     M::::::M    A:::::AAAAAAAAAAAAA:::::A      L:::::L         LLLLLL
-                                                       M::::::M               M::::::M   A:::::A             A:::::A   LL:::::::LLLLLLLLL:::::L
-                                                       M::::::M               M::::::M  A:::::A               A:::::A  L::::::::::::::::::::::L
-                                                       M::::::M               M::::::M A:::::A                 A:::::A L::::::::::::::::::::::L
-                                                       MMMMMMMM               MMMMMMMMAAAAAAA                   AAAAAAALLLLLLLLLLLLLLLLLLLLLLLL
-                                                                                        
-                                                                                        
-                                                                                                                                               
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMKk0WMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWk;lKMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNl.'kMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWO;..cNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd'..,OMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM0:....oNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWx'....;0MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXl......dWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWk,..'...:KMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXo'.......xWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMO;........:XMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXd,'.......'kWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXOd:,'........;dKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXOdc;,''...........;oONMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNKko:,.......'cc,.......':d0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWX0xl;'..,l:....lXKl....''....,cxOKNNXOXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMNXNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNXXNNNXKkoc,...ckXKc''.'kMWk,...lOd;...'';cod:'oNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWMMMMMMMMM
-                        MMMMMMMMMMNOdodO0XWWMMMMMMMMMMMMMMMMMMMMMMMMMW0l:cldolc,'...;OWWWx,'..cNMMXc...,OWNOo,..'''...'oKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWNXOkKWMMMMMMMMM
-                        MMMMMMMMMMMMNk:',:ldk0XNWMMMMMMMMMMMMMMMMMMMWKo,''''....,cc:kWWNKl'..'kMMMWx'...cXMMWO;.........;lkKNWMMMMMMMMMMMMMMMMMMMMMWWNXKOdccxKWMMMMMMMMMM
-                        MMMMMMMMMMMMMMNk:..'',:cdxOKXWMMMMMMMMMWWNXKOo;'''...,lONWWWWWKoc:'..cXMMMWKc...':kXWWd',::,.....'';coxOKNWMMMMMMMMMMWWNXKOkdlc;';dXMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMNk:....'',,;:ldk0XNXXK0Oxoc:,'......lXMMMMMMMMWd'....kMMMMMWd''...:0WMNKNWWX0xl,.....'',;coxOKNWWNNK0kxolc;'...;xXMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMNk:....'...',;:llc::;,....,coxdoc:OWMMMMMMMMWx''..;KMMMMMKl''..'OMMMMMMMMMMMWx:ccc:,....'',:oxxolc:;,,''...;xNMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMNk:..............'...,oOXWWMMMMWWMMMMMMMMMKc''..,OMMMMMKl.....xWMMMMMMMMMMMWNWWMWX0d:'.'''',''''''.....:kNMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMNk:................,:ldxOKX0dOWMMMMMMMMWx,'..'cOWMMMMMNk;...:XMMMMMMMMMMWXkokXXK0Odc,.......'''....:kNMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMNk:.......';llc;'....';:c,.;x0KNWWWMMXl'..,0WMMMMMMMMWx'...xWMMMMMWWNXOl;';lc;,'...';::;,;,....:ONMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMNx;...''.';dKXKOxoc;'...'',;:ldxk0Kx,'..oWMMMMWMMMMWK:...cKNNXK0kxol:'.....,:lok0K0ko:,'...:ONMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMWx'........;o0WWMWNKOd;.......'',:c,..'xNWWN0kxkNWWXd'..;oolc;,......:oxOKNWWMWXkl:,'''..lNMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMWO;....:;....,o0WMMMMMXxoxkkoc;'..''..':coxo:;,'cxkdl;'.'...,:coo;'c0WMMMMMMWKkl:'......'OMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMXc...'kXx;....,o0NMMMMMMMMMMMWXd,.....',,,,''...''.......c0XWMMMNXWMMMMMMWKxl;'..c:....cNMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMWd....oWMNd'.''.;oxkONMMMMMMMMNx,'.,cl;,'..........';;'..:KWMMMMMMMMWXXXKkl;'..cONx'...oWMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMWk,...:0WWKl,'..','.:KMMMMMXkkOo:,,;;'...,;::::,....';;,';oxd0WMMMMWKl:cc;,..:0WMNo....xMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMW0;....;kNWNKKkc....'l0WMMMXo'''''...'cx0XWWWWWN0xl'...''''.,OWMMMWXx:'.....;KMMWKc''..xMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMM0;.'..;xXMMMMMNOc'...,o0WWKo,..'...cKWMMMMMMMMMMMWKo'......,xNWWXkl:'..:xkx0WMWKx:,'..dWMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMWx,'..'OMMMMMMMMMWOc....,oxl,......oNMMMMMMMMMMMMMMMWk,.'....'ckko;'..cONMMMMMWOc,''...:KMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMWXkc,'..'kMMMMMMMMMMMWOc'..,;'......,0MMMMMMMMMMMMMMMMMNl........;:'..cOWMMMMMMMMWKl......oXWMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMWk;......dWMMMMMMMMMMMNkc,....';,...;KMMMMMMMMMMMMMMMMMNo.'..':,.....cKWMMMMMMMMMMW0;......:0WMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMWO;.....;d0WMMMMMMWNOo:,..'....''..'kWMMMMMMMMMMMMMMMMKc''..',......':xXWMMMMMMMMMKc.'...;kNMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMNo......;xNMMMMWXOo:'..;xKOc...'...:0WMMMMMMMMMMMMMMXd,''....,x0x:....;xXWMMMMMMWNo.'..,0MMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMWd....'dNMMNkx0Oo:'..:kNMMWNd''.....,o0NMMMMMMMMMWN0o;''....:KWMMNk;...':xKXXWMWKd:,...lNMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMWd'...cNMMWk,';:,..;ONMMMMMKl........',cdOKXXXNXKOdc;'......'kWMMMMXx,..',:;;OMMNk;....lNMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMNo''..oWWXkc'.....,kMMMMMMMNKOx;.......',,:ccllcc;'.......lxOXWMMMMMXl.......lXWMW0;...:KMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMXl....xXkl;'..;dO0XWMMMMMMMMMMWk'...;;..............'....lNMMMMMMMMMWKOxl,....;xXWNo...'kMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMW0:...'oo:'..:kNMMMMMMWX0KWWWNXKOl,.';;,............';;'..l0XNWMMMMMMMMMMWKd,....:xKx'...oWMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMWx,...','..:kNMMMMMWWXkl;:xkxol:;'.....;lodc...;doc;......';:ldx0KOdONMMMMMWKd,...':l;'..:KMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMWKc'......cONMWWNXXK0ko:'.'''...,:c;...'OWMMNOdONMMWKc'...,,....';:,.,lk0KNWMMWKo,..';;'..'kMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMWKxc,'....ckKKK0Oxdl:;,,'..';cldO0XWWO,...oNMMMMMMMMMWk,...oNX0xoc;'....',;:ldxO0XN0o,.......cKWMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMWKxc;,'..';lddlc:,'...';'..;xKNWMMMMMMWXl...,OWMMMMMMMWKl'..,0MMMMMMNKOl'.......'',:ldxo;.......;dKWMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMWKxc,,''',;::;,'....:dk0XNXxxXMMMMMMMMMMMWk'...;dKWMMMMKxo:'..oWMMMMMMMMMNkdkOOkdl:,..'',,;;,'......;dKWMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMN0dc,,''.............'cdOKNWMMMWWMMMMMMMMMMMXc.....oNMMMMXc.'..,0MMMMMMMMMWNWWMMMMWNKOo;'....'''''......;dKWMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMN0dc,'........';cll;'....',;lx0KOokWMMMMMMMMMWKl'...;KMMMMMNl....lNMMMMMMMMMXdldx0XKOxl:;'....''............;dKWMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMWNOd:,......;coxOXWWMMWKkdc;....';;,.;dOKNWMWNNMNx,....;0MMMMW0:''..:KMMMMMMMMWO:'',:c;'..';loxO0XKOxo:,.........;dKWMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMWNOl,'.',:lxOKNWMMMMMMMMMMMMWNKkoc,....'',;lx0kcxWMWO:....dWMMMNd''...:kWMWMMWX0xl,'.....;dOXWMMMMMMMMMMWNKkdc;'.....;dKWMMMMMMMMMMMMM
-                        MMMMMMMMMWXxc::ldk0NWMMMMMMMMMMMMMMMMMMMMMMMWN0d:'...'',;'.:KWMM0;...:XMMW0:'..,ONWW0dOKOdc;'......dNMMMMMMMMMMMMMMMMMMMMWXOxl:;..,dKWMMMMMMMMMMM
-                        MMMMMMMMWXOkOXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0l'........;d0WNd...'kWMWx,'..oWMW0c';c:'...',;;,cKMMMMMMMMMMMMMMMMMMMMMMMMMMWN0kolokXWMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWx'..'.....',lkk;...lXWKc'..,0WXkl,'...,lx0XNWNXNWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNKXWMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNOkKK0ko;....'cc,..,kNx,...c0ko:'..'lkXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN0o,..','...cxc'...:l;'..;dXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXk:.......'''......'cONMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNO:.......'....;dKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0;.........'xNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNo.........cNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMO,...'....kMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXc.......:XMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWx'......xWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK:.....;KMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWd.....oWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMO;...,OMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNl...lNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWk'.'kMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMX:.cXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWk:kWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-                        
-"""
-    frase_lenta=r"""
-                            Eu te avisei, guerreiro, e mesmo assim, você não me ouviu. Você abraçou as trevas, e agora o caminho que escolheu será marcado pela ambição 
-                             insaciável e pelo poder destrutivo. Cada passo que der deixará um rastro de sofrimento, e aqueles que cruzarem seu caminho sentirão o peso 
-                            de sua fúria. Sua espada não será guiada pela honra, mas pelo desejo implacável de subjugar todos que ousarem se opor a você. Mas lembre-se, 
-                            ó guerreiro, a escuridão não é um manto que se veste sem preço. Há um custo profundo que você pagará por sua escolha, um preço que nem mesmo 
-                            o poder poderá apagar. A profecia que paira sobre você é clara: em sua ascensão, você verá seus aliados se tornarem sombras, seus inimigos 
-                            se multiplicarem, e, por fim, encontrará uma solidão que as trevas nunca poderão preencher. Sua alma, já marcada pelas trevas, será testada, 
-                            e quando isso acontecer, a verdadeira face da escuridão se revelará. O que você busca agora, você pode obter, mas o que perderá ao final… 
-                                                                                nem as trevas podem devolver!                                                
-"""
-
-    for letra in frase:
-        sys.stdout.write(letra)  # escreve o caractere sem pular linha
-        sys.stdout.flush()  # força a saída imediata
-        time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
-
-    # Digita a parte lenta
-    for letra in frase_lenta:
-        sys.stdout.write(letra)
-        sys.stdout.flush()
-        time.sleep(0.02)  # Digitação lenta (ajuste o tempo como preferir)
-
-def cor1():
-    frase_lenta = r"""
-                                                Aviso, essência corrupta detectada. A linhagem do cavaleiro foi corrompida, e sua alma, 
-                                                   agora forjada nas profundezas das trevas, não conhece mais a luz. Sua classe foi 
-                                                transformada para a versão das Sombras, e com isso, você agora trilha o caminho do mal eterno...
-"""
-
-    # Digita a parte lenta
-    for letra in frase_lenta:
-        sys.stdout.write(letra)
-        sys.stdout.flush()
-        time.sleep(0.02)  # Digitação lenta (ajuste o tempo como preferir)
-
-def cavaleiro_negro():
-    frase=r"""
-    
-  e88'Y88 888         e Y8b      dP"8  dP"8 888'Y88       e88'Y88     e Y8b     Y8b Y88888P     e Y8b     888     888'Y88 888 888 88e    e88 88e       Y88b Y88 888'Y88   e88'Y88  888 88e    e88 88e   
- d888  'Y 888        d8b Y8b    C8b Y C8b Y 888 ,'Y      d888  'Y    d8b Y8b     Y8b Y888P     d8b Y8b    888     888 ,'Y 888 888 888D  d888 888b       Y88b Y8 888 ,'Y  d888  'Y  888 888D  d888 888b  
-C8888     888       d888b Y8b    Y8b   Y8b  888C8       C8888       d888b Y8b     Y8b Y8P     d888b Y8b   888     888C8   888 888 88"  C8888 8888D     b Y88b Y 888C8   C8888 eeee 888 88"  C8888 8888D 
- Y888  ,d 888  ,d  d888888888b  b Y8D b Y8D 888 ",d      Y888  ,d  d888888888b     Y8b Y     d888888888b  888  ,d 888 ",d 888 888 b,    Y888 888P      8b Y88b  888 ",d  Y888 888P 888 b,    Y888 888P  
-  "88,d88 888,d88 d8888888b Y8b 8edP  8edP  888,d88       "88,d88 d8888888b Y8b     Y8P     d8888888b Y8b 888,d88 888,d88 888 888 88b,   "88 88"       88b Y88b 888,d88   "88 88"  888 88b,   "88 88"   
-                                                                                                                                                                                                        
-                        c,.  .'cc'.   'cc,.  .'cc'.  .':c,.   ':c;.   .:c,.   .:c,.   .:c;.   .:cc,.   .:c;.   .;c;.   .;c:.   .;c:.   .;c:'   .;c:.   .;c:.   .;cc'   .:
-                        .,'..''..'....'..'....'..'....'...'...'..''...'.......'..''...'..''...'....'...'...'...'...'...'...'...'...'...'...'...'...'...'...'...''..,'..,'
-                          ',,.    ....    ..'.    ..'.    ..'..   ..'.    .....   ..'..   ..'..    ..'..   .....   .....   .....   ..'..   ..'..   ..'..   ..''.   .';;. 
-                        .'......................................................  .. .    .. ...  ........... ............... ....... ....... .........................,,
-                        c,    ....    ....    ....    ....    ....    ....             ..        ..    .....   .....   .....    ....    ....    ....    ....    ....   .;
-                        .''............................. .................     ................       ........... ....... ....... ....... ..................          ..'
-                         ..,'.    ....    ....    ....    ....    ....      .......................        .....    ....    ....    ....    ....    ...     .......  ... 
-                        .'.............................................   ...........................     ... ............... ....... ..........     .............    .''
-                        c'    ....    ....    ....    ....    ....       .............................   ...    ....   .....   .....    ...     ................       .;
-                        .'...................................... ...    ...............................   ..........................      .....................    ....''
-                          .'..    ....    ....    ....    ....    ...  .................................    ....   .....    ....    ..........................      ..'. 
-                        .''..................................... ...    ...................  ...........   .............       ............................    ........''
-                        c,    ....    ....    ....    ....    ....                            ..........        ....     .............................          ....   .;
-                        .'.......... ...............................  .....................   ..........   .       ...............................         ............''
-                          .'..    ....    ....    ....    ....    ..  ...'''''''''''.......   .........      .................................      ....    ....    ..'. 
-                        .'..........................................     ............       ...........    ..............................      .. .....................''
-                        c,    ....    ....    ....    ....    ....      .            ..................   ..........................     ..    .....    ....    ....   .;
-                        .'..........................................   ...    ..........................  ......................      ....... ..........................'
-                          .'..    ....    ....    ....    ....    ...   ..   ...........................   ...............          ....    ....    ....    ....    ..'. 
-                        .''............         ........ ...........   ...   ..........................    ...........        ... ............... ....... ....... .....''
-                        c,    ....        ....  ..    ....    ....     ...   .......................     ........       ....   .....    ....    ....    ....    ....   .;
-                        .'.. .......    ...''.  .... ......       ..   ...   ....................        ..        .. ....... ....... ............... ....... ....... ..,
-                          .'..    ....  .''''..   ....      .........   ...  ................                ..    .....   .....    ....    ....    ....    ....    ..'. 
-                        .'.....  .....   .''''..      ...............   ..    ..........                     .... ....... ....... ....... ....... ....... ....... .....''
-                        c'    ....       ..''''..  ...................        .....                            ....    .....   .....    ....    ....    ....    ....   .;
-                        ''.. ......  ...  ..''''.  .....................                                                        ..... .......  ...... .......  .........'
-                         .....    ....     ...''..  ...................                                               .......         ..    ....    ....    ....   ...'. 
-                        ......         ...   ..''..  .................                                              ........               ...... .......  ...... .....''
-                        :..       ...  ....   ..''..  ............                                                 ......     .........        .....    ....    ....   .,
-                        .    ....  ...  ...    ..''..  .......         ...                        ...            ......    ...............     ......  ......  ...... ..'
-                           .......  ..     ...   .''.                  ...                  .......      ..     ......   ...................       .....    ....    ..'. 
-                           ........    ........  ..'..                  ....             ......       ....     ......  ......................     .......  ......  ......
-                        .   ........   .........  .''..                  ..................        ......     ......  ........................    ..   .....   .....   .;
-                        .    ..  .       .......  ..''.             ..    .............        ........      ......  ..........................    ..  ......  ...... ..,
-                                   .. .........   ..''..           .....    ........        ..........       .....   ...........................   .....    ....   ...'..
-                        ..  ..................     .....          ........            ..................    ..  .   ............................    .....  ......  ....'.
-                        :'   ...............                     ...........    .........................    ...      ...........................      .....   .....   .;
-                        ,,..  .............     ...  ..          ...........   ..........................               .........................      ......  ...... ..,
-                         ....   ........          ....           ..........    ...........................                .......................   ....   .....   ...'..
-                         ....            ..      ......          ..........   ..............................                ..................      .....  ......  ....'.
-                        ;'.     ............    ...             ...........   ...............................                ..........                .....   .....   .;
-                        ;,.      ............    ..              ..........   ...............................           ..                   ....      ......  ...... ..,
-                         .....   .............          ..       ..........   .............................                      ................   ....   .....   ...'..
-                        .......  ..............        ...       ........       ........................                         .................   ....  ......  ....'.
-                        ;'.  .    ...............       .         ......          ....................       .....               .................     .....   .....   .,
-                        ;'.  ..   ................                 ..          .      .............       .........               ..........           ......  ......  .,
-                         ......    ..............   ..                  ....  .....        ..        ..  .........                                    ..   .....   ......
-                         ......    ..............   ...               ......   ........            ..............               ..................    ...  ......  ......
-                        ,'.  ....   ............    ...               ......    ............       .............         ..     .................      .....   ...... ..,
-                        :,.   ...   ...........    ....               .....       ...............      ........          ...    ............            .....  ......  .,
-                        .......      ........    ......               ...            ..............       ....             ...    .......       ......     ......  ....'.
-                         .....                ........                     ...            .............               ..   ...              ..........     .....   ......
-                        ,,.  .....           .......           ...      ...........            . .......              .......             ............    ...  ...... ..,
-                        :,.   ....           ......           ....      ....  ....   ....              .               .....          .   ............   ...   ......  .,
-                        ..'....  .....                     ....  .       .. ..     ....                            ......  ....     ........   ......      ......  ......
-                         ..'..    ....                    .....             ..........                             .....   ....     ............           .....   ......
-                        ',.. ......  .....            ...... ....    ..... ..........  ........................   ... .......     ..................     ....  ...... ..,
-                        c,.   ....    ....    ....    ....    ....  ...... ..........  ........................        .....     ....................   ....   .....   .;
-                        .''....  ....... ............... .......    .....  ........... ........................    ...... ....    ..................    .  ......  ....'.
-                         ..'..    ....    ....    ....    ....              .........      ..                       ....    ...   ...............     ..   .....    ..'..
-                        ''.. ....... ....... ....... ....... ..   ..    .......  .............. .     ....            .......    ................      ...... ....... ..,
-                        :'.   ....    ....    ....    ....      ...    ........  ................     .....             ....     ...............       .....    ....   .;
-                        .'...... ............... ..........   ....    ........    ................     .....           .. ....   ..............     ..... ....... .....'.
-                          .'..    ....    ....    ....      .....   .........       ...............     ......       .      ...  .............     .....    ....    ..'..
-                        .'..............................    ....    ......             ..............    .....            ...    ............     ... ....... ....... ..,
-                        c'    ....    ....    ....     .   .....  .......               .............     .....           .     .............    ...    ....    ....   .;
-                        .'..........................      ....    .....                  .............     .....                 ...........      .......  ...... .....''
-                          .'..    ....    ....    ...    ....    .....                    .............     .....                    ......         ....    ....    .',. 
-                        .'..........................     ...     .....                    ..............     .....             ....            ...... ....... .........',
-                        c,    ....    ....    ....                                              ..                              ...             ....    ....   .....   .;
-                        .,'............................   .....   .....   .....   .....   .....    .....   .....   .....   .....   .....   ............................,,
-                         .':;.    .;;'    .;;'.   .;;'.   .,;'.   .,;'.   .,;'.   .,;'.   .,;'.    .,;,.   .,;'.   .,;,.   .,;,.   .,;,.   .':;.   .,:;.   .':;.   .,::. 
-                         .:;;;.  .;;,:.  .;;,:.  .;;,:.  .;;':'  .;;':'  .;;':'  .,;,;'. .,;,;'.  .,;,;,. .,;';,. .,:';,. .,;';,.  ,:',;.  ,:',:. .,:',:. .,:.,:. .,:';:.
-"""
-    frase_lenta = r"""
-    
-                           Como Cavaleiro Negro, você foi consumido pela escuridão, não apenas no coração, mas na alma. Cada golpe de sua espada carrega a corrupção 
-                            das trevas, e suas escolhas definem um destino marcado pela destruição. Você não é mais um guerreiro, mas um arauto da queda, forjado na 
-                           sombra e na dor. Lembre-se, a verdadeira força reside na rendição ao poder sombrio, na aniquilação de tudo o que um dia foi puro. Porém, 
-                           cuidado, Cavaleiro Negro, pois até a sombra mais imponente pode ser engolida pela própria sede de poder. Quando a última chama se apagar, 
-                                                      restará apenas o vazio eterno, onde até a escuridão se dissolve.
-"""
-
-    for letra in frase:
-        sys.stdout.write(letra)  # escreve o caractere sem pular linha
-        sys.stdout.flush()  # força a saída imediata
-        time.sleep(0.001)  # espera o tempo definido antes de escrever o próximo caractere
-
-    # Digita a parte lenta
-    for letra in frase_lenta:
-        sys.stdout.write(letra)
-        sys.stdout.flush()
-        time.sleep(0.02)  # Digitação lenta (ajuste o tempo como preferir)
