@@ -17,8 +17,8 @@ def criar_personagem(): #criar personagem
         exit()
 
     print("\nComo você quer definir a vida do personagem?") #Menu inicial das opções
-    print("[F] Fixa (escolher entre 250, 150, 120, 80)") # 1° opção
-    print("[A] Aleatória (entre 80 e 250)") # 2° opção
+    print("[F] Fixa (escolher entre 250, 150, 120, 1)") # 1° opção
+    print("[A] Aleatória (entre 1 e 250)") # 2° opção
     print("[U] Usuário escolhe qualquer valor") # 3° opção
 
     modo = input("Escolha (F/A/U): ").lower() # escolha
@@ -38,7 +38,7 @@ def criar_personagem(): #criar personagem
         elif escolha == 3:
             vida = 120 # vai ter uma vida de 120
         elif escolha == 4:
-            vida = 1 # vai ter uma vida de 80
+            vida = 1 # vai ter uma vida de 1
         else:# se esoclher algo errado
                 print("Escolha inválida. Definindo vida como 120.")
                 vida = 120 # vai ter uma vida de 120
@@ -47,7 +47,9 @@ def criar_personagem(): #criar personagem
         vida = random.randint(1, 250)
 
     elif modo == "u": #escolher modo u
-        vida = int(input("Digite a vida desejada: "))
+        vida = int(input("Digite a vida desejada: limite da vida 600!"))
+        if vida > 600:
+            exit()
 
     else: # se escolhe algo errado
         print("Modo inválido. Usando vida padrão 120.")
@@ -62,11 +64,11 @@ def limpar_tela():#Função limpa tela
     """Limpa a tela do terminal"""
     os.system("cls" if os.name == "nt" else "clear")
 
-def chance(p):
+def chance(p): ##calcular depedendo de quanto a pessoa precisa
     return random.randint(1, 100) <= p
     
-def tentar_desviar(porcentagem):
-    return random.randint(1, 100) <= porcentagem
+def tentar_desviar(porcentagem): # chance de desviar do inimigo
+    return random.randint(1, 100) <= porcentagem 
 
 def jogar():
     while True:
@@ -92,7 +94,7 @@ def jogar():
         if escolha == 1: # caso escolha 1 
             print("Caimos num buraco")
             resposta = input(f'"Morremos de forma ridicula {heroi.nome} vamos tentar de novo? [S/N]: "').capitalize()
-            if resposta == "s":
+            if resposta == "s": # se quiser recomeçar o jogo
                 print('"UFA! Eu não queria um final assim"')
                 time.sleep(3)  # Espera 3 segundos
                 continue
@@ -117,15 +119,15 @@ def jogar():
                 
                 if goblin.esta_vivo(): # se o goblin estiver vivo, então ele atacar
                     
-                    if tentar_desviar(42):
+                    if tentar_desviar(42): ##usar método para desviar com  42 % de chance
                         print(f"{heroi.nome} desviou do ataque de {goblin.nome}!")
-                    else:
+                    else: # se não desviar vai receber dano 
                         dano = random.randint(1, 10) # de 1 a 10 de dano
                         heroi.vida -= dano # diminuir  a vida do heroi 
                         print(f"Goblin atacou {heroi.nome} e causou {dano} de dano!")
                         print(f'{heroi.nome} agora tem {heroi.vida} de vida.\n')
                         
-                        if heroi.vida <= 0 and heroi.revive:
+                        if heroi.vida <= 0 and heroi.revive: # se o heroi morrer e puder reviver
                             print("\n⚰️ O silêncio domina o campo de batalha...")
                             print(f"{heroi.nome} cai de joelhos, sem forças, seus olhos se fechando lentamente.")
                             print("...")
@@ -135,7 +137,7 @@ def jogar():
                             print("Um grito ecoa não da sua boca, mas da própria alma. O mundo para por um instante.")
                             print(f"\n🕊️ {heroi.nome.upper()} RENASCEU!")
                                     
-                            heroi.vida = heroi.max_vida
+                            heroi.vida = heroi.max_vida # voltar a vida a quantidade maxima
                             heroi.dano_max += 100  # buff permanente de dano
                             heroi.revive = False
                 
@@ -156,101 +158,101 @@ def jogar():
             
         else: # se o heroi estiver morto
             print(f"{goblin.nome} venceu!")
-            if vida_inicial == 80 and heroi.modo_vida == "f":
+            if vida_inicial == 1 and heroi.modo_vida == "f":# se tiver escolhido o modo de vida f e tiver escolhido vida fixa inicial de 1
                 escolha = input("Mestre: Sei que escolheu o modo infernal, mas não é ridículo morrer para um simples goblin? Esquecendo quer continuar? Talvez seja melhor diminuir a dificuldade [S/N]: ").capitalize()
-                if escolha == "s":
-                    print('"Um conselho não morrer para um goblin"')  
+                if escolha == "s": # se escolher continuar
+                    print("Mestre:Um conselho não morrer para um goblin")  
                     time.sleep(3)  # Espera 3 segundos
-                    continue
-                elif escolha == "n":
-                    if heroi.sexo == "Feminino":
-                        print('"Sério...Parece que você era uma fracote desde o início"')
-                        break
+                    continue # voltar ao início do loop
+                elif escolha == "n":#se quiser terminar o loop
+                    if heroi.sexo == "Feminino":# se o sexo for Feminino
+                        print('"Companheiro: Sério...Parece que você era uma fracote desde o início"')
+                        break#sai do loop
                     else:
-                        print('"Sério...Parece que você era um fracote desde o início"')
-                        break
+                        print('"Companheiro: Sério...Parece que você era um fracote desde o início"')
+                        break#sai do loop
                 else:
-                    continue
-            elif vida_inicial == 120 and heroi.modo_vida == "f":
+                    continue # voltar ao início do loop
+            elif vida_inicial == 120 and heroi.modo_vida == "f":  # se tiver escolhido o modo de vida f e tiver escolhido vida fixa inicial de 120
                 escolha = input("Mestre: Sei que escolheu o modo padrão, mas não é ridículo morrer para um simples goblin? Tipo você tinha capacidade de durar mais...Vamos tentar de novo! [S/N]: ").capitalize()
-                if escolha == "s":
-                    print('"Um conselho tomar poção se necessário"')  
+                if escolha == "s":# se escolher continuar
+                    print("Mestre Um conselho tomar poção se necessário")  
                     time.sleep(3)  # Espera 3 segundos
-                    continue
-                elif escolha == "n":
-                    if heroi.sexo == "Feminino":
-                        print('"Parece que você era uma convarde desde o início"')
-                        break
+                    continue # voltar ao início do loop
+                elif escolha == "n":#se quiser terminar o loop
+                    if heroi.sexo == "Feminino": # se o sexo for Feminino
+                        print('"Companheiro: Parece que você era uma convarde desde o início"')
+                        break#sai do loop
                     else:
-                        print('"Parece que você era um convarde desde o início"')
-                        break
+                        print('"Companheiro: Parece que você era um convarde desde o início"')
+                        break#sai do loop
                 else:
-                    continue
-            elif vida_inicial == 150 and heroi.modo_vida == "f":
+                    continue # voltar ao início do loop
+            elif vida_inicial == 150 and heroi.modo_vida == "f":  # se tiver escolhido o modo de vida f e tiver escolhido vida fixa inicial de 150 
                 escolha = input("Mestre: Sei que escolheu o modo equilibrado, mas não é era necessário ser equilibrado também no dano e na cura? Todo mundo falhar...Porém vamos continuar! [S/N]: ").capitalize()
-                if escolha == "s":
-                    print('"Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero."')  
+                if escolha == "s":# se escolher continuar
+                    print("Mestre: Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero.")  
                     time.sleep(3)  # Espera 3 segundos
-                    continue
-                elif escolha == "n":
-                    if heroi.sexo == "Feminino":
+                    continue # voltar ao início do loop
+                elif escolha == "n":#se quiser terminar o loop
+                    if heroi.sexo == "Feminino":# se o sexo for Feminino
                         print("Ele apenas virou o rosto para o lado, sem dizer uma palavra, deixando claro que não se importava com sua decisão. Apenas seguiu com o seu caminho, como se nada tivesse acontecido.") 
-                        break
+                        break#sai do loop
                     else:
                         print("Ele apenas virou o rosto para o lado, sem dizer uma palavra, deixando claro que não se importava com sua decisão. Apenas seguiu com o seu caminho, como se nada tivesse acontecido.") 
-                        break
+                        break#sai do loop
                 else:
-                    continue
-            elif vida_inicial == 250 and heroi.modo_vida == "f":
+                    continue # voltar ao início do loop
+            elif vida_inicial == 250 and heroi.modo_vida == "f": # se tiver escolhido o modo de vida f e tiver escolhido vida fixa inicial de 250 
                 escolha = input("Mestre: Você escolheu o modo guerreiro, mas não! Tinha que ser morto por um goblin! Um goblin, sério? Vamos começar de novo logo, antes que eu perca mais tempo. [S/N]: ").capitalize()
-                if escolha == "s":
+                if escolha == "s":# se escolher continuar
                     if heroi.sexo == "Feminino":
-                        print('"Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo."') 
+                        print("Mestre: Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo.") 
                         time.sleep(3)  # Espera 3 segundos
-                        continue
+                        continue # voltar ao início do loop
                     else:
-                        print('"Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo."')  
+                        print("Mestre:Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo.")  
                         time.sleep(3)  # Espera 3 segundos
-                        continue
-                elif escolha == "n":
+                        continue # voltar ao início do loop
+                elif escolha == "n":#se quiser terminar o loop
                     if heroi.sexo == "Feminino":
-                        print('"Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
-                        break
-                    else:
-                        print('"Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
-                        break
+                        print('"Companheiro: Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                        break#sai do loop
+                    else:# recomeçar automaticamente se escollher opção errada
+                        print('"Companheiro: Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                        break#sai do loop
                 else:
                     continue
-            elif heroi.modo_vida == "u":
+            elif heroi.modo_vida == "u": # se tiver escolhido o modo de vida u 
                 escolha = input("Mestre: Que pena...Mas você deveria ter escolhido uma vida maior. Esquecendo isso..Quer continuar? [S/N]: ").capitalize()
-                if escolha == "s":
-                    print("Legal dessa vez vai dar certo!")
+                if escolha == "s":  # se quiser recomeçar o jogo
+                    print("Mestre: Legal dessa vez vai dar certo!")
                     time.sleep(3)  # Espera 3 segundos
-                    continue
-                elif escolha == "n":
-                    if heroi.sexo == "Feminino":
-                        print("Entendi...Valeu por jogar...perdedora")
-                        break
+                    continue # voltar ao início do loop
+                elif escolha == "n":#se quiser terminar o loop#se quiser terminar o loop
+                    if heroi.sexo == "Feminino":# se o sexo for Feminino
+                        print("Mestre: Entendi...Valeu por jogar...perdedora")
+                        break#sai do loop
                     else:
-                        print("Entendi...Valeu por jogar...perdedor")
-                        break
+                        print("Mestre: Entendi...Valeu por jogar...perdedor")
+                        break#sai do loop
                 else: 
-                    continue
+                    continue # voltar ao início do loop
             else:
                 escolha = input("Mestre: Valeu por tentar jogar, mas agora quer tentar de novo? [S/N]: ").capitalize()
-                if escolha == "s":
-                    print(f"Legal, vamos voltar {heroi.nome}")
+                if escolha == "s": # se quiser recomeçar o jogo
+                    print(f"Mestre: Legal, vamos voltar {heroi.nome}")
                     time.sleep(3)  # Espera 3 segundos
-                    continue
-                elif escolha == "n":
-                    print("Que decepção...")
-                    break
+                    continue # voltar ao início do loop
+                elif escolha == "n":#se quiser terminar o loop
+                    print('"Companheiro: Que decepção..."')
+                    break#sai do loop
                 else:
-                    continue
+                    continue # voltar ao início do loop
         print(f"Depois de {heroi.nome} matar o Goblin voltamos a andar em buscar do tesouro. Até que aparece um slime na nossa frente")
         slime = Personagem("slime", 20, "Monstro") # objeto criado para ser o inimigo
         turno = 1
-        while heroi.esta_vivo() and slime.esta_vivo():
+        while heroi.esta_vivo() and slime.esta_vivo():# continua enquanto o heroi ou o slime estiver vivo
             acao = int(input("Deseja atacar (1) ou tomar poção (2)? "))
             if acao == 1: # atacar o slime
                 print(f"\n--- Turno {turno} ---")
@@ -299,35 +301,35 @@ def jogar():
             if vida_inicial == 80 and heroi.modo_vida == "f":
                 escolha = input("Mestre: Sei que escolheu o modo infernal, mas não é ridículo morrer para um simples slime? Esquecendo quer continuar? Talvez seja melhor diminuir a dificuldade [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Um conselho não morrer para um slime"')  
+                    print("Mestre: Um conselho não morrer para um slime")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Sério...Parece que você era uma fracote desde o início"')
+                        print('"Companheiro: Sério...Parece que você era uma fracote desde o início"')
                         break
                     else:
-                        print('"Sério...Parece que você era um fracote desde o início"')
+                        print('"Companheiro: Sério...Parece que você era um fracote desde o início"')
                         break
                 else:
                     continue
             elif vida_inicial == 120 and heroi.modo_vida == "f":
                 escolha = input("Mestre: Sei que escolheu o modo padrão, mas não é ridículo morrer para um simples slime? Tipo você tinha capacidade de durar mais...Vamos tentar de novo! [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Um conselho esmagar ele"')  
+                    print(" Mestre: Um conselho esmagar ele")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Parece que você era uma convarde desde o início"')
+                        print('"Companheiro: Parece que você era uma convarde desde o início"')
                         break
                     else:
-                        print('"Parece que você era um convarde desde o início"')
+                        print('"Companheiro: Parece que você era um convarde desde o início"')
                         break
                 else:
                     continue
             elif vida_inicial == 150 and heroi.modo_vida == "f":
                 escolha = input("Mestre: Sei que escolheu o modo equilibrado, mas não é era necessário ser equilibrado também no dano e na cura? Todo mundo falhar...Porém vamos continuar! [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero."')  
+                    print("Mestre: Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero.")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
@@ -342,61 +344,60 @@ def jogar():
                 escolha = input("Mestre: Você escolheu o modo guerreiro, mas não! Tinha que ser morto por um slime! Um slime, sério? Vamos começar de novo logo, antes que eu perca mais tempo. [S/N]: ").capitalize()
                 if escolha == "s":
                     if heroi.sexo == "Feminino":
-                        print('"Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo."') 
+                        print("Mestre: Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo.") 
                     else:
-                        print('"Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo."')  
+                        print("Mestre: Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo.")  
                         continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                        print('"Companheiro: Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
                         break
                     else:
-                        print('"Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                        print('"Companheiro: Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
                         break
                 else:
                     continue
             elif heroi.modo_vida == "u":
                 escolha = input("Mestre: Que pena...Mas você deveria ter escolhido uma vida maior. Esquecendo isso..Quer continuar? [S/N]: ").capitalize()
                 if escolha == "s":
-                    print("Legal dessa vez vai dar certo!")
+                    print("Mestre: Legal dessa vez vai dar certo!")
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print("Entendi...Valeu por jogar...perdedora")
+                        print("Mestre: Entendi...Valeu por jogar...perdedora")
                         break
                     else:
-                        print("Entendi...Valeu por jogar...perdedor")
+                        print("Mestre: Entendi...Valeu por jogar...perdedor")
                         break
                 else: 
                     continue
             else:
                 escolha = input("Mestre: Valeu por tentar jogar, mas agora quer tentar de novo? [S/N]: ").capitalize()
                 if escolha == "s":
-                    print(f"Legal, vamos voltar {heroi.nome}")
+                    print(f"Mestre: Legal, vamos voltar {heroi.nome}")
                     continue
                 elif escolha == "n":
-                    print("Que decepção...")
+                    print("Mestre: Que decepção...")
                     break
                 else:
                     continue
             
         paciencia_com = 0
+        print(f'"Parabéns {heroi.nome} por limpar nosso caminho para o tesouro e agora o que desejar fazer?"')
         while paciencia_com <= 100:
-            escolha = int(input(f'"Parabéns {heroi.nome} por limpar nosso caminho para o tesouro e agora o que desejar fazer? 1° Continuar a aprofundar na caverna| 2° procurar poção| 3° sentar e afiar espada | 4° Olhar inventário: " '))
+            escolha = int(input("1° procurar poção| 2° sentar e afiar espada | 3° Olhar inventário: " ))
                 
-            if escolha == 2:
+            if escolha == 1:
                 heroi.tentar_ganhar_pocao()
                 paciencia_com += 5
-            elif escolha == 3:
+            elif escolha == 2:
                 print(f"{heroi.nome} se sentar é começar a afiar a espada")
                 heroi.dano_max += 1
                 paciencia_com += 3
                 print("A sua espada fica mais afiada")
-            elif escolha == 4:
+            elif escolha == 3:
                 print(f"{heroi.nome} se sentar para ver seu inventário")
                 heroi.ver_inventario()
-            elif escolha != 1:
-                print("Opção inválida ou ainda não é hora de continuar.\n")
                 
         print('"Entendi, vem {heroi.nome} vamos achar esse tesouro!"')
         print("Estávamos andado até que dava para ouvir um grunhido estranho e logo aparecia um orc verde que estava sorrindo")
@@ -452,35 +453,35 @@ def jogar():
             if vida_inicial == 80 and heroi.modo_vida == "f":
                 escolha = input("Mestre: Sei que escolheu o modo infernal, mas você sabia que teria de matar um Orc? Esquecendo disso quer continuar? Talvez seja melhor diminuir a dificuldade [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Um conselho observe o Orc bem"')  
+                    print("Mestre: Um conselho observe o Orc bem")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Sério...Parece que você era uma fracote desde o início"')
+                        print('"Companheiro: Sério...Parece que você era uma fracote desde o início"')
                         break
                     else:
-                        print('"Sério...Parece que você era um fracote desde o início"')
+                        print('"Companheiro: Sério...Parece que você era um fracote desde o início"')
                         break
                 else:
                     continue
             elif vida_inicial == 120 and heroi.modo_vida == "f":
                 escolha = input("Mestre: Sei que escolheu o modo padrão, mas não deveria ter tentando melhor contrar o Orc? Tipo você tinha capacidade de durar mais...Vamos tentar de novo! [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Um conselho tomar poção se necessário"')  
+                    print("Mestre: Um conselho tomar poção se necessário")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Parece que você era uma convarde desde o início"')
+                        print('"Companheiro: Parece que você era uma convarde desde o início"')
                         break
                     else:
-                        print('"Parece que você era um convarde desde o início"')
+                        print('"Companheiro: Parece que você era um convarde desde o início"')
                         break
                 else:
                     continue
             elif vida_inicial == 150 and heroi.modo_vida == "f":
                 escolha = input(" Mestre: Sei que escolheu o modo equilibrado, mas não é era necessário ser equilibrado também no dano e na cura? Todo mundo falhar...Porém vamos continuar! [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero."')  
+                    print("Mestre: Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero.")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
@@ -495,40 +496,40 @@ def jogar():
                 escolha = input(" Mestre: Você escolheu o modo guerreiro, mas não! Tinha que ser morto por um Orc! Vamos começar de novo logo, antes que eu perca mais tempo. [S/N]: ").capitalize()
                 if escolha == "s":
                     if heroi.sexo == "Feminino":
-                        print('"Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo."') 
+                        print("Mestre: Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo.") 
                     else:
                         print('"Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo."')  
                         continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                        print('"Companheiro: Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
                         break
                     else:
-                        print('"Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                        print('"Companheiro: Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
                         break
                 else:
                     continue
             elif heroi.modo_vida == "u":
                 escolha = input(" Mestre: Que pena...Mas você deveria ter escolhido uma vida maior. Esquecendo isso..Quer continuar? [S/N]: ").capitalize()
                 if escolha == "s":
-                    print("Legal dessa vez vai dar certo!")
+                    print("Mestre: Legal dessa vez vai dar certo!")
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print("Entendi...Valeu por jogar...perdedora")
+                        print("Mestre: Entendi...Valeu por jogar...perdedora")
                         break
                     else:
-                        print("Entendi...Valeu por jogar...perdedor")
+                        print("Mestre: Entendi...Valeu por jogar...perdedor")
                         break
                 else: 
                     continue
             else:
                 escolha = input("Mestre: Valeu por tentar jogar, mas agora quer tentar de novo? [S/N]: ").capitalize()
                 if escolha == "s":
-                    print(f"Legal, vamos voltar {heroi.nome}")
+                    print(f"Mestre: Companheiro: Legal, vamos voltar {heroi.nome}")
                     continue
                 elif escolha == "n":
-                    print("Que decepção...")
+                    print("Companheiro: Companheiro: Que decepção...")
                     break
                 else:
                     continue
@@ -602,35 +603,35 @@ def jogar():
                         if vida_inicial == 80 and modo == "f":
                             escolha = input("Mestre: Sei que escolheu o modo infernal, mas não é ridículo morrer para um simples esqueleto? Esquecendo quer continuar? Talvez seja melhor diminuir a dificuldade [S/N]: ").capitalize()
                             if escolha == "s":
-                                print('"Um conselho tire as pernas dele"')  
+                                print("Mestre: Um conselho tire as pernas dele")  
                                 continue
                             elif escolha == "n":
                                 if heroi.sexo == "Feminino":
-                                    print('"Sério...Parece que você era uma fracote desde o início"')
+                                    print('"Companheiro: Sério...Parece que você era uma fracote desde o início"')
                                     break
                                 else:
-                                    print('"Sério...Parece que você era um fracote desde o início"')
+                                    print('"Companheiro: Sério...Parece que você era um fracote desde o início"')
                                     break
                             else:
                                 continue
                         elif vida_inicial == 120 and modo == "f":
                             escolha = input("Mestre: Sei que escolheu o modo padrão, mas não é ridículo morrer para um simples esqueleto? Tipo você tinha capacidade de durar mais...Vamos tentar de novo! [S/N]: ").capitalize()
                             if escolha == "s":
-                                print('"Um conselho tirar a espada dele"')  
+                                print("Mestre: Um conselho tirar a espada dele")  
                                 continue
                             elif escolha == "n":
                                 if heroi.sexo == "Feminino":
-                                    print('"Parece que você era uma convarde desde o início"')
+                                    print('"Companheiro: Parece que você era uma convarde desde o início"')
                                     break
                                 else:
-                                    print('"Parece que você era um convarde desde o início"')
+                                    print('"Companheiro: Parece que você era um convarde desde o início"')
                                     break
                             else:
                                 continue
                         elif vida_inicial == 150 and modo == "f":
                             escolha = input("Mestre:Sei que escolheu o modo equilibrado, mas não é era necessário ser equilibrado também no dano e na cura? Todo mundo falhar...Porém vamos continuar! [S/N]:  ").capitalize()
                             if escolha == "s":
-                                print('"Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero."')  
+                                print("Mestre: Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero.")  
                                 continue
                             elif escolha == "n":
                                 if heroi.sexo == "Feminino":
@@ -645,40 +646,40 @@ def jogar():
                             escolha = input("Mestre: Você escolheu o modo guerreiro, mas não! Tinha que ser morto por um simples esqueleto! Vamos começar de novo logo, antes que eu perca mais tempo. [S/N]: ").capitalize()
                             if escolha == "s":
                                 if heroi.sexo == "Feminino":
-                                    print('"Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo."') 
+                                    print("Mestre: Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo.") 
                                 else:
-                                    print('"Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo."')  
+                                    print("Mestre: Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo.")  
                                     continue
                             elif escolha == "n":
                                 if heroi.sexo == "Feminino":
-                                    print('"Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                                    print('"Companheiro: Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
                                     break
                                 else:
-                                    print('"Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                                    print('"Companheiro: Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
                                     break
                             else:
                                 continue
                         elif modo == "u":
                             escolha = input("Mestre: Que pena...Mas você deveria ter escolhido uma vida maior. Esquecendo isso..Quer continuar? [S/N]: ").capitalize()
                             if escolha == "s":
-                                print("Legal dessa vez vai dar certo!")
+                                print("Mestre: Legal dessa vez vai dar certo!")
                                 continue
                             elif escolha == "n":
                                 if heroi.sexo == "Feminino":
-                                    print("Entendi...Valeu por jogar...perdedora")
+                                    print("Mestre: Entendi...Valeu por jogar...perdedora")
                                     break
                                 else:
-                                    print("Entendi...Valeu por jogar...perdedor")
+                                    print("Mestre: Entendi...Valeu por jogar...perdedor")
                                     break
                             else: 
                                 continue
                         else:
                             escolha = input("Mestre: Valeu por tentar jogar, mas agora quer tentar de novo? [S/N]: ").capitalize()
                             if escolha == "s":
-                                print(f"Legal, vamos voltar {heroi.nome}")
+                                print(f"Mestre: Legal, vamos voltar {heroi.nome}")
                                 continue
                             elif escolha == "n":
-                                print("Que decepção...")
+                                print("Companheiro: Que decepção...")
                                 break
                             else:
                                 continue
@@ -724,35 +725,35 @@ def jogar():
             if vida_inicial == 80 and heroi.modo_vida == "f":
                 escolha = input("Mestre: Sei que escolheu o modo infernal, mas você sabia que teria de matar um Necromante né? Esquecendo disso quer continuar? Talvez seja melhor diminuir a dificuldade [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Valeu e um conselho. Tome cuidado com seus poderes"')  
+                    print("Mestre: Um conselho Tome cuidado com seus poderes")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Sério...Parece que você era uma fracote desde o início"')
+                        print('"Companheiro: Sério...Parece que você era uma fracote desde o início"')
                         break
                     else:
-                        print('"Sério...Parece que você era um fracote desde o início"')
+                        print('"Companheiro: Sério...Parece que você era um fracote desde o início"')
                         break
                 else:
                     continue
             elif vida_inicial == 120 and heroi.modo_vida == "f":
                 escolha = input("Mestre: Sei que escolheu o modo padrão, mas não deveria ter tentando melhor contrar o Necromante? Tipo você tinha capacidade de durar mais..., também ele era mais fraco de dano diferente do orc e ok vamos tentar de novo! [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Valeu e um conselho. Tomar poção se necessário"')  
+                    print("Mestre: Um conselho tomar poção se necessário")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Parece que você era uma convarde desde o início"')
+                        print('"Companheiro: Parece que você era uma convarde desde o início"')
                         break
                     else:
-                        print('"Parece que você era um convarde desde o início"')
+                        print('"Companheiro: Parece que você era um convarde desde o início"')
                         break
                 else:
                     continue
             elif vida_inicial == 150 and heroi.modo_vida == "f":
                 escolha = input(" Mestre: Sei que escolheu o modo equilibrado, mas não é era necessário ser equilibrado também no dano e na cura? Todo mundo falhar...Porém vamos continuar! [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero."')  
+                    print("Mestre: Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero.")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
@@ -767,40 +768,40 @@ def jogar():
                 escolha = input(" Mestre: Você escolheu o modo guerreiro, mas não! Tinha que ser morto por um Necromante! Vamos começar de novo logo, antes que eu perca mais tempo. [S/N]: ").capitalize()
                 if escolha == "s":
                     if heroi.sexo == "Feminino":
-                        print('"Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo."') 
+                        print("Mestre: Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo.") 
                     else:
-                        print('"Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo."')  
+                        print("Mestre: Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo.")  
                         continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                        print('"Companheiro: Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
                         break
                     else:
-                        print('"Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                        print('"Companheiro: Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
                         break
                 else:
                     continue
             elif heroi.modo_vida == "u":
                 escolha = input(" Mestre: Que pena...Mas você deveria ter escolhido uma vida maior. Esquecendo isso..Quer continuar? [S/N]: ").capitalize()
                 if escolha == "s":
-                    print("Legal dessa vez vai dar certo!")
+                    print("Mestre: Legal dessa vez vai dar certo!")
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print("Entendi...Valeu por jogar...perdedora")
+                        print("Mestre: Entendi...Valeu por jogar...perdedora")
                         break
                     else:
-                        print("Entendi...Valeu por jogar...perdedor")
+                        print("Mestre: Entendi...Valeu por jogar...perdedor")
                         break
                 else: 
                     continue
             else:
                 escolha = input("Mestre: Valeu por tentar jogar, mas agora quer tentar de novo? [S/N]: ").capitalize()
                 if escolha == "s":
-                    print(f"Legal, vamos voltar {heroi.nome}")
+                    print(f"Mestre: Legal, vamos voltar {heroi.nome}")
                     continue
                 elif escolha == "n":
-                    print("Que decepção...")
+                    print("Companheiro: Que decepção...")
                     break
                 else:
                     continue
@@ -814,12 +815,17 @@ def jogar():
         dragao = Personagem("Dragão",600,"monstro")
         dragao_dormindo = 0
         print('"Olha ali!"'"Ele se escondia atrás de uma pilastra e olhava para o dragão que estava adormecido."'"O que você quer fazer antes dele acordar?"')
+        ja_tem_espada = False  # controle fora do loop
         while dragao_dormindo <= 100:
             escolha = int(input("1° Procurar uma nova espada| 2° Procurar poção| 3° Atacar o dragão | 4° Afiar a espada | 5° Desistir: | 6° Olhar inventário: "))
             
             if escolha == 1:
-                heroi.encontrar_espada()
-                dragao_dormindo += 10
+                if ja_tem_espada:
+                    print("⚔️ Você já encontrou uma espada. Não há mais espadas por aqui.")
+                else:
+                    heroi.encontrar_espada()
+                    dragao_dormindo += 10
+                    ja_tem_espada = True  # marca que já pegou a espada
                 
             elif escolha ==2: 
                 heroi.tentar_ganhar_pocao()
@@ -891,7 +897,7 @@ def jogar():
                         print("Agora, seus inimigos não enfrentam mais um aventureiro...")
                         print("...eles enfrentam a ira de alguém que venceu a morte.")
                         print("⚡ Os céus tremem. Os monstros recuam. O verdadeiro jogo começou.\n") 
-                        print("Dragão: Como você tem essa poção ")
+                        print("Dragão: Como você tem essa poção? ")
             turno += 1
             
         if heroi.esta_vivo():
@@ -902,42 +908,42 @@ def jogar():
             if vida_inicial == 80 and heroi.modo_vida == "f":
                 escolha = input("Mestre: Sei que escolheu o modo infernal, mas você sabia que teria de matar um Dragão ancião!? Esquecendo disso quer continuar? Talvez seja melhor diminuir a dificuldade [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Um conselho tinha que ser mais forte"')  
+                    print("Mestre: Um conselho seja mais forte")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Sério...Parece que você era uma fracote desde o início"')
+                        print('"Companheiro: Sério...Parece que você era uma fracote desde o início"')
                         break
                     else:
-                        print('"Sério...Parece que você era um fracote desde o início"')
+                        print('"Companheiro: Sério...Parece que você era um fracote desde o início"')
                         break
                 else:
                     continue
             elif vida_inicial == 120 and heroi.modo_vida == "f":
                 escolha = input("Mestre: Sei que escolheu o modo padrão, mas não deveria ter como você fica mais forte? Tipo você tinha capacidade de durar mais...Vamos tentar de novo! [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Um conselho deveria ter treinado mais"')  
+                    print("Mestre: Um conselho deveria ter treinado mais")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Parece que você era uma convarde desde o início"')
+                        print('"Companheiro: Parece que você era uma convarde desde o início"')
                         break
                     else:
-                        print('"Parece que você era um convarde desde o início"')
+                        print('"Companheiro: Parece que você era um convarde desde o início"')
                         break
                 else:
                     continue
             elif vida_inicial == 150 and heroi.modo_vida == "f":
                 escolha = input(" Mestre: Sei que escolheu o modo equilibrado, mas não é era necessário ser equilibrado também no dano e na cura? Todo mundo falhar...Porém vamos continuar! [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero."')  
+                    print("Mestre: Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero.")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print("Ele apenas virou o rosto para o lado, sem dizer uma palavra, deixando claro que não se importava com sua decisão. Apenas seguiu com o seu caminho, como se nada tivesse acontecido.") 
+                        print("Companheiro: Ele apenas virou o rosto para o lado, sem dizer uma palavra, deixando claro que não se importava com sua decisão. Apenas seguiu com o seu caminho, como se nada tivesse acontecido.") 
                         break
                     else:
-                        print("Ele apenas virou o rosto para o lado, sem dizer uma palavra, deixando claro que não se importava com sua decisão. Apenas seguiu com o seu caminho, como se nada tivesse acontecido.") 
+                        print("Companheiro: Ele apenas virou o rosto para o lado, sem dizer uma palavra, deixando claro que não se importava com sua decisão. Apenas seguiu com o seu caminho, como se nada tivesse acontecido.") 
                         break
                 else:
                     continue
@@ -945,51 +951,52 @@ def jogar():
                 escolha = input(" Mestre: Você escolheu o modo guerreiro, mas não! Tinha que ser morto por um Dragão! Vamos começar de novo logo, antes que eu perca mais tempo. [S/N]: ").capitalize()
                 if escolha == "s":
                     if heroi.sexo == "Feminino":
-                        print('"Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo."') 
+                        print("Mestre: Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo.") 
                     else:
-                        print('"Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo."')  
+                        print("Mestre: Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo.")  
                         continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                        print('"Companheiro: Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
                         break
                     else:
-                        print('"Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                        print('"Companheiro: Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
                         break
                 else:
                     continue
             elif heroi.modo_vida == "u":
                 escolha = input(" Mestre: Que pena...Mas você deveria ter escolhido uma vida maior. Esquecendo isso..Quer continuar? [S/N]: ").capitalize()
                 if escolha == "s":
-                    print("Legal dessa vez vai dar certo!")
+                    print("Mestre: Legal dessa vez vai dar certo!")
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print("Entendi...Valeu por jogar...perdedora")
+                        print("Mestre: Entendi...Valeu por jogar...perdedora")
                         break
                     else:
-                        print("Entendi...Valeu por jogar...perdedor")
+                        print("Mestre: Entendi...Valeu por jogar...perdedor")
                         break
                 else: 
                     continue
             else:
                 escolha = input("Mestre: Valeu por tentar jogar, mas agora quer tentar de novo? [S/N]: ").capitalize()
                 if escolha == "s":
-                    print(f"Legal, vamos voltar {heroi.nome}")
+                    print(f"Mestre: Legal, vamos voltar {heroi.nome}")
                     continue
                 elif escolha == "n":
-                    print("Que decepção...")
+                    print("Companheiro: Que decepção...")
                     break
                 else:
                     continue
                 
-        print('"Isso é fantástico, você conseguiu..."'f"O companheiro te abraçava e no mesmo momento transparencia um sorriso maligna, então puxar uma espada estranha da sua bainha e atravessar  pela barriga")
+        print('"Isso é fantástico, você conseguiu..."'f"O companheiro te abraçava e no mesmo momento transparencia um sorriso maligna, então puxar uma espada estranha da sua bainha e te atravessar pela barriga")
         heroi.vida -= heroi.vida // 2  
+        print(f"{heroi.nome} está com {heroi.vida} de vida")
         traidor = Personagem("Trevor",heroi.vida,"Masculino")
         print(f"Logo {heroi.nome} empurrar {traidor.nome} alguns metros de distância e mesmo começava a rir!"'"Acha mesmo que tudo seria como antes? Metade da sua vida já se foi — e a outra metade... vai comigo. Sua força agora é minha, sua vida também. Mas só um de nós vai sair daqui. E não vai ser você."')
         print('"Quando seu corpo cair, e o silêncio tomar este lugar... Eu vou fazer o que deveria ter feito há muito tempo. Vou arrancar o Coração do Dragão com as minhas próprias mãos. E ninguém mais vai me impedir."')
         turno = 1
-        while heroi.esta_vivo() and traidor.esta_vivo():
+        while heroi.esta_vivo() and traidor.esta_vivo():# SE o heroi e o traidor estiver vivo
             acao = int(input("Deseja atacar (1) ou tomar poção (2)? "))
             if acao == 1: # atacar o traidor
                 print(f"\n--- Turno {turno} ---")
@@ -1030,112 +1037,123 @@ def jogar():
                         traidor.vida = heroi.max_vida
                         traidor.dano_max += 100
             turno += 1
-    if heroi.esta_vivo():
-        print(f"{traidor.nome} estava ajoelhado no chão, o sangue escorrendo por entre os dedos.")
-        print(f"Ele ergueu os olhos para {heroi.nome}, com um meio sorriso quebrado.")
-        print(f'"No fim... eu nunca consegui te superar."')
-        print("A cabeça dele caiu de lado, os olhos perdendo a luz.")
-        print('E então, em sua última respiração, ele murmurou:')
-        print('"Me desculpa... mãe."')
-        print(f"\n😔 {heroi.nome} abaixou a cabeça, os punhos cerrados, os dentes rangendo.")
-        print("💧 Lágrimas escorriam enquanto o silêncio tomava o campo.")
-        print("⚔️ Ele pegou a espada caída do antigo companheiro...")
-        print("🔥 ...e com um gesto firme, arrancou o Coração do Dragão, ainda pulsando com energia antiga.")
-        print("⛓️ Virando-se de volta, cravou a lâmina no chão ao lado do corpo.")
-        print('"Aqui será o seu descanso final... meu velho amigo."')
+        if heroi.esta_vivo(): # SE o heroi estiver vivo
+            print(f"{traidor.nome} estava ajoelhado no chão, o sangue escorrendo por entre os dedos.")
+            print(f"Ele ergueu os olhos para {heroi.nome}, com um meio sorriso quebrado.")
+            print(f'"No fim... eu nunca consegui te superar."')
+            print("A cabeça dele caiu de lado, os olhos perdendo a luz.")
+            print('E então, em sua última respiração, ele murmurou:')
+            print('"Me desculpa... mãe."')
+            print(f"\n😔 {heroi.nome} abaixou a cabeça, os punhos cerrados, os dentes rangendo.")
+            print("💧 Lágrimas escorriam enquanto o silêncio tomava o campo.")
+            print("⚔️ Ele pegou a espada caída do antigo companheiro...")
+            print("🔥 ...e com um gesto firme, arrancou o Coração do Dragão, ainda pulsando com energia antiga.")
+            print("⛓️ Virando-se de volta, cravou a lâmina no chão ao lado do corpo.")
+            print('"Aqui será o seu descanso final... meu velho amigo."')
 
-        print("\n✨ O Coração do Dragão emitiu um brilho estranho, como se tivesse sentido a dor... e o arrependimento.")
-        print("Por um instante, o tempo pareceu parar.")
-        print("...")
-        print("🕯️ Quando {heroi.nome} abriu os olhos novamente, já não estava mais na caverna.")
-        print("Estava de joelhos, sob o céu aberto... e nas palmas de suas mãos, o Coração virava cinzas.")
-        print("☁️ O vento soprou suavemente, levando as cinzas pelo ar — como se o próprio destino estivesse aceitando o fim.")
-        
+            print("\n✨ O Coração do Dragão emitiu um brilho estranho, como se tivesse sentido a dor... e o arrependimento.")
+            print("Por um instante, o tempo pareceu parar.")
+            print("...")
+            print("🕯️ Quando {heroi.nome} abriu os olhos novamente, já não estava mais na caverna.")
+            print("Estava de joelhos, sob o céu aberto... e nas palmas de suas mãos, o Coração virava cinzas.")
+            print("☁️ O vento soprou suavemente, levando as cinzas pelo ar — como se o próprio destino estivesse aceitando o fim.")
+            final()
+            break
         else:
-            print(f"{traidor.nome} venceu!")        
+            if heroi.sexo == "Feminino": # se o sexo for Feminino
+                print(f"{traidor.nome} venceu!")        
+                print('"Eu consegui..."')
+                print("...")
+                print('"Mas matei minha única amiga."')
+                print("As lágrimas caíram.")
+                print("Ele não tentou escondê-las.")
+                print('"Não importa."')
+                print('"Com este coração... eu vou salvar minha mãe."')
+            else:
+                print(f"{traidor.nome} venceu!")        
+                print('"Eu consegui..."')
+                print("...")
+                print('"Mas matei meu único amigo."')
+                print("As lágrimas caíram.")
+                print("Ele não tentou escondê-las.")
+                print('"Não importa."')
+                print('"Com este coração... eu vou salvar minha mãe."')
             if vida_inicial == 80 and heroi.modo_vida == "f":
-                escolha = input("Mestre: Sei que escolheu o modo infernal, mas você sabia que teria de matar um Dragão ancião!? Esquecendo disso quer continuar? Talvez seja melhor diminuir a dificuldade [S/N]: ").capitalize()
+                escolha = input("Mestre: Sei que escolheu o modo infernal, mas você deveria ter desconfiado do seu amigo? Talvez seja melhor diminuir a dificuldade [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Um conselho tinha que ser mais forte"')  
+                    print("Mestre: Um conselho não tenha amigos")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Sério...Parece que você era uma fracote desde o início"')
+                        print('"Companheiro: Sério...Parece que você era uma fracote desde o início"')
                         break
                     else:
-                        print('"Sério...Parece que você era um fracote desde o início"')
+                        print('"Companheiro: Sério...Parece que você era um fracote desde o início"')
                         break
                 else:
                     continue
             elif vida_inicial == 120 and heroi.modo_vida == "f":
                 escolha = input("Mestre: Sei que escolheu o modo padrão, mas não deveria ter como você fica mais forte? Tipo você tinha capacidade de durar mais...Vamos tentar de novo! [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Um conselho deveria ter treinado mais"')  
+                    print("Mestre: Um conselho deveria ter treinado mais")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print('"Parece que você era uma convarde desde o início"')
+                        print('"Companheiro: Parece que você era uma convarde desde o início. Obrigado"')
                         break
                     else:
-                        print('"Parece que você era um convarde desde o início"')
+                        print('"Companheiro: Parece que você era um convarde desde o início. Obrigado"')
                         break
                 else:
                     continue
             elif vida_inicial == 150 and heroi.modo_vida == "f":
-                escolha = input(" Mestre: Sei que escolheu o modo equilibrado, mas não é era necessário ser equilibrado também no dano e na cura? Todo mundo falhar...Porém vamos continuar! [S/N]: ").capitalize()
+                escolha = input("Mestre: Sei que escolheu o modo equilibrado, mas não é era necessário ser equilibrado também no dano e na cura? Todo mundo falhar...Porém vamos continuar! [S/N]: ").capitalize()
                 if escolha == "s":
-                    print('"Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero."')  
+                    print("Mestre: Legal... vamos tentar de novo. Só que, da próxima vez, seria bom se não precisássemos começar tudo do zero.")  
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print("Ele apenas virou o rosto para o lado, sem dizer uma palavra, deixando claro que não se importava com sua decisão. Apenas seguiu com o seu caminho, como se nada tivesse acontecido.") 
-                        break
-                    else:
-                        print("Ele apenas virou o rosto para o lado, sem dizer uma palavra, deixando claro que não se importava com sua decisão. Apenas seguiu com o seu caminho, como se nada tivesse acontecido.") 
+                        print("Ele apenas virou o rosto para o lado, sem dizer uma palavra, deixando claro que não se importava com sua decisão. Apenas seguiu com o seu caminho, como se nada tivesse acontecido. Pegando o coração do dragão e indo embora") 
                         break
                 else:
                     continue
             elif vida_inicial == 250 and heroi.modo_vida == "f":
-                escolha = input(" Mestre: Você escolheu o modo guerreiro, mas não! Tinha que ser morto por um Dragão! Vamos começar de novo logo, antes que eu perca mais tempo. [S/N]: ").capitalize()
+                escolha = input("Mestre: Você escolheu o modo guerreiro, mas não! Tinha que ser morto por seu companheiro! Vamos começar de novo logo, antes que eu perca mais tempo. [S/N]: ").capitalize()
                 if escolha == "s":
                     if heroi.sexo == "Feminino":
-                        print('"Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo."') 
+                        print("Mestre: Agora, dessa vez, tenta ficar viva, heroína... não quero ter que te aguentar de novo.") 
                     else:
-                        print('"Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo."')  
+                        print("Mestre: Agora, dessa vez, tenta ficar vivo, heroizinho... não quero ter que ficar aguentando você de novo.")  
                         continue
                 elif escolha == "n":
-                    if heroi.sexo == "Feminino":
-                        print('"Sua inútil, eu estava quase chegando no meu objetivo, era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
-                        break
-                    else:
-                        print('"Seu inútil, eu estava quase chegando no meu objetivo e era só você abrir o caminho e depois eu te mataria para ter meu tesouro, mas você falhou!"') 
+                        print('"Companheiro: Você lutou com força, mas você foi quem morreu"') 
                         break
                 else:
                     continue
             elif heroi.modo_vida == "u":
-                escolha = input(" Mestre: Que pena...Mas você deveria ter escolhido uma vida maior. Esquecendo isso..Quer continuar? [S/N]: ").capitalize()
+                escolha = input("Mestre: Que pena...Mas você deveria ter escolhido uma vida maior. Esquecendo isso..Quer continuar? [S/N]: ").capitalize()
                 if escolha == "s":
-                    print("Legal dessa vez vai dar certo!")
+                    print("Mestre: Legal dessa vez vai dar certo!")
                     continue
                 elif escolha == "n":
                     if heroi.sexo == "Feminino":
-                        print("Entendi...Valeu por jogar...perdedora")
+                        print("Mestre: Entendi...Valeu por jogar...perdedora")
                         break
                     else:
-                        print("Entendi...Valeu por jogar...perdedor")
+                        print("Mestre: Entendi...Valeu por jogar...perdedor")
                         break
                 else: 
                     continue
             else:
                 escolha = input("Mestre: Valeu por tentar jogar, mas agora quer tentar de novo? [S/N]: ").capitalize()
                 if escolha == "s":
-                    print(f"Legal, vamos voltar {heroi.nome}")
+                    print(f"Mestre: Legal, vamos voltar {heroi.nome}")
                     continue
                 elif escolha == "n":
-                    print("Que decepção...")
+                    print("Companheiro: Obrigado por aceitar sua morte")
                     break
                 else:
-                    continue
+                    continue# o jogo dentro de um loop
             
-jogar(
+jogar()
     
