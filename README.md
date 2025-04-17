@@ -57,8 +57,6 @@ marcos agora tem 44 de vida.
 - Magias e habilidades
 - Mais escolhas na história
 - Vários inimigos diferentes
-- Salvamento de progresso
-
 ---
 
 
