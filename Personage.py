@@ -1,5 +1,6 @@
 import random
 from Xp import *
+from Classes import *
 
 class Personagem: # Definição da classe Personagem
     def __init__(self, nome, vida, sexo, classe,nivel=1, xp_atual=0):
@@ -12,7 +13,7 @@ class Personagem: # Definição da classe Personagem
         self.max_pocoes = 8
         self.arma = []
         # 🎯 Definindo quantas armas pode carregar com base na classe
-        if self.classe_inicial == "Assassino" or self.classe_inicial == "Arqueiro" or self.classe_inicial == "Cavaleiro":
+        if self.classe_inicial == "Assassino" or self.classe_inicial == "Arqueiro" or self.classe_inicial == "Guerreiro":
             self.max_arma = 2  # Pode equipar 2 armas!
         else:
             self.max_arma = 1  # Padrão: 1 arma
@@ -42,33 +43,41 @@ class Personagem: # Definição da classe Personagem
         self.queimado = False
         self.corrosivo = False
         self.visao_noturna = False
-        self.classe_incompativeis = {
-            "Cavaleiro": ["Arqueiro", "Mago", "Berserker", "Bruxo", "Feiticeiro", "Monge", "Bardo", "Druida", "Engenheiro", "Clérigo", "Assassino"],
-            "Mago": ["Arqueiro", "Cavaleiro", "Berserker", "Bruxo", "Feiticeiro", "Monge", "Bardo", "Druida", "Engenheiro", "Clérigo", "Assassino"],
-            "Arqueiro": ["Cavaleiro", "Mago", "Berserker", "Bruxo", "Feiticeiro", "Monge", "Bardo", "Druida", "Engenheiro", "Clérigo", "Assassino"],
-            "Monge": ["Arqueiro", "Mago", "Berserker", "Bruxo", "Feiticeiro", "Cavaleiro", "Bardo", "Druida", "Engenheiro", "Clérigo", "Assassino"],
-            "Feiticeiro": ["Arqueiro", "Mago", "Berserker", "Bruxo", "Cavaleiro", "Monge", "Bardo", "Druida", "Engenheiro", "Clérigo", "Assassino"],       
-            "Berserker": ["Arqueiro", "Mago", "Cavaleiro", "Bruxo", "Feiticeiro", "Monge", "Bardo", "Druida", "Engenheiro", "Clérigo", "Assassino"],
-            "Bardo": ["Arqueiro", "Mago", "Berserker", "Bruxo", "Feiticeiro", "Monge", "Cavaleiro", "Druida", "Engenheiro", "Clérigo", "Assassino"],
-            "Druida": ["Arqueiro", "Mago", "Berserker", "Bruxo", "Feiticeiro", "Monge", "Bardo", "Cavaleiro", "Engenheiro", "Clérigo", "Assassino"],
-            "Assassino": ["Arqueiro", "Mago", "Berserker", "Bruxo", "Feiticeiro", "Monge", "Bardo", "Druida", "Engenheiro", "Clérigo", "Cavaleiro"],
-            "Clérigo": ["Arqueiro", "Mago", "Berserker", "Bruxo", "Feiticeiro", "Monge", "Bardo", "Druida", "Engenheiro", "Cavaleiro", "Assassino"],
-            "Bruxo": ["Arqueiro", "Mago", "Berserker", "Cavaleiro", "Feiticeiro", "Monge", "Bardo", "Druida", "Engenheiro", "Clérigo", "Assassino"],
-            "Engenheiro": ["Arqueiro", "Mago", "Berserker", "Bruxo", "Feiticeiro", "Monge", "Bardo", "Druida", "Cavaleiro", "Clérigo", "Assassino"]
-        }
-        self.
-
-        def tentar_multiclassificar(self, nova_classe):
-            """
-            Tenta mudar a classe do personagem, mas com caminhos limitados por sua classe inicial.
-            """
-            if nova_classe in self.classe_incompativeis.get(self.classe_inicial, []):
-                print(f"Você não pode mudar porque a classe inicial é {self.classe_inicial} diferente da classe inicial da sua nova classe {nova_classe}!")
-            else:
-                self.classe = nova_classe
-                print(f"{self.nome} agora é {self.classe}!")
+        
+       def tentar_multiclassificar(self, nova_classe):
+            if nova_classe not in classes:
+                print(f"❌ Classe '{nova_classe}' não existe.")
+                return
+        
+            classe_atual_info = classes[self.classe]
+            classe_nova_info = classes[nova_classe]
+        
+            # Verifica se a classe inicial é a mesma
+            if classe_nova_info["classe_inicial"] != self.classe_inicial:
+                print(f"❌ {self.nome} não pode mudar para {nova_classe}, pois pertence a outra árvore de classe (inicial: {self.classe_inicial}).")
+                return
+        
+            # Verifica se a nova classe está na lista de evolução permitida
+            if nova_classe not in classe_atual_info.get("pode_evoluir", []):
+                print(f"❌ {self.nome} não pode evoluir de {self.classe} para {nova_classe}.")
+                return
+        
+            # Verifica o nível de evolução (se estiver definido nas duas classes)
+            nivel_atual = classe_atual_info.get("nivel_evolucao")
+            nivel_novo = classe_nova_info.get("nivel_evolucao")
+        
+            if nivel_atual is not None and nivel_novo is not None:
+                if nivel_novo != nivel_atual + 1:
+                    print(f"❌ {nova_classe} requer um nível de evolução superior. ({nivel_novo} vs {nivel_atual + 1})")
+                    return
+        
+            # Tudo certo: evolução liberada
+            self.classe = nova_classe
+            self.classe_inicial = classe_nova_info["classe_inicial"]  # Atualiza a raiz da árvore
+            print(f"✅ {self.nome} evoluiu para {self.classe}!")
+      
     
-        def status(self):
+        def status(self):# mostrar os status do personagem 
             print(f"{self.nome} está no nível {self.nivel} e é {self.classe}.")
         
         
@@ -281,7 +290,6 @@ class Personagem: # Definição da classe Personagem
                 print(f"🟫 Você encontrou: Espada Nova (Comum)!")
                 self.dano_max += 10
                 print("🗡️ Dano aumentado em +10!")
-            elif chance <= 1 and self.classe == "Arqueiro":
                 self.arma.append("lunar")
                 print(f"️🌙 Você encontro: Arco Lunar (Lendário/Linhagem dos céus)!")
                 print("Ele irradia poder... mas há algo especial nele. Que apenas pode ser despertado na hora certa")
