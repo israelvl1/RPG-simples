@@ -2,16 +2,39 @@ classes = {
     "Guerreiro": {
         "nivel_evolucao": 1,
         "desc": "O guerreiro é uma classe de combatente versátil, mestre das armas e da tática. Ele se destaca em combate físico, seja em combate corpo a corpo ou à distância, sendo capaz de usar uma variedade de armas e armaduras.",
-        "pode_evoluir": ["Mestre de Batalha", "Campeão", "Cavaleiro Eldritch", "Guerreiro Psíquico", "Arqueiro Arcano", "Cavaleiro", "Samurai", "Banneret", "Rune Knight", "Echo Knight"],
+        "pode_evoluir": [
+            "Mestre de Batalha",
+            "Campeão",
+            "Cavaleiro Eldritch",
+            "Guerreiro Psíquico",
+            "Cavaleiro",
+            "Samurai",
+            "Banneret",
+            "Rune Knight",
+            "Echo Knight",
+        ],
         "classe_inicial": "Guerreiro",
-        "bonus": {"Força": 2, "Constituição": 2}
+        "bonus": {"Força": 2, "Constituição": 2},
+        "habilidades": [null],
     },
     "Mestre de Batalha": {
         "nivel_evolucao": 3,
         "desc": "Um guerreiro tático que usa manobras especiais para controlar o campo de batalha.",
-        "pode_evoluir": ["Comandante de Vanguarda","Tático das Sombras","Mestre do Cerco","Veterano da Arena","Estrategista Elemental","Condutor de Falange","Arquiteto da Guerra","Executor Implacável","Marionetista de Guerra"],
+        "pode_evoluir": [
+            "Comandante de Vanguarda",
+            "Tático das Sombras",
+            "Mestre do Cerco",
+            "Condutor de Falange",
+            "Executor Implacável",
+            "Marionetista de Guerra",
+        ],
         "classe_inicial": "Guerreiro",
-        "bonus": {"Força": 2, "Destreza": 1}
+        "bonus": {"Força": 2, "Destreza": 1},
+        "habilidades": [
+            "Manobra Estratégica: Permite reposicionar aliados ou inimigos no campo de batalha, abrindo espaço para vantagens táticas.",
+            "Controle da Zona: Cria uma área ao redor do Mestre que reduz a mobilidade e precisão dos inimigos, dificultando seus ataques.",
+            "Ataque Coordenado: Quando um aliado ataca um inimigo que o Mestre também está ameaçando, ambos ganham bônus de ataque ou dano.",
+        ],
     },
     "Comandante de Vanguarda": {
         "nivel_evolucao": 7,
@@ -22,8 +45,8 @@ classes = {
         "habilidades": [
             "Grito de Guerra: Aumenta o moral e a força de ataque dos aliados próximos, inspirando-os a lutar com mais ferocidade.",
             "Impulso de Ataque: Fornece um bônus temporário de dano a todos os aliados dentro de um raio específico, incentivando-os a atacar com mais intensidade.",
-            "Força de Vanguarda: Garante que o comandante seja mais resistente ao dano enquanto lidera o ataque, funcionando como um 'tanque' que absorve danos para proteger seus aliados."
-        ]
+            "Força de Vanguarda: Garante que o comandante seja mais resistente ao dano enquanto lidera o ataque, funcionando como um 'tanque' que absorve danos para proteger seus aliados.",
+        ],
     },
     "Comandante Supremo": {
         "nivel_evolucao": 13,
@@ -32,19 +55,20 @@ classes = {
         "bonus": {"Carisma": 2, "Inteligência": 1},
         "pode_evoluir": [null],
         "habilidades": [
-                "Aumentar Bônus de Inspiração: Aumenta os efeitos das habilidades que inspiram e fortalecem os aliados, melhorando o bônus de ataque e defesa em combate.",
-                "Liderança Imbatível: Dá aos aliados próximos uma resistência significativa ao dano, além de permitir que eles ignorem status negativos por um tempo limitado."
-        ]
+            "Aumentar Bônus de Inspiração: Aumenta os efeitos das habilidades que inspiram e fortalecem os aliados, melhorando o bônus de ataque e defesa em combate.",
+            "Liderança Imbatível: Dá aos aliados próximos uma resistência significativa ao dano, além de permitir que eles ignorem status negativos por um tempo limitado.",
+        ],
     },
     "Tornado de Guerra": {
+        "nivel_evolucao": 13,
         "desc": "A evolução torna o comandante mais agressivo, liderando ataques devastadores que afetam o campo de batalha.",
         "classe_inicial": "Comandante de Vanguarda",
         "bonus": {"Força": 2, "Destreza": 1},
         "pode_evoluir": [null],
         "habilidades": [
-                 "Ataque Devastador: Permite ao comandante realizar ataques massivos em área, causando grande dano a todos os inimigos ao redor.",
-                 "Grito de Guerra Aprimorado: Aumenta a eficácia do Grito de Guerra, proporcionando mais força de ataque e aumentando a moral dos aliados por mais tempo."
-        ]
+            "Ataque Devastador: Permite ao comandante realizar ataques massivos em área, causando grande dano a todos os inimigos ao redor.",
+            "Grito de Guerra Aprimorado: Aumenta a eficácia do Grito de Guerra, proporcionando mais força de ataque e aumentando a moral dos aliados por mais tempo.",
+        ],
     },
     "Tático das Sombras": {
         "nivel_evolucao": 7,
@@ -55,28 +79,30 @@ classes = {
         "habilidades": [
             "Furtividade Avançada: Permite ao Tático se mover sem ser detectado, tornando-o invisível por curtos períodos, o que lhe permite escapar de perigos ou se posicionar para um ataque surpresa.",
             "Emboscada Mortal: Garante dano extra ao atacar inimigos desprevenidos, aproveitando a falta de defesa do oponente.",
-            "Manipulação de Terreno: Cria áreas de sombra que dificultam a visão inimiga e confundem o campo de batalha, permitindo emboscadas e evasão."
-        ]
+            "Manipulação de Terreno: Cria áreas de sombra que dificultam a visão inimiga e confundem o campo de batalha, permitindo emboscadas e evasão.",
+        ],
     },
     "Sombra Mortal": {
+        "nivel_evolucao": 13,
         "desc": "O Tático das Sombras se torna uma sombra ambulante, capaz de causar grandes danos enquanto permanece invisível ou difícil de ser detectado.",
         "classe_inicial": "Tático das Sombras",
         "bonus": {"Destreza": 2, "Inteligência": 1},
         "pode_evoluir": [null],
         "habilidades": [
-                "Invisibilidade Avançada: Aumenta a duração da invisibilidade e reduz a chance de detecção, permitindo movimentos furtivos com maior liberdade.",
-                "Ataque Fatal: Aumenta o dano de ataques furtivos contra inimigos desprevenidos, causando danos massivos ao atingir pontos fracos."
-        ]
+            "Invisibilidade Avançada: Aumenta a duração da invisibilidade e reduz a chance de detecção, permitindo movimentos furtivos com maior liberdade.",
+            "Ataque Fatal: Aumenta o dano de ataques furtivos contra inimigos desprevenidos, causando danos massivos ao atingir pontos fracos.",
+        ],
     },
     "Lâmina Silenciosa": {
+        "nivel_evolucao": 13,
         "desc": "Evolução que torna o Tático das Sombras mais letal em ataques furtivos, além de ganhar habilidades de manipulação mental em combate.",
         "classe_inicial": "Tático das Sombras",
         "bonus": {"Destreza": 2, "Carisma": 1},
         "pode_evoluir": [null],
         "habilidades": [
-                "Manipulação Psíquica: Permite ao Tático manipular as mentes dos inimigos próximos, confundindo-os e forçando-os a agir de maneira errada.",
-                "Ataque Silencioso Aprimorado: Melhora a habilidade de ataques furtivos, causando dano extra e debilitando os inimigos afetados, reduzindo sua capacidade de defesa."
-        ]
+            "Manipulação Psíquica: Permite ao Tático manipular as mentes dos inimigos próximos, confundindo-os e forçando-os a agir de maneira errada.",
+            "Ataque Silencioso Aprimorado: Melhora a habilidade de ataques furtivos, causando dano extra e debilitando os inimigos afetados, reduzindo sua capacidade de defesa.",
+        ],
     },
     "Mestre do Cerco": {
         "nivel_evolucao": 7,
@@ -87,93 +113,33 @@ classes = {
         "habilidades": [
             "Aríete Imortal: Um ataque de cerco que destrói as defesas inimigas e causa dano massivo a estruturas e unidades inimigas.",
             "Catapulta de Fogo: Lança projéteis incendiários em áreas grandes, causando dano em área e queimando inimigos e estruturas ao redor.",
-            "Resistência de Cerco: Aumenta a resistência a ataques de longo alcance e danos físicos, permitindo ao Mestre do Cerco resistir a embates prolongados durante a batalha."
-        ]
+            "Resistência de Cerco: Aumenta a resistência a ataques de longo alcance e danos físicos, permitindo ao Mestre do Cerco resistir a embates prolongados durante a batalha.",
+        ],
     },
     "Destruidor Imparável": {
+        "nivel_evolucao": 13,
         "desc": "Foco em aumentar a destruição e a resistência em combate, permitindo ao Mestre do Cerco destruir fortificações e esmagar inimigos com força bruta.",
         "classe_inicial": "Mestre do Cerco",
         "bonus": {"Força": 3, "Constituição": 1},
         "pode_evoluir": [null],
         "habilidades": [
-                "Destruição Total: Permite ao Mestre do Cerco causar dano massivo em estruturas inimigas, derrubando defesas e deixando o campo de batalha aberto para ataques subsequentes.",
-                "Invulnerabilidade Temporária: Concede uma camada de invulnerabilidade temporária ao Mestre do Cerco, permitindo que ele absorva danos sem ser afetado por um curto período."
-        ]
+            "Destruição Total: Permite ao Mestre do Cerco causar dano massivo em estruturas inimigas, derrubando defesas e deixando o campo de batalha aberto para ataques subsequentes.",
+            "Invulnerabilidade Temporária: Concede uma camada de invulnerabilidade temporária ao Mestre do Cerco, permitindo que ele absorva danos sem ser afetado por um curto período.",
+        ],
     },
     "Mestre das Máquinas": {
+        "nivel_evolucao": 13,
         "desc": "Focado em utilizar ferramentas de cerco, como catapultas e aríetes, e até mesmo em comandar máquinas de guerra.",
         "classe_inicial": "Mestre do Cerco",
         "bonus": {"Inteligência": 2, "Força": 1},
         "pode_evoluir": [null],
         "habilidades": [
-                "Controle de Máquinas: Permite ao Mestre do Cerco controlar máquinas de guerra com precisão, como catapultas, aríetes e balistas, causando dano em larga escala.",
-                "Mestre das Armas de Cerco: Aumenta a eficácia das armas de cerco, reduzindo o tempo de recarga e aumentando o dano causado a estruturas e unidades inimigas."
-        ]
-    },
-    "Veterano da Arena": {
-        "nivel_evolucao": 7,
-        "desc": "Forjado em combate individual e em batalhas públicas, esse mestre é um duelista brutal e imprevisível.",
-        "classe_inicial": "Mestre de Batalha",
-        "bonus": {"Força": 2, "Sabedoria": 1},
-        "pode_evoluir": ["Gladiador Supremo", "Ferro e Fogo"],
-        "habilidades": [
-            "Golpe Preciso: Aumenta a chance de acertos críticos e o dano em duelos, tornando o Veterano da Arena uma força devastadora em combate individual.",
-            "Desvio Impecável: Permite ao veterano evitar um ataque com maestria, utilizando sua experiência de combate para desviar com facilidade.",
-            "Ataque Frenético: Aumenta a velocidade de ataque por um curto período, permitindo combos rápidos e ataques contínuos."
-        ]
-    },
-    "Gladiador Supremo": {
-        "desc": "O Veterano da Arena se torna um mestre imbatível em combates 1x1, invencível e com ataques que exploram fraquezas dos oponentes.",
-        "classe_inicial": "Veterano da Arena",
-        "bonus": {"Força": 3, "Sabedoria": 1},
-        "pode_evoluir": [null],
-        "habilidades": [
-                "Exploitar Fraquezas: Permite ao Gladiador identificar e explorar as fraquezas do inimigo, causando danos adicionais e quebrando defesas inimigas.",
-                "Ataques Imparáveis: Dá ao Gladiador a capacidade de realizar ataques imbatíveis, ignorando armaduras e resistências de inimigos por um período curto."
-        ]
-    },
-    "Ferro e Fogo": {
-        "desc": "Especializa-se em usar armas e habilidades de combate em uma combinação brutal de ataque físico e mágico.",
-        "classe_inicial": "Veterano da Arena",
-        "bonus": {"Força": 2, "Inteligência": 1},
-        "pode_evoluir": [null],
-        "habilidades": [
-                "Golpes Elementais: Permite ao Veterano usar ataques elementais junto com suas habilidades físicas, causando dano adicional baseado em fogo, gelo ou eletricidade.",
-                "Combate Mágico Aprimorado: Aprimora o uso de magia no combate, permitindo conjurações rápidas e eficazes, mesmo durante ataques físicos."
-        ]
-    },
-    "Estrategista Elemental": {
-        "desc": "Um mestre de batalha que estudou como manipular elementos naturais em suas táticas. Mistura combate físico com efeitos mágicos sutis e estratégicos.",
-        "classe_inicial": "Mestre de Batalha",
-        "bonus": {"Inteligência": 2, "Força": 1},
-        "pode_evoluir": ["Mestre Elemental", "Chamado da Tempestade"],
-        "habilidades": [
-            "Magia de Combate: Mistura feitiços elementares com ataques físicos, aumentando o dano e causando efeitos adicionais baseados nos elementos (fogo, água, vento, terra).",
-            "Campo Elemental: Cria um campo ao redor do comandante que altera o terreno e afeta os inimigos com um dos quatro elementos, podendo causar dano ou aplicar debuffs.",
-            "Escudo Elemental: Protege aliados próximos com uma barreira de energia elemental, aumentando sua resistência a danos e controlando os efeitos do campo."
-        ]
-    },
-    "Mestre Elemental": {
-        "desc": "O Estrategista Elemental alcança domínio absoluto sobre os elementos, podendo invocar e manipular os elementos de forma mais poderosa.",
-        "classe_inicial": "Estrategista Elemental",
-        "bonus": {"Inteligência": 3, "Força": 1},
-        "pode_evoluir": [null],
-        "habilidades": [
-                "Invocação Elemental Avançada: Permite ao Estrategista invocar criaturas elementares poderosas para lutar ao seu lado e controlar os elementos de maneira mais efetiva.",
-                "Controle Elemental: Aumenta o controle sobre os elementos naturais, podendo manipular o fogo, a água, a terra e o vento para criar barreiras, causar dano e controlar o campo de batalha."
-        ]
-    },
-    "Chamado da Tempestade": {
-        "desc": "Habilidade de conjurar tempestades elementais e usar os poderes da natureza para desferir ataques devastadores.",
-        "classe_inicial": "Estrategista Elemental",
-        "bonus": {"Sabedoria": 2, "Inteligência": 1},
-        "pode_evoluir": [null],
-        "habilidades": [
-                "Tempestade de Raios: Invoca uma tempestade que descarrega raios nos inimigos, causando dano massivo em área e deixando-os atordoados.",
-                "Fúria dos Elementos: Desencadeia uma série de ataques elementares que arrasam as fileiras inimigas, causando dano e criando condições desfavoráveis para os oponentes."
-        ]
+            "Controle de Máquinas: Permite ao Mestre do Cerco controlar máquinas de guerra com precisão, como catapultas, aríetes e balistas, causando dano em larga escala.",
+            "Mestre das Armas de Cerco: Aumenta a eficácia das armas de cerco, reduzindo o tempo de recarga e aumentando o dano causado a estruturas e unidades inimigas.",
+        ],
     },
     "Condutor de Falange": {
+        "nivel_evolucao": 7,
         "desc": "Especializado em combate em grupo e formação defensiva, lidera aliados como uma unidade só, transformando um grupo em uma muralha viva.",
         "classe_inicial": "Mestre de Batalha",
         "bonus": {"Constituição": 2, "Carisma": 1},
@@ -181,61 +147,33 @@ classes = {
         "habilidades": [
             "Formação Blindada: Cria uma formação defensiva onde os aliados recebem redução de dano, tornando-se mais difíceis de serem derrotados.",
             "Comando de Falange: Ordena um ataque coordenado que causa dano em área aos inimigos dentro do alcance, com todos os aliados agindo em uníssono.",
-            "Defesa Inquebrável: Aumenta a resistência a danos de todos os aliados próximos quando em formação, criando uma linha de defesa impenetrável."
-        ]
+            "Defesa Inquebrável: Aumenta a resistência a danos de todos os aliados próximos quando em formação, criando uma linha de defesa impenetrável.",
+        ],
     },
     "Falange Imbatível": {
-    "desc": "A evolução definitiva do Condutor de Falange. Transforma o grupo em uma fortaleza ambulante, com sinergia defensiva extrema.",
-    "classe_inicial": "Condutor de Falange",
-    "bonus": { "Constituição": 2, "Sabedoria": 1 },
-    "pode_evoluir": [null],
-    "habilidades": [
-      "Muralha Viva: Torna aliados praticamente imunes a ataques frontais enquanto estiverem em formação.",
-      "Barreira Inquebrável: Cria um escudo coletivo que reduz dano mágico e bloqueia controle por um tempo limitado."
-        ]
+        "nivel_evolucao": 13,
+        "desc": "A evolução definitiva do Condutor de Falange. Transforma o grupo em uma fortaleza ambulante, com sinergia defensiva extrema.",
+        "classe_inicial": "Condutor de Falange",
+        "bonus": {"Constituição": 2, "Sabedoria": 1},
+        "pode_evoluir": [null],
+        "habilidades": [
+            "Muralha Viva: Torna aliados praticamente imunes a ataques frontais enquanto estiverem em formação.",
+            "Barreira Inquebrável: Cria um escudo coletivo que reduz dano mágico e bloqueia controle por um tempo limitado.",
+        ],
     },
     "Guardião da Legião": {
-    "desc": "Focado em proteger aliados com táticas defensivas avançadas e inspirar resistência mesmo nas piores situações.",
-    "classe_inicial": "Condutor de Falange",
-    "bonus": { "Carisma": 2, "Constituição": 1 },
-    "pode_evoluir": [null],
-    "habilidades": [
-      "Proteção Coletiva: Parte do dano de aliados é transferida para o Guardião, que o absorve com resistência aumentada.",
-      "Juramento de Ferro: Torna aliados vulneráveis temporariamente imunes a dano fatal."
-       ]
-     },
-    "Arquiteto da Guerra": {
-        "desc": "Um planejador nato que transforma o campo de batalha em um tabuleiro. Capaz de alterar o terreno, criar armadilhas e manipular posicionamento.",
-        "classe_inicial": "Mestre de Batalha",
-        "bonus": {"Inteligência": 2, "Sabedoria": 1},
-        "pode_evoluir": ["Construtor de Caos", "Mestre das Armadilhas"],
+        "nivel_evolucao": 13,
+        "desc": "Focado em proteger aliados com táticas defensivas avançadas e inspirar resistência mesmo nas piores situações.",
+        "classe_inicial": "Condutor de Falange",
+        "bonus": {"Carisma": 2, "Constituição": 1},
+        "pode_evoluir": [null],
         "habilidades": [
-            "Terreno Manipulado: Muda o terreno, criando obstáculos ou zonas de vantagem para a própria equipe, alterando o campo de batalha para controlar o fluxo do combate.",
-            "Armadilha Explosiva: Coloca armadilhas que detonam quando inimigos passam por elas, causando dano em área e desorganizando as fileiras inimigas.",
-            "Posicionamento Estratégico: Aumenta o poder de ataque e defesa de aliados em uma área ao redor de pontos-chave, otimizando as posições para maximizar a eficácia do time."
-        ]
-    },
-    "Construtor de Caos": {
-    "desc": "Transcende o papel de arquiteto e se torna um controlador absoluto do campo, usando o ambiente para causar destruição e desordem total.",
-    "classe_inicial": "Arquiteto da Guerra",
-    "bonus": { "Inteligência": 2, "Carisma": 1 },
-    "pode_evoluir": [null],
-    "habilidades": [
-      "Colapso Programado: Detona zonas manipuladas do terreno, causando dano em área e desorientando inimigos.",
-      "Campo Caótico: Cria um ambiente instável onde habilidades e movimentações inimigas têm chance de falhar."
-      ]
-     },
-    "Mestre das Armadilhas": {
-    "desc": "Aprofunda-se na arte das armadilhas, tornando o campo de batalha um labirinto letal para os desavisados.",
-    "classe_inicial": "Arquiteto da Guerra",
-    "bonus": { "Inteligência": 2, "Destreza": 1 },
-    "pode_evoluir": [null],
-    "habilidades": [
-      "Rede de Armadilhas: Instala múltiplas armadilhas ocultas que se ativam por proximidade ou comando.",
-      "Engenharia de Batalha: Reduz o tempo de preparo e aumenta o alcance e eficácia das armadilhas."
-      ]
+            "Proteção Coletiva: Parte do dano de aliados é transferida para o Guardião, que o absorve com resistência aumentada.",
+            "Juramento de Ferro: Torna aliados vulneráveis temporariamente imunes a dano fatal.",
+        ],
     },
     "Executor Implacável": {
+        "nivel_evolucao": 7,
         "desc": "Um mestre que se especializou em eliminar alvos prioritários rapidamente e com precisão cirúrgica.",
         "classe_inicial": "Mestre de Batalha",
         "bonus": {"Destreza": 2, "Força": 1},
@@ -243,30 +181,33 @@ classes = {
         "habilidades": [
             "Golpe Mortal: Aumenta significativamente o dano contra um único alvo, focando no inimigo mais importante ou vulnerável.",
             "Execução Rápida: Permite eliminar um inimigo crítico em um golpe de precisão, oferecendo uma maneira de eliminar rapidamente alvos prioritários.",
-            "Foco Letal: Concentra a mente para garantir um acerto fatal em inimigos com pouca vida, tornando-os alvos fáceis para o Executor."
-        ]
+            "Foco Letal: Concentra a mente para garantir um acerto fatal em inimigos com pouca vida, tornando-os alvos fáceis para o Executor.",
+        ],
     },
     "Assassino Imparável": {
-    "desc": "Um especialista em eliminação que executa alvos com velocidade e brutalidade, quase impossível de deter quando em ação.",
-    "classe_inicial": "Executor Implacável",
-    "bonus": { "Destreza": 2, "Força": 1 },
-    "pode_evoluir": [null],
-    "habilidades": [
-      "Cadência Letal: Permite múltiplas execuções em sequência se os inimigos forem eliminados rapidamente.",
-      "Sombras Velozes: Aumenta drasticamente a mobilidade após uma execução, permitindo reposicionamento imediato."
-      ]
+        "nivel_evolucao": 13,
+        "desc": "Um especialista em eliminação que executa alvos com velocidade e brutalidade, quase impossível de deter quando em ação.",
+        "classe_inicial": "Executor Implacável",
+        "bonus": {"Destreza": 2, "Força": 1},
+        "pode_evoluir": [null],
+        "habilidades": [
+            "Cadência Letal: Permite múltiplas execuções em sequência se os inimigos forem eliminados rapidamente.",
+            "Sombras Velozes: Aumenta drasticamente a mobilidade após uma execução, permitindo reposicionamento imediato.",
+        ],
     },
     "Sentença Final": {
-    "desc": "Transforma o Executor em um juiz do campo de batalha, cuja presença impõe medo e cuja lâmina traz o fim inevitável.",
-    "classe_inicial": "Executor Implacável",
-    "bonus": { "Carisma": 2, "Destreza": 1 },
-    "pode_evoluir": [null],
-    "habilidades": [
-      "Veredito Imediato: Executa automaticamente inimigos com menos de certa porcentagem de vida.",
-      "Golpe Final: Um ataque devastador que ignora armadura e causa dano crítico absoluto."
-      ]
+        "nivel_evolucao": 13,
+        "desc": "Transforma o Executor em um juiz do campo de batalha, cuja presença impõe medo e cuja lâmina traz o fim inevitável.",
+        "classe_inicial": "Executor Implacável",
+        "bonus": {"Carisma": 2, "Destreza": 1},
+        "pode_evoluir": [null],
+        "habilidades": [
+            "Veredito Imediato: Executa automaticamente inimigos com menos de certa porcentagem de vida.",
+            "Golpe Final: Um ataque devastador que ignora armadura e causa dano crítico absoluto.",
+        ],
     },
     "Marionetista de Guerra": {
+        "nivel_evolucao": 7,
         "desc": "Um mestre de batalha que manipula o inimigo como peças em um tabuleiro, forçando movimentos, trocando posições e desorientando.",
         "classe_inicial": "Mestre de Batalha",
         "bonus": {"Inteligência": 2, "Carisma": 1},
@@ -274,130 +215,540 @@ classes = {
         "habilidades": [
             "Controle Mental: Controla a mente de um inimigo, forçando-o a agir em seu favor por um curto período, transformando-o em uma ferramenta contra seus próprios aliados.",
             "Troca de Posições: Troca de lugar com um inimigo ou aliado, causando confusão nas linhas inimigas e alterando o posicionamento no campo de batalha.",
-            "Desorientação Psíquica: Faz com que os inimigos próximos percam a capacidade de coordenar ataques corretamente, gerando caos e ineficiência nas fileiras inimigas."
-        ]
+            "Desorientação Psíquica: Faz com que os inimigos próximos percam a capacidade de coordenar ataques corretamente, gerando caos e ineficiência nas fileiras inimigas.",
+        ],
     },
     "Domínio Psíquico": {
-    "desc": "Aprofunda-se no controle mental e manipulação, tornando-se um mestre do caos psíquico no campo de batalha.",
-    "classe_inicial": "Marionetista de Guerra",
-    "bonus": { "Inteligência": 3 },
-    "pode_evoluir": [null],
-    "habilidades": [
-      "Controle Total: Prolonga o controle mental e permite forçar inimigos a usar habilidades contra seus aliados.",
-      "Corrupção Psíquica: Envenena a mente do inimigo, causando dano contínuo e bloqueando habilidades."
-        ]
+        "nivel_evolucao": 13,
+        "desc": "Aprofunda-se no controle mental e manipulação, tornando-se um mestre do caos psíquico no campo de batalha.",
+        "classe_inicial": "Marionetista de Guerra",
+        "bonus": {"Inteligência": 3},
+        "pode_evoluir": [null],
+        "habilidades": [
+            "Controle Total: Prolonga o controle mental e permite forçar inimigos a usar habilidades contra seus aliados.",
+            "Corrupção Psíquica: Envenena a mente do inimigo, causando dano contínuo e bloqueando habilidades.",
+        ],
     },
     "Teatro da Guerra": {
-    "desc": "Transcende a manipulação individual e passa a coordenar o caos como um diretor de uma peça sangrenta no campo de batalha.",
-    "classe_inicial": "Marionetista de Guerra",
-    "bonus": { "Carisma": 2, "Inteligência": 1 },
-    "pode_evoluir": [null],
-    "habilidades": [
-      "Cenário Ilusório: Cria ilusões em larga escala que enganam os inimigos e alteram suas rotas.",
-      "Direção Oculta: Dá comandos secretos aos aliados, permitindo ações sincronizadas fora da percepção inimiga."
-        ]
+        "nivel_evolucao": 13,
+        "desc": "Transcende a manipulação individual e passa a coordenar o caos como um diretor de uma peça sangrenta no campo de batalha.",
+        "classe_inicial": "Marionetista de Guerra",
+        "bonus": {"Carisma": 2, "Inteligência": 1},
+        "pode_evoluir": [null],
+        "habilidades": [
+            "Cenário Ilusório: Cria ilusões em larga escala que enganam os inimigos e alteram suas rotas.",
+            "Direção Oculta: Dá comandos secretos aos aliados, permitindo ações sincronizadas fora da percepção inimiga.",
+        ],
     },
     "Campeão": {
         "desc": "Um guerreiro resiliente com habilidades aprimoradas em combate físico.",
-        "pode_evoluir": ["Cavaleiro", "Guerreiro Psíquico", "Samurai"],
         "classe_inicial": "Guerreiro",
-        "bonus": {"Força": 2, "Constituição": 1}
+        "nivel_evolucao": 3,
+        "bonus": {"Força": 2, "Constituição": 1},
+        "habilidades": [
+            "Golpe Preciso: Permite ampliar a chance de acerto crítico para 19-20 uma vez por turno.",
+            "Postura Inabalável: Concede resistência a empurrões, quedas e efeitos de desequilíbrio enquanto estiver com mais da metade da vida.",
+            "Despertar do Espírito de Luta: Ao atingir 0 PV pela primeira vez em combate, permanece com 1 PV (uma vez por descanso longo).",
+            "Ímpeto Brutal: Permite realizar um segundo ataque com desvantagem se o primeiro ataque do turno falhar.",
+        ],
+        "pode_evoluir": ["Titã de Ferro", "Punho dos Deuses", "Guardião da Arena"],
+    },
+    "Titã de Ferro": {
+        "desc": "Um mestre da defesa física, que transforma seu corpo em uma verdadeira fortaleza viva.",
+        "classe_inicial": "Campeão",
+        "nivel_evolucao": 7,
+        "bonus": {"Constituição": 2, "Força": 1},
+        "habilidades": [
+            "Pele de Aço: Reduz todo dano físico recebido em 3 pontos.",
+            "Provocação Instintiva: Quando atacado, pode forçar o inimigo a focar seus próximos ataques contra você.",
+            "Parede de Carne e Osso: Concede cobertura a aliados adjacentes e pode interceptar ataques destinados a eles uma vez por rodada.",
+        ],
+        "pode_evoluir": ["Colosso Imortal", "Fortaleza Andante"],
+    },
+    "Colosso Imortal": {
+        "desc": "Um ser de pura resistência, quase invulnerável, que se mantém de pé mesmo quando tudo parece perdido.",
+        "classe_inicial": "Titã de Ferro",
+        "nivel_evolucao": 13,
+        "bonus": {"Constituição": 3},
+        "pode_evoluir": [null],
+        "habilidades": [
+            "Regeneração Imparável: Recupera uma pequena quantidade de PV a cada turno (ex: 5 PV por turno).",
+            "Imortalidade Temporária: Uma vez por combate, ignora todos os efeitos que o reduziriam a 0 PV por 1 turno completo.",
+        ],
+    },
+    "Fortaleza Andante": {
+        "desc": "Um protetor intransponível, capaz de barrar exércitos sozinho. Avança lentamente, mas nunca recua.",
+        "classe_inicial": "Titã de Ferro",
+        "nivel_evolucao": 13,
+        "bonus": {"Força": 1, "Constituição": 2},
+        "pode_evoluir": [null],
+        "habilidades": [
+            "Muralha Móvel: Pode se mover com aliados atrás de si, concedendo cobertura total contra ataques à distância.",
+            "Absorver o Golpe: Pode escolher receber o dano que seria causado a um aliado adjacente (1 vez por turno).",
+        ],
+    },
+    "Punho dos Deuses": {
+        "desc": "Um guerreiro sagrado que canaliza força bruta em ataques devastadores imbuídos com poder místico.",
+        "classe_inicial": "Campeão",
+        "nivel_evolucao": 7,
+        "bonus": {"Força": 2, "Sabedoria": 1},
+        "habilidades": [
+            "Impacto Divino: Seus ataques causam dano adicional radiante igual ao modificador de Sabedoria uma vez por turno.",
+            "Aura da Força: Aliados próximos recebem bônus de dano igual a metade do seu modificador de Força.",
+            "Punho Abençoado: Pode escolher causar dano não letal com ataques físicos e paralisar o inimigo por 1 turno se falhar em um teste de resistência.",
+        ],
+        "pode_evoluir": ["Avatar da Força", "Justiçar Celestial"],
+    },
+    "Avatar da Força": {
+        "desc": "A encarnação da força bruta, seus golpes ressoam como trovões e sua presença é inspiradora e aterradora.",
+        "classe_inicial": "Punho dos Deuses",
+        "nivel_evolucao": 13,
+        "bonus": {"Força": 3},
+        "pode_evoluir": [null],
+        "habilidades": [
+            "Golpe Titânico: Um ataque por combate pode causar o triplo de dano e empurrar o inimigo por vários metros.",
+            "Aura Avassaladora: Inimigos próximos sofrem penalidade em testes de resistência física enquanto estiverem em sua zona de ameaça.",
+        ],
+    },
+    "Justiçar Celestial": {
+        "desc": "Um executor sagrado, portador de julgamento divino sobre os que espalham o caos.",
+        "classe_inicial": "Punho dos Deuses",
+        "nivel_evolucao": 13,
+        "pode_evoluir": [null],
+        "bonus": {"Sabedoria": 2, "Força": 1},
+        "habilidades": [
+            "Julgamento Radiante: Uma vez por dia, pode marcar um inimigo — causando dano radiante extra contínuo até que ele seja derrotado.",
+            "Toque Purificador: Pode curar aliados ao causar dano com ataques físicos, convertendo parte do dano em cura (ex: metade do dano infligido como cura).",
+        ],
+    },
+    "Guardião da Arena": {
+        "desc": "Veterano de incontáveis combates, conhece todos os truques e manhas da batalha corpo a corpo.",
+        "classe_inicial": "Campeão",
+        "nivel_evolucao": 7,
+        "bonus": {"Destreza": 1, "Constituição": 2},
+        "habilidades": [
+            "Instinto de Combate: Pode agir no início do combate mesmo se surpreendido.",
+            "Leitura de Movimento: Recebe bônus de esquiva contra ataques repetidos do mesmo inimigo.",
+            "Golpe Esmagador: Se o inimigo estiver com metade da vida ou menos, seus ataques têm chance de atordoá-lo por 1 turno.",
+        ],
+        "pode_evoluir": ["Lenda da Arena", "Mestre do Coliseu"],
+    },
+    "Lenda da Arena": {
+        "desc": "Temido e respeitado por todos os combatentes. Um mestre de técnicas de combate perfeitas, dignas de histórias e canções.",
+        "classe_inicial": "Guardião da Arena",
+        "nivel_evolucao": 13,
+        "pode_evoluir": [null],
+        "bonus": {"Destreza": 2, "Força": 1},
+        "habilidades": [
+            "Reflexo Perfeito: Pode anular completamente um ataque por combate com uma esquiva lendária.",
+            "Execução Precisa: Pode gastar uma ação bônus para realizar um ataque crítico automático se o inimigo estiver com menos de 25% de vida.",
+        ],
+    },
+    "Mestre do Coliseu": {
+        "desc": "Domina o espetáculo da luta como ninguém. Suas técnicas confundem, impressionam e destroem com estilo e precisão.",
+        "classe_inicial": "Guardião da Arena",
+        "nivel_evolucao": 13,
+        "pode_evoluir": [null],
+        "bonus": {"Carisma": 1, "Destreza": 2},
+        "habilidades": [
+            "Show de Sangue: Após derrotar um inimigo, ganha bônus de ataque e moral temporário, e inspira aliados próximos.",
+            "Duelo Teatral: Pode desafiar um inimigo em combate singular, e enquanto estiverem focados um no outro, ambos recebem penalidade contra outros alvos — mas bônus mútuos entre si.",
+        ],
     },
     "Cavaleiro Eldritch": {
         "desc": "Um guerreiro que combina combate físico com magia arcana.",
-        "pode_evoluir": ["Arqueiro Arcano", "Guerreiro Psíquico", "Campeão"],
         "classe_inicial": "Guerreiro",
-        "bonus": {"Força": 2, "Inteligência": 1}
+        "nivel_evolucao": 3,
+        "bonus": {"Força": 2, "Inteligência": 1},
+        "habilidades": [
+            "Golpe Arcano: Pode imbuir ataques corpo a corpo com energia mágica para causar dano adicional elemental (fogo, gelo ou trovão).",
+            "Escudo Arcano: Pode conjurar uma barreira mágica temporária que reduz o dano de ataques por 1 turno.",
+            "Conjuração em Combate: Pode lançar magias de nível 1 sem sofrer Ataques de Oportunidade enquanto empunha uma arma.",
+            "Canalizar Magia: Converte parte do dano mágico recebido em pontos de mana ou energia (1 vez por descanso longo).",
+        ],
+        "pode_evoluir": [
+            "Arcanoguarda",
+            "Lâmina Rúnica",
+            "Guardião dos Véus",
+            "Ceifador Astral",
+        ],
+    },
+    "Arcanoguarda": {
+        "desc": "Especialista em defesa mágica, protege a si mesmo e seus aliados com escudos e encantamentos.",
+        "classe_inicial": "Cavaleiro Eldritch",
+        "nivel_evolucao": 7,
+        "bonus": {"Inteligência": 2, "Constituição": 1},
+        "habilidades": [
+            "Barreira Mística: Cria um escudo protetor ao redor de aliados próximos que reduz o dano mágico recebido.",
+            "Redirecionar Magia: Uma vez por combate, pode redirecionar uma magia de alvo único que seria lançada contra você para outro alvo válido.",
+        ],
+        "pode_evoluir": ["Sentinela Arcana", "Guardião da Trama"],
+    },
+    "Sentinela Arcana": {
+        "desc": "Defensor místico supremo, cria barreiras arcanas quase impenetráveis e protege aliados com magia pura.",
+        "classe_inicial": "Arcanoguarda",
+        "nivel_evolucao": 13,
+        "pode_evoluir": [null],
+        "bonus": {"Inteligência": 3},
+        "habilidades": [
+            "Fortaleza Etérea: Pode criar uma zona de proteção mágica que reduz em 50% o dano de área para todos os aliados dentro dela por 2 turnos.",
+            "Espelho Arcano: Uma vez por combate, reflete totalmente uma magia de alvo único de volta ao conjurador.",
+        ],
+    },
+    "Guardião da Trama": {
+        "desc": "Manipula os próprios fios da magia para proteger a realidade — ou distorcê-la para seu favor.",
+        "classe_inicial": "Arcanoguarda",
+        "pode_evoluir": [null],
+        "nivel_evolucao": 13,
+        "bonus": {"Inteligência": 2, "Sabedoria": 1},
+        "habilidades": [
+            "Trama Estável: Anula efeitos de teletransporte, banimento ou desmaterialização em uma área ao redor por 3 turnos.",
+            "Ancoragem Arcana: Escolhe um aliado e cria um vínculo — qualquer dano letal sofrido por ele será dividido com você (1 vez por descanso longo).",
+        ],
+    },
+    "Lâmina Rúnica": {
+        "desc": "Mestre em inscrever runas mágicas em suas armas, amplificando seus efeitos com magias devastadoras.",
+        "classe_inicial": "Cavaleiro Eldritch",
+        "nivel_evolucao": 7,
+        "bonus": {"Força": 2, "Inteligência": 1},
+        "habilidades": [
+            "Runas de Impacto: Inscreve runas na arma que explodem com dano mágico ao acertar um inimigo (1 vez por turno).",
+            "Encantamento Rápido: Pode gastar uma ação bônus para trocar ou renovar um efeito mágico ativo na arma.",
+        ],
+        "pode_evoluir": ["Forjador Rúnico", "Executor Arcanizado"],
+    },
+    "Forjador Rúnico": {
+        "desc": "Criador de runas lendárias, cada golpe seu carrega o poder ancestral das forças mágicas primordiais.",
+        "classe_inicial": "Lâmina Rúnica",
+        "nivel_evolucao": 13,
+        "bonus": {"Força": 2, "Inteligência": 2},
+        "pode_evoluir": [null],
+        "habilidades": [
+            "Runa Explosiva: Pode inscrever uma runa que detona com magia em área após um ataque crítico ou quando ativada.",
+            "Gravura Permanente: Escolhe uma runa permanente para sua arma, que concede um efeito mágico passivo até o fim do combate.",
+        ],
+    },
+    "Executor Arcanizado": {
+        "desc": "Um ceifador encantado, canaliza magias ofensivas diretamente nos cortes de sua lâmina.",
+        "classe_inicial": "Lâmina Rúnica",
+        "nivel_evolucao": 13,
+        "bonus": {"Força": 3},
+        "pode_evoluir": [null],
+        "habilidades": [
+            "Fenda Elemental: Seus ataques cortam a resistência do alvo a um tipo de dano mágico (fogo, gelo, elétrico) por 1 turno.",
+            "Golpe Canalizado: Pode lançar uma magia ofensiva ao mesmo tempo em que ataca corpo a corpo, combinando efeitos e dano.",
+        ],
+    },
+    "Guardião dos Véus": {
+        "desc": "Manipulador do espaço e da ilusão, um guerreiro espectral que se move entre planos.",
+        "classe_inicial": "Cavaleiro Eldritch",
+        "nivel_evolucao": 7,
+        "bonus": {"Destreza": 1, "Inteligência": 2},
+        "habilidades": [
+            "Piscar Dimensional: Pode se teletransportar em curto alcance como reação ao ser alvo de um ataque.",
+            "Lâmina Fantasmagórica: Seus ataques ignoram parte da armadura física e podem causar efeitos ilusórios (como cegueira temporária).",
+        ],
+        "pode_evoluir": ["Cavaleiro do Vazio", "Andarilho Arcano"],
+    },
+    "Cavaleiro do Vazio": {
+        "desc": "Um guerreiro que domina o espaço entre mundos. Ataca de ângulos impossíveis e some no ar.",
+        "classe_inicial": "Guardião dos Véus",
+        "nivel_evolucao": 13,
+        "pode_evoluir": [null],
+        "bonus": {"Destreza": 2, "Inteligência": 1},
+        "habilidades": [
+            "Ataque Dimensional: Pode ignorar cobertura e armadura mágica por 1 ataque por turno.",
+            "Espectro Deslizante: Após atacar, pode se mover livremente por objetos ou criaturas por até 6 metros (1 vez por rodada).",
+        ],
+    },
+    "Andarilho Arcano": {
+        "desc": "Viajante entre planos, mestre da distorção mágica e da manipulação de posicionamento em combate.",
+        "classe_inicial": "Guardião dos Véus",
+        "nivel_evolucao": 13,
+        "pode_evoluir": [null],
+        "bonus": {"Inteligência": 2, "Carisma": 1},
+        "habilidades": [
+            "Distorção Tática: Pode trocar de lugar instantaneamente com um aliado visível (1 vez por combate).",
+            "Esquiva Planar: Ao ser alvo de um ataque, pode desaparecer momentaneamente em outro plano e evitar completamente o golpe (1 vez por descanso longo).",
+        ],
+    },
+    "Ceifador Astral": {
+        "desc": "Um guerreiro que canaliza as forças entre planos para atacar com precisão sobrenatural e desaparecer entre os véus da realidade.",
+        "classe_inicial": "Cavaleiro Eldritch",
+        "nivel_evolucao": 7,
+        "bonus": {"Inteligência": 2, "Destreza": 1},
+        "habilidades": [
+            "Corte do Véu: Um ataque que ignora armadura mágica e causa dano psíquico adicional. Se o inimigo for abatido, o Ceifador pode se teletransportar para outro ponto visível.",
+            "Passo Entre Planos: Uma vez por combate, pode se tornar intangível por 1 turno, ignorando ataques e se movendo livremente por obstáculos.",
+        ],
+        "pode_evoluir": ["Espectro do Véu", "Juiz Estelar"],
+    },
+    "Espectro do Véu": {
+        "desc": "Mestre em atravessar realidades, confundindo inimigos e atacando de locais impossíveis.",
+        "classe_inicial": "Ceifador Astral",
+        "nivel_evolucao": 13,
+        "pode_evoluir": [null],
+        "bonus": {"Destreza": 2, "Inteligência": 1},
+        "habilidades": [
+            "Duplicata Etérea: Cria uma imagem astral ilusória que se move independentemente e pode atrair ataques. Se for atingida, explode em energia causando dano psíquico leve.",
+            "Deslocamento Sombrio: Pode desaparecer ao ser alvo de um ataque e reaparecer a até 9 metros de distância, sem custo de movimento.",
+        ],
+    },
+    "Juiz Estelar": {
+        "desc": "Emissário dos planos superiores, julga os vivos com energia estelar e punição arcana.",
+        "classe_inicial": "Ceifador Astral",
+        "nivel_evolucao": 13,
+        "pode_evoluir": [null],
+        "bonus": {"Inteligência": 3},
+        "habilidades": [
+            "Sentença Cósmica: Escolhe um inimigo por combate para sofrer vulnerabilidade ao próximo dano mágico ou psíquico.",
+            "Luz do Abismo: Emite um feixe astral em linha reta que causa dano em todos os inimigos no caminho e aplica cegueira por 1 turno (1 vez por descanso longo).",
+        ],
     },
     "Guerreiro Psíquico": {
+        "nivel_evolucao": 3,
         "desc": "Um guerreiro que usa poderes psíquicos para aumentar suas capacidades em combate.",
-        "pode_evoluir": ["Campeão", "Mestre de Batalha", "Cavaleiro Eldritch"],
         "classe_inicial": "Guerreiro",
-        "bonus": {"Força": 2, "Sabedoria": 1}
+        "bonus": {"Força": 2, "Sabedoria": 1},
+        "habilidades": [
+            "Golpe Mental: Pode aplicar dano psíquico adicional em um ataque por turno, forçando o inimigo a fazer um teste de resistência para evitar ser desorientado.",
+            "Intuição de Combate: Pode prever e evitar um ataque por combate, anulando o dano com um reflexo instintivo.",
+            "Campo Mental: Cria uma aura psíquica que bloqueia comunicação mágica e telepatia inimiga num raio curto.",
+            "Canalização Psíquica: Pode impulsionar um teste físico (Força, Destreza ou Constituição) com bônus mental 1 vez por descanso curto.",
+        ],
+        "pode_evoluir": [
+            "Aniquilador Psíquico",
+            "Discípulo da Mente",
+            "Vanguarda Mental",
+            "Eco da Dor",
+            "Cavaleiro da Percepção",
+            "Predador Psíquico",
+            "Guardião dos Sonhos",
+        ],
     },
-    "Arqueiro Arcano": {
-        "desc": "Um guerreiro especializado no uso de arcos e flechas mágicas.",
-        "pode_evoluir": ["Cavaleiro Eldritch", "Mestre de Batalha"],
-        "classe_inicial": "Guerreiro",
-        "bonus": {"Destreza": 2, "Inteligência": 1}
+    "Aniquilador Psíquico": {
+        "desc": "Canaliza poder mental puro em ataques ofensivos brutais, destruindo a mente antes do corpo.",
+        "classe_inicial": "Guerreiro Psíquico",
+        "nivel_evolucao": 7,
+        "bonus": {"Força": 2, "Sabedoria": 1},
+        "habilidades": [
+            "Explosão Mental: Causa dano psíquico em área e pode atordoar inimigos com mente fraca.",
+            "Olhar Despedaçador: Pode forçar um inimigo a falhar automaticamente um teste mental por combate.",
+        ],
+        "pode_evoluir": ["Desintegrador Psíquico", "Anjo da Destruição"],
+    },
+    "Desintegrador Psíquico": {
+        "desc": "Especializa-se em destruir completamente a mente do inimigo, eliminando qualquer resistência psíquica.",
+        "classe_inicial": "Aniquilador Psíquico",
+        "nivel_evolucao": 13,
+        "habilidades": [
+            "Opressão Mental: Pode suprimir as ações de um inimigo por 1 turno, fazendo com que ele perca sua ação.",
+            "Desintegração Psíquica: Aplica um grande dano psíquico a um inimigo e pode desintegrar parte de sua energia mental, reduzindo suas defesas.",
+        ],
+    },
+    "Anjo da Destruição": {
+        "desc": "Canaliza poderes psíquicos para liberar ataques devastadores que corrompem a alma dos inimigos.",
+        "classe_inicial": "Aniquilador Psíquico",
+        "nivel_evolucao": 13,
+        "habilidades": [
+            "Sofrimento Eterno: Os inimigos afetados por ataques psíquicos sofrem dano contínuo por 2 turnos.",
+            "Destruição Celestial: Lança uma onda de destruição mental que causa dano psíquico em área e aplica um efeito de atordoamento.",
+        ],
+    },
+    "Discípulo da Mente": {
+        "desc": "Foca em autocontrole, disciplina e fortalecimento físico por meio da mente.",
+        "classe_inicial": "Guerreiro Psíquico",
+        "nivel_evolucao": 7,
+        "bonus": {"Constituição": 2, "Sabedoria": 1},
+        "habilidades": [
+            "Corpo de Ferro: Reduz dano físico recebido em 2 pontos sempre que estiver consciente.",
+            "Meditação Restauradora: Cura-se 1d6 + Sabedoria como ação bônus uma vez por combate.",
+        ],
+        "pode_evoluir": ["Mestre Mental", "Guardião Espiritual"],
+    },
+    "Mestre Mental": {
+        "desc": "Foca em treinamento mental para maximizar resistência e controle psíquico.",
+        "classe_inicial": "Discípulo da Mente",
+        "nivel_evolucao": 13,
+        "habilidades": [
+            "Foco Inabalável: Concentra-se para anular o efeito de condições adversas como medo, paralisia e desorientação.",
+            "Controle Total: Recebe bônus de resistência mental e física, reduzindo os danos de magia mental em 50%.",
+        ],
+    },
+    "Guardião Espiritual": {
+        "desc": "Desenvolve a capacidade de proteger aliados através da força mental e espiritual.",
+        "classe_inicial": "Discípulo da Mente",
+        "nivel_evolucao": 13,
+        "habilidades": [
+            "Escudo Mental: Cria um campo mental que absorve dano para um aliado, utilizando sua sabedoria como escudo.",
+            "Aura Protetora: Aumenta a resistência mental e física dos aliados próximos, protegendo-os de efeitos negativos.",
+        ],
+    },
+    "Vanguarda Mental": {
+        "desc": "Especialista em ilusões e manipulação de percepção no campo de batalha.",
+        "classe_inicial": "Guerreiro Psíquico",
+        "nivel_evolucao": 7,
+        "bonus": {"Destreza": 1, "Sabedoria": 2},
+        "habilidades": [
+            "Distorção Sensorial: Impõe desvantagem em um inimigo ao tentar atacá-lo por 1 turno.",
+            "Duplicata Psíquica: Cria uma imagem ilusória que pode atrair um ataque antes de desaparecer.",
+        ],
+        "pode_evoluir": ["Senhor das Sombras", "Despertar da Percepção"],
+    },
+    "Senhor das Sombras": {
+        "desc": "Mestre da ilusão, pode fazer os inimigos atacar suas próprias sombras.",
+        "classe_inicial": "Vanguarda Mental",
+        "nivel_evolucao": 13,
+        "habilidades": [
+            "Ilusão Mortal: Cria uma ilusão que faz o inimigo atacar seu aliado, causando dano ao seu próprio time.",
+            "Aparição Sombria: Cria um clone ilusório que ocupa a posição de um aliado ou inimigo, confundindo os oponentes.",
+        ],
+    },
+    "Despertar da Percepção": {
+        "desc": "Desperta uma visão além da normalidade, permitindo manipular as percepções dos inimigos.",
+        "classe_inicial": "Vanguarda Mental",
+        "nivel_evolucao": 13,
+        "habilidades": [
+            "Olhar do Mestre: Pode controlar as percepções dos inimigos e criar visões ilusórias aterrorizantes.",
+            "Percepção Aumentada: Permite ver através de ilusões e detectar inimigos invisíveis por um turno.",
+        ],
+    },
+    "Eco da Dor": {
+        "desc": "Transforma sofrimento em arma, refletindo dano e amplificando feridas mentais.",
+        "classe_inicial": "Guerreiro Psíquico",
+        "nivel_evolucao": 7,
+        "bonus": {"Constituição": 2, "Sabedoria": 1},
+        "habilidades": [
+            "Reflexo da Dor: Pode refletir parte do dano recebido de volta para o inimigo em forma de dano psíquico.",
+            "Cicatrização Mental: Recupera uma quantidade de pontos de vida com base na quantidade de dano recebido por um inimigo.",
+        ],
+        "pode_evoluir": ["Sombra da Dor", "Flagelo Psíquico"],
+    },
+    "Sombra da Dor": {
+        "desc": "Sufoca os inimigos em um ciclo de dor e terror, tornando-os mais vulneráveis.",
+        "classe_inicial": "Eco da Dor",
+        "nivel_evolucao": 13,
+        "habilidades": [
+            "Vingança Sombria: Ao receber dano, aplica um debuff psicológico nos inimigos próximos, reduzindo sua eficácia de ataque.",
+            "Sufocamento Psíquico: Um inimigo marcado sofre danos psíquicos contínuos enquanto estiver dentro do alcance da habilidade.",
+        ],
+    },
+    "Flagelo Psíquico": {
+        "desc": "Concentra-se em causar dor mental insuportável, quebrando a mente do inimigo.",
+        "classe_inicial": "Eco da Dor",
+        "nivel_evolucao": 13,
+        "habilidades": [
+            "Flagelo da Mente: Causa dano psíquico maciço e impede o inimigo de usar habilidades por 1 turno.",
+            "Chicote Mental: Ataca o inimigo à distância com uma energia mental que o desorienta e causa dano.",
+        ],
+    },
+    "Cavaleiro da Percepção": {
+        "desc": "Um guerreiro psíquico que se especializa em previsões e controle mental.",
+        "classe_inicial": "Guerreiro Psíquico",
+        "nivel_evolucao": 7,
+        "habilidades": [
+            "Leitura Mental: Pode descobrir as intenções de um inimigo, ganhando vantagens em combate.",
+            "Futuro Revelado: Consegue antecipar um ataque, aumentando sua evasão por 1 turno.",
+        ],
+        "pode_evoluir": ["Vidente Astral", "Senhor do Destino"],
+    },
+    "Vidente Astral": {
+        "desc": "Mestre da percepção temporal, pode alterar o fluxo do combate com visões futuras.",
+        "classe_inicial": "Cavaleiro da Percepção",
+        "nivel_evolucao": 13,
+        "habilidades": [
+            "Visão do Futuro: Pode ver e evitar o próximo ataque de um inimigo.",
+            "Ruptura Temporal: Desacelera um inimigo, fazendo com que perca a ação por 1 turno.",
+        ],
+    },
+    "Senhor do Destino": {
+        "desc": "Manipulador do destino, controla a percepção da morte e das ações inimigas.",
+        "classe_inicial": "Cavaleiro da Percepção",
+        "nivel_evolucao": 13,
+        "habilidades": [
+            "Destino Selado: Faz um inimigo falhar automaticamente um ataque, anulando seus efeitos.",
+            "Percepção Fatal: Concentra-se e aumenta drasticamente seu dano psíquico contra o inimigo com maior poder.",
+        ],
     },
     "Cavaleiro": {
+        "nivel_evolucao": 3,
         "desc": "Um guerreiro montado que se destaca na proteção de aliados e controle do campo de batalha.",
         "pode_evoluir": ["Samurai", "Cavaleiro Eldritch", "Guerreiro Psíquico"],
         "classe_inicial": "Guerreiro",
-        "bonus": {"Força": 2, "Constituição": 1}
+        "bonus": {"Força": 2, "Constituição": 1},
     },
     "Samurai": {
+        "nivel_evolucao": 3,
         "desc": "Um guerreiro disciplinado que se especializa em combates ferozes e resistir ao dano.",
         "pode_evoluir": ["Cavaleiro", "Campeão", "Mestre de Batalha"],
         "classe_inicial": "Guerreiro",
-        "bonus": {"Força": 2, "Carisma": 1}
+        "bonus": {"Força": 2, "Carisma": 1},
     },
     "Banneret": {
+        "nivel_evolucao": 3,
         "desc": "Um guerreiro líder, inspirando e protegendo seus aliados em combate.",
         "pode_evoluir": ["Cavaleiro", "Guerreiro Psíquico", "Cavaleiro Eldritch"],
         "classe_inicial": "Guerreiro",
-        "bonus": {"Força": 2, "Carisma": 1}
+        "bonus": {"Força": 2, "Carisma": 1},
     },
     "Rune Knight": {
+        "nivel_evolucao": 3,
         "desc": "Um guerreiro que canaliza o poder das runas para aumentar suas habilidades.",
         "pode_evoluir": ["Cavaleiro", "Mestre de Batalha", "Guerreiro Psíquico"],
         "classe_inicial": "Guerreiro",
-        "bonus": {"Força": 2, "Inteligência": 1}
+        "bonus": {"Força": 2, "Inteligência": 1},
     },
     "Echo Knight": {
+        "nivel_evolucao": 3,
         "desc": "Um guerreiro que manipula ecos temporais para realizar ataques adicionais e distorcer o espaço.",
-        "pode_evoluir": ["Mestre de Batalha", "Guerreiro Psíquico", "Cavaleiro Eldritch"],
+        "pode_evoluir": [
+            "Mestre de Batalha",
+            "Guerreiro Psíquico",
+            "Cavaleiro Eldritch",
+        ],
         "classe_inicial": "Guerreiro",
-        "bonus": {"Força": 2, "Destreza": 1}
+        "bonus": {"Força": 2, "Destreza": 1},
     },
-
     "Paladino": {
         "desc": "Um cavaleiro sagrado, mestre da espada e da cura divina.",
         "pode_evoluir": [],
         "classe_inicial": "Cavaleiro",
-        "bonus": {"Força": 1, "Sabedoria": 2, "Carisma": 1}
+        "bonus": {"Força": 1, "Sabedoria": 2, "Carisma": 1},
     },
-
     "Mago": {
         "desc": "Especialista em magias arcanas. Frágil, mas poderoso à distância.",
         "pode_evoluir": ["Arquimago", "Feiticeiro"],
         "classe_inicial": "Mago",
-        "bonus": {"Inteligência": 3}
+        "bonus": {"Inteligência": 3},
     },
-
     "Arquimago": {
         "desc": "Um mestre absoluto da magia. Conhecimento e destruição.",
         "pode_evoluir": [],
         "classe_inicial": "Mago",
-        "bonus": {"Inteligência": 4, "Constituição": -1}
+        "bonus": {"Inteligência": 4, "Constituição": -1},
     },
-
     "Feiticeiro": {
         "desc": "Canaliza magia bruta vinda do sangue ou pacto.",
         "pode_evoluir": [],
         "classe_inicial": "Mago",
-        "bonus": {"Carisma": 2, "Inteligência": 1}
+        "bonus": {"Carisma": 2, "Inteligência": 1},
     },
-
     "Arqueiro": {
         "desc": "Perito em ataques à distância. Rápido e preciso.",
         "pode_evoluir": ["Atirador Sombrio", "Rastreador"],
         "classe_inicial": "Arqueiro",
-        "bonus": {"Destreza": 3}
+        "bonus": {"Destreza": 3},
     },
-
     "Atirador Sombrio": {
         "desc": "Um arqueiro que domina o silêncio e a escuridão.",
         "pode_evoluir": [],
         "classe_inicial": "Arqueiro",
-        "bonus": {"Destreza": 2, "Sabedoria": 1}
+        "bonus": {"Destreza": 2, "Sabedoria": 1},
     },
-
     "Rastreador": {
         "desc": "Caçador nato, conectado à natureza e ao faro de combate.",
         "pode_evoluir": [],
         "classe_inicial": "Arqueiro",
-        "bonus": {"Destreza": 1, "Sabedoria": 2}
-    }
+        "bonus": {"Destreza": 1, "Sabedoria": 2},
+    },
 }
