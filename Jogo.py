@@ -107,15 +107,14 @@ def jogar():
             goblin = Personagem("Goblin", 50, "Monstro") # objeto criado para ser o inimigo
             turno = 1
             while heroi.esta_vivo() and goblin.esta_vivo(): # continua enquanto o heroi ou o goblin estiver vivo
-                acao = int(input("Deseja atacar (1) ou tomar poção (2)? ")) 
+                acao = int(input("Deseja atacar (1)? ")) 
                 if acao == 1: # atacar o goblin
                     print(f"\n--- Turno {turno} ---")
                     heroi.atacar(goblin)
-                    
-        
-                elif acao == 2: # tomar poção 
-                    heroi.tomar_pocao()
-                
+                else: 
+                    print(f"\n--- Turno {turno} ---")
+                    heroi.atacar(goblin)
+
                 if goblin.esta_vivo(): # se o goblin estiver vivo, então ele atacar
                     
                     if tentar_desviar(42): ##usar método para desviar com  42 % de chance
@@ -259,6 +258,10 @@ def jogar():
         
             elif acao == 2: # beber poção
                 heroi.tomar_pocao()
+                
+            else: 
+                print(f"\n--- Turno {turno} ---")
+                heroi.atacar(slime)
                         
             # Slime ataca, se estiver vivo
             if slime.esta_vivo():
@@ -384,7 +387,7 @@ def jogar():
         paciencia_com = 0
         print(f'"Parabéns {heroi.nome} por limpar nosso caminho para o tesouro e agora o que desejar fazer?"')
         while paciencia_com <= 100:
-            escolha = int(input("1° procurar poção| 2° sentar e afiar espada | 3° Olhar inventário: " ))
+            escolha = int(input("1° procurar poção| 2° sentar e afiar espada | 3° Olhar inventário | 4° Continuar : " ))
                 
             if escolha == 1:
                 heroi.tentar_ganhar_pocao()
@@ -397,7 +400,12 @@ def jogar():
             elif escolha == 3:
                 print(f"{heroi.nome} se sentar para ver seu inventário")
                 heroi.ver_inventario()
-                
+            elif escolha == 4:
+                print(f"{heroi.nome} decidir continuar sua jornada")
+                paciencia_com += 100
+            else: 
+                print(f"{heroi.nome} ficou parado")
+                paciencia_com += 1
         print(f'"Entendi, vem {heroi.nome} vamos achar esse tesouro!"')
         print("Estávamos andado até que dava para ouvir um grunhido estranho e logo aparecia um orc verde que estava sorrindo")
         print("ORC:"'"Que grande sorte dois humanos para devorar!"')
@@ -411,6 +419,10 @@ def jogar():
         
             elif acao == 2: # beber poção
                 heroi.tomar_pocao()
+                
+            else: 
+                print(f"\n--- Turno {turno} ---")
+                heroi.atacar(orc)
                         
             # orc ataca, se estiver vivo
             if orc.esta_vivo():
@@ -545,6 +557,10 @@ def jogar():
         
             elif acao == 2: # beber poção
                 heroi.tomar_pocao()
+            
+            else: 
+                print(f"\n--- Turno {turno} ---")
+                heroi.atacar(necromante)
                         
             # necromante ataca, se estiver vivo
             if necromante.esta_vivo():
@@ -565,6 +581,10 @@ def jogar():
             
                         elif acao1 == 2: # beber poção
                             heroi.tomar_pocao() 
+                            
+                        else: 
+                            print(f"\n--- Turno {turno} ---")
+                            heroi.atacar(esqueleto)                     
                             
                         if esqueleto.esta_vivo(): # se o goblin estiver vivo, então ele atacar
                             dano = random.randint(1, 10) # de 1 a 10 de dano
@@ -847,8 +867,13 @@ def jogar():
                 heroi.ver_inventario()
                 dragao_dormindo += 1
                 
-            else:
-                print("Opção ínvalida")
+            elif escolha == 7:
+                heroi.tomar_pocao() 
+                dragao_dormindo += 3
+                
+            else: 
+                print(f"{heroi.nome} ficou parado")
+                dragao_dormindo += 1
                 
         print("De repente, um rugido profundo e estrondoso ecoou pela caverna, como um trovão que se aproximava. As paredes tremiam, e o ar ao nosso redor parecia vibrar com a força do som. Com um enorme estalo, as asas do dragão bateram, criando um vento tão forte que quase fomos derrubados. O monstro estava acordando.")
         print(f'O dragão abriu seus olhos, e sua voz, como o eco de uma montanha, preencheu a caverna.')
@@ -864,6 +889,10 @@ def jogar():
         
             elif acao == 2: # beber poção
                 heroi.tomar_pocao()
+                
+            else:
+                print(f"\n--- Turno {turno} ---")
+                heroi.atacar(dragao)
                 
                  # orc ataca, se estiver vivo
             if dragao.esta_vivo():
@@ -1000,6 +1029,10 @@ def jogar():
         
             elif acao == 2: # beber poção
                 heroi.tomar_pocao()
+            
+            else:
+                print(f"\n--- Turno {turno} ---")
+                heroi.atacar(dragao)
                 
                  # traidor ataca, se estiver vivo
             if traidor.esta_vivo():
@@ -1029,7 +1062,7 @@ def jogar():
                         print("Agora, seus inimigos não enfrentam mais um aventureiro...")
                         print("...eles enfrentam a ira de alguém que venceu a morte.")
                         print("⚡ Os céus tremem. Os monstros recuam. O verdadeiro jogo começou.\n") 
-                        print(f"{traidor.nome} começaava a rir!"'"Achou que eu não estava preparado? "')
+                        print(f"{traidor.nome} começava a rir!"'"Achou que eu não estava preparado? "')
                         traidor.vida = heroi.max_vida
                         traidor.dano_max += 100
             turno += 1
