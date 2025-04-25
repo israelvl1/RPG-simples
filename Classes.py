@@ -675,7 +675,7 @@ classes = {
         "nivel_evolucao": 13,
         "habilidades": [
             "Visão do Futuro: Pode ver e evitar o próximo ataque de um inimigo.",
-            "Ruptura Temporal: Desacelera um inimigo, fazendo com que perca a ação por 1 turno.",
+            "Ruptura Astral: Manipula as energias astrais para desacelerar um inimigo, fazendo com que ele perca a ação por 1 turno, além de reduzir sua velocidade de movimento em 50% durante 2 turnos.",
         ],
         "pode_evoluir": [],
     },
@@ -1266,7 +1266,7 @@ classes = {
         "nivel_evolucao": 13,
         "habilidades": [
             "Luz Protetora: Concede um bônus de cura a todos os aliados em área e aumenta a resistência contra efeitos negativos por 2 turnos.",
-            "Escudo Celestial: Cria um escudo que bloqueia os primeiros 3 ataques recebidos por 2 turnos.",
+            "Escudo imaterial: Cria um escudo que bloqueia os primeiros 3 ataques recebidos por 2 turnos.",
             "Salvador Divino: Reage a ataques com uma onda de energia divina que cura os aliados ao redor e causa dano aos inimigos.",
         ],
         "pode_evoluir": [],
@@ -1403,8 +1403,7 @@ classes = {
         "classe_inicial": "Guardião das Runas",
         "habilidades": [
             "Runa da Eternidade: Lança uma runa que concede regeneração de vida aos aliados em uma área de efeito, curando 15% da vida máxima por 3 turnos.",
-            "Escudo Ancestral: Invoca um escudo que absorve até 40% do dano recebido e ainda retorna 10% do dano absorvido como cura para o grupo.",
-            "Luz Protetora: Concentra uma poderosa runa que cria uma onda de luz curativa, restaurando 25% da vida dos aliados e removendo qualquer debuff que afete a equipe.",
+            "Luz Ancestral: Concentra uma poderosa runa que cria uma onda de luz curativa, restaurando 25% da vida dos aliados e removendo qualquer debuff que afete a equipe.",
         ],
         "pode_evoluir": [],
         "bonus": {"Força": 1, "Inteligência": 4, "Sabedoria": 2},
@@ -1415,7 +1414,6 @@ classes = {
         "classe_inicial": "Rune Knight",
         "habilidades": [
             "Olho da Runa: Marca um inimigo com uma runa, aumentando o dano recebido por ele em 25% por 2 turnos.",
-            "Correntes Rúnicas: Conjura correntes de runas que imobilizam todos os inimigos ao redor por 1 turno, diminuindo sua velocidade de movimento em 30%.",
             "Sentinela Ancestral: Invoca uma runa ancestral que garante visão aprimorada do campo de batalha, revelando inimigos invisíveis por 2 turnos.",
         ],
         "pode_evoluir": ["Vigia Eterna", "Guardião Sombrio"],
@@ -1427,7 +1425,7 @@ classes = {
         "classe_inicial": "Sentinela das Runas",
         "habilidades": [
             "Marca da Vigilância: Coloca uma runa de vigilância sobre um inimigo, revelando sua posição no mapa e tornando-o visível para toda a equipe por 2 turnos.",
-            "Correntes Rúnicas: Conjura correntes de runas que imobilizam todos os inimigos ao redor por 1 turno, diminuindo sua velocidade de movimento em 30%.",
+            "Correntes de Runas: Conjura poderosas correntes de runas que imobilizam todos os inimigos ao redor por 1 turno, além de reduzir sua velocidade de movimento em 50% enquanto estiverem presos.",
             "Cegueira Rúnica: Invoca runas cegantes que tornam todos os inimigos ao redor incapazes de atacar por 1 turno e reduzem sua precisão em 50%.",
         ],
         "pode_evoluir": [],
@@ -1451,20 +1449,19 @@ classes = {
         "classe_inicial": "Rune Knight",
         "habilidades": [
             "Runas de Forjamento: Forja uma espada ou uma lança encantada com uma runa, aumentando o dano do ataque em 30% por 2 turnos.",
-            "Armadura Rúnica: Encanta sua armadura com runas de resistência, concedendo uma barreira de absorção de dano que reduz danos recebidos em 50% por 1 turno.",
-            "Explosão Rúnica: Libera uma explosão de energia rúnica, causando dano em área e diminuindo a defesa dos inimigos atingidos por 20% por 2 turnos.",
+            "Construtor de Runas: Invoca o poder das runas para forjar uma armadura mágica no calor da batalha, aumentando a resistência do cavaleiro. A armadura rúnica criada confere uma barreira que absorve 60% do dano recebido e reflete 30% desse dano de volta para os inimigos ao atingirem o portador.",
         ],
-        "pode_evoluir": ["Forjador Supremo", "Mestre das Armas"],
+        "pode_evoluir": ["Forjador Rúnico Supremo", "Mestre das Armas"],
         "bonus": {"Força": 3, "Inteligência": 2},
     },
-    "Forjador Supremo": {
+    "Forjador Rúnico Supremo": {
         "nivel_evolucao": 13,
         "desc": "Mestre na arte de forjar runas poderosas, o Forjador Supremo pode criar armas encantadas de enorme poder e reforçar suas defesas com runas impenetráveis.",
         "classe_inicial": "Arquiteto Rúnico",
         "habilidades": [
-            "Forja Mágica: Cria uma espada ou lança encantada com runas, aumentando o dano do ataque em 40% por 2 turnos e concedendo um bônus de 10% na velocidade de ataque.",
-            "Armadura Inquebrável: Encanta sua armadura com runas de resistência extrema, criando uma barreira de absorção que reduz danos recebidos em 60% por 1 turno.",
-            "Explosão Rúnica: Libera uma poderosa explosão de energia rúnica em área, causando dano em todos os inimigos ao redor e diminuindo sua defesa em 25% por 2 turnos.",
+            "Forja Eterna: Conjura uma arma mágica (espada, machado ou lança) com runas poderosas, concedendo ao portador um bônus de 50% no dano por 3 turnos e tornando a arma indestrutível durante esse período.",
+            "Escudo Celestial: Invoca um escudo imbuído com runas sagradas, criando uma barreira que absorve até 80% do dano recebido por 3 turnos e reflete 20% do dano de volta ao atacante.",
+            "Caminho do Forjador: Concentra-se no poder das runas para fortalecer seus aliados, concedendo um aumento de 40% na defesa e resistência a dano mágico por 2 turnos a todos os aliados próximos.",
         ],
         "pode_evoluir": [],
         "bonus": {"Força": 4, "Inteligência": 2, "Constituição": 1},
@@ -1476,7 +1473,7 @@ classes = {
         "habilidades": [
             "Runas de Poder: Cria uma lança ou espada encantada com runas que aumentam o dano do ataque em 35% e adiciona um efeito de queima que causa 5% de dano contínuo ao inimigo por 2 turnos.",
             "Armadura Rúnica: Encanta sua armadura com runas de resistência, criando uma barreira que reduz danos recebidos em 50% e devolve 10% do dano recebido ao atacante como dano de fogo.",
-            "Explosão Rúnica: Libera uma explosão de energia rúnica, causando dano em área e deixando uma marca que aumenta o dano recebido pelos inimigos atingidos em 15% por 3 turnos.",
+            "Explosão de Energia Rúnica: Libera uma explosão de energia rúnica, causando dano em área e deixando uma marca nos inimigos atingidos. A marca aumenta o dano recebido pelos inimigos atingidos em 15% enquanto a marca estiver ativa.",
         ],
         "pode_evoluir": [],
         "bonus": {"Força": 3, "Inteligência": 3, "Sabedoria": 2},
@@ -1486,11 +1483,10 @@ classes = {
         "desc": "Um cavaleiro rúnico focado em utilizar o poder das runas para intensificar sua ofensiva, buscando destruir seus inimigos com poder devastador.",
         "classe_inicial": "Rune Knight",
         "habilidades": [
-            "Golpe Rúnico: Um ataque rápido que canaliza runas de destruição, causando dano massivo e reduzindo a defesa do inimigo em 30% por 2 turnos.",
-            "Runa da Fúria: Libera uma runa de fúria que aumenta o dano do cavaleiro e dos aliados ao redor em 25% por 2 turnos.",
-            "Runa Vingativa: Marca um inimigo que causou dano significativo a um aliado, fazendo com que ele receba 50% mais dano de todos os ataques durante 3 turnos.",
+            "Runa do Medo: Libera uma runa de terror que enfraquece os inimigos ao redor, reduzindo sua defesa em 30% e fazendo com que eles falhem 20% de suas ações por 2 turnos. Além disso, os inimigos afetados têm suas resistências a debuffs aumentadas em 50%.",
+            "Runa do Vácuo: Marca um inimigo com a runa do vácuo, fazendo com que ele receba 60% mais dano de todos os ataques durante 3 turnos. Além disso, a velocidade do inimigo é reduzida em 20% e o tempo de recarga de suas habilidades aumenta em 1 turno enquanto a runa estiver ativa.",
         ],
-        "pode_evoluir": [],
+        "pode_evoluir": ["Justiceiro Imparável","Executor das Runas"],
         "bonus": {"Força": 4, "Carisma": 1},
     },
     "Justiceiro Imparável": {
@@ -1498,8 +1494,8 @@ classes = {
         "desc": "Com o poder das runas de vingança, o Justiceiro Imparável concentra sua fúria em ataques devastadores, destruindo qualquer inimigo que se interponha em seu caminho.",
         "classe_inicial": "Vingador Rúnico",
         "habilidades": [
-            "Golpe Rúnico: Um ataque rápido que canaliza runas de destruição, causando dano massivo e reduzindo a defesa do inimigo em 35% por 2 turnos.",
-            "Runa da Fúria: Libera uma runa de fúria que aumenta o dano do cavaleiro e dos aliados ao redor em 30% por 2 turnos, além de restaurar 10% da vida máxima do cavaleiro.",
+            "Golpe Rúnico Soberano: Realiza um ataque devastador que canaliza runas de destruição, causando dano massivo ao inimigo e reduzindo sua defesa em 50% permanentemente, além de aplicar uma marca que aumenta o dano recebido por ele em 20% por 2 turnos."
+            "Runa da Morte: Libera uma runa de destruição profunda que aumenta o dano do cavaleiro e dos aliados ao redor em 30% por 2 turnos. Além disso, cada ataque realizado durante esse período restaura 10% da vida máxima do cavaleiro.",
             "Runa Vingativa: Marca um inimigo que causou dano significativo a um aliado, fazendo com que ele receba 60% mais dano de todos os ataques durante 3 turnos, além de reduzir a velocidade do inimigo em 20%.",
         ],
         "pode_evoluir": [],
@@ -1512,7 +1508,7 @@ classes = {
         "habilidades": [
             "Golpe Rúnico: Um ataque rápido que canaliza runas de destruição, causando dano massivo e reduzindo a defesa do inimigo em 40% por 2 turnos.",
             "Runa da Fúria: Libera uma runa de fúria que aumenta o dano do cavaleiro e dos aliados ao redor em 35% por 2 turnos, além de conceder 15% de aceleração de ataque ao cavaleiro.",
-            "Runa Vingativa: Marca um inimigo que causou dano significativo a um aliado, fazendo com que ele receba 50% mais dano de todos os ataques durante 3 turnos e fazendo com que o inimigo seja atordoado por 1 turno ao ser atacado.",
+            "Runa do Sol: Canaliza a energia do sol para marcar um inimigo, fazendo com que ele receba 50% mais dano de todos os ataques durante 3 turnos. Além disso, ao ser atacado, o inimigo é cegado por 1 turno, reduzindo sua precisão em 30%.",
         ],
         "pode_evoluir": [],
         "bonus": {"Força": 4, "Carisma": 2, "Agilidade": 1},
@@ -1526,7 +1522,7 @@ classes = {
             "Runa do Tempo: Manipula o tempo ao redor de si, retardando os inimigos e aumentando a velocidade de movimento do cavaleiro em 50% por 2 turnos.",
             "Destruição Rúnica: Canaliza o poder total das runas, liberando uma enorme explosão mágica que causa dano massivo e atordoa todos os inimigos na área de efeito por 1 turno.",
         ],
-        "pode_evoluir": [],
+        "pode_evoluir": ["Arquiteto do Caos","Guardião do Éter"],
         "bonus": {"Inteligência": 4, "Força": 2},
     },
     "Arquiteto do Caos": {
@@ -1621,7 +1617,7 @@ classes = {
         "classe_inicial": "Mestre do Caos Temporal",
         "habilidades": [
             "Ecos Caóticos Avançados: Agora cria três ecos temporais que atacam simultaneamente, causando 50% do dano total do cavaleiro durante 3 turnos. Cada eco pode aplicar um debuff único, como redução de defesa, lentidão ou atordoamento.",
-            "Vórtice Temporal: Cria um vórtice temporal no centro do campo de batalha que suga inimigos próximos, causando dano de 60% do dano total do cavaleiro a cada turno por 2 turnos e reduzindo a velocidade de movimento dos inimigos em 70%.",
+            "Buraco Dimensional: Cria um buraco dimensional no campo de batalha que puxa todos os inimigos em uma área de 5 metros, causando dano de 50% do dano total do cavaleiro e teletransportando os inimigos para um local aleatório no campo de batalha. A cada turno que os inimigos permanecem próximos ao buraco, eles perdem 20% da sua vida máxima até que sejam transportados ou o efeito termine.",
             "Desintegração Temporal: Lança um ataque massivo que dilacera a linha do tempo dos inimigos, causando dano devastador a todos os inimigos em uma linha reta e reduzindo suas defesas em 40% por 3 turnos.",
         ],
         "pode_evoluir": [],
@@ -1682,7 +1678,6 @@ classes = {
         "habilidades": [
             "Eco Protetor: Cria um eco do passado que assume a posição do cavaleiro, absorvendo até 50% do dano recebido durante 2 turnos.",
             "Distorção Temporal Defensiva: Cria uma barreira temporal ao redor de um aliado, reduzindo o dano recebido por ele em 30% e tornando-o imune a debuffs por 1 turno.",
-            "Retorno Temporal: Ao ser atacado, o Guardião do Passado cria uma área ao redor de si onde os ataques inimigos retornam com 20% de dano ao atacante.",
         ],
         "pode_evoluir": ["Arquétipo Imortal", "Sentinela Eterna"],
         "bonus": {"Força": 2, "Destreza": 2, "Constituição": 2},
@@ -1735,14 +1730,14 @@ classes = {
         "pode_evoluir": [],
         "bonus": {"Força": 6, "Destreza": 3, "Constituição": 2},
     },
-    "Guardião do Fluxo Temporal": {
+    "Rei do Fluxo Temporal": {
         "nivel_evolucao": 13,
-        "desc": "O Guardião do Fluxo Temporal é um mestre absoluto da distorção temporal, utilizando sua habilidade de manipulação temporal para alterar a realidade ao seu redor, tornando-se uma força imbatível que desafia o próprio tempo.",
+        "desc": "O Rei do Fluxo Temporal é um mestre absoluto da distorção temporal, utilizando sua habilidade de manipulação temporal para alterar a realidade ao seu redor, tornando-se uma força imbatível que desafia o próprio tempo. Ele comanda o fluxo do tempo com maestria, alterando a velocidade e o destino de seus inimigos e aliados.",
         "classe_inicial": "Guerreiro do Eterno",
         "habilidades": [
-            "Ataque Eterno Exaltado: Cria um eco que repete o último ataque realizado a um inimigo, causando dano extra de 60% do valor original do ataque. Além disso, este ataque agora aplica um debuff de lentidão de 40% por 2 turnos no inimigo, reduzindo sua capacidade de atacar e se mover.",
+            "Eterno Eclipse: O Rei do Fluxo Temporal cria um vórtice de distorção ao redor de um inimigo, causando dano de 60% do dano total do cavaleiro e aplicando uma debuff de aceleração negativa de 50% por 3 turnos. Durante esse tempo, o inimigo se move e ataca a metade da velocidade normal.",
             "Ruptura Temporal Cataclísmica: Usa um eco de distorção no tempo para criar uma onda de choque massiva que atinge todos os inimigos em um grande raio, causando dano em área e reduzindo sua resistência ao dano em 50% por 3 turnos. Inimigos atingidos também têm sua velocidade de ataque diminuída em 25% por 2 turnos.",
-            "Retorno Imortal Infinito: Quando a vida do Guerreiro do Eterno chega a 0, um eco é ativado, curando 100% da vida máxima do cavaleiro, concedendo-lhe 2 turnos de imortalidade e tornando-o imune a debuffs. Durante esses 2 turnos, o Guerreiro do Eterno tem 50% de chance de realizar um ataque crítico adicional após cada ataque.",
+            "Retorno Imortal Infinito: Quando a vida do Rei do Fluxo Temporal chega a 0, um eco temporal é ativado, curando 100% da vida máxima do cavaleiro, concedendo-lhe 2 turnos de imortalidade e tornando-o imune a debuffs. Durante esses 2 turnos, o Rei do Fluxo Temporal tem 50% de chance de realizar um ataque crítico adicional após cada ataque."
         ],
         "pode_evoluir": [],
         "bonus": {"Força": 7, "Destreza": 2, "Constituição": 3},
