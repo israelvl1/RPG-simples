@@ -13,18 +13,24 @@ class Personagem: # Definição da classe Personagem
         self.max_pocoes = 8
         self.arma = []
         # 🎯 Definindo quantas armas pode carregar com base na classe
-        if self.classe_inicial == "Assassino" or self.classe_inicial == "Arqueiro" or self.classe_inicial == "Guerreiro":
+        if self.classe_inicial in ["Guerreiro", "Arqueiro", "Assassino"]:
             self.max_arma = 2  # Pode equipar 2 armas!
         else:
             self.max_arma = 1  # Padrão: 1 arma
         if self.classe_inicial == "Monge":
             self.ki = self.defini_ki()
-        if self.classe_inicial == "Mago" or self.classe_inicial == "Feiticeiro" or self.classe_inicial == "Bruxo" or self.classe_inicial == "Bardo" self.classe_inicial == "Druida":
+        if self.classe_inicial in ["Mago", "Feiticeiro", "Bruxo", "Bardo", "Druida"]:
             self.mana = self.defini_mana()
-        if self.classe_inicial == "Guerreiro" or self.classe_inicial == "Berserker" or self.classe_inicial == "Arqueiro" or self.classe_inicial == "Assassino":  
+        if self.classe_inicial in ["Guerreiro", "Berserker", "Arqueiro", "Assassino"]:  
             self.aura = self.defini_aura()
         if self.classe_inicial == "Clérigo":
-            self.energia_divina == self.defini_energia_divina()
+            self.energia_divina = self.defini_energia_divina()
+        if self.classe == "Mestre de Batalha" or self.classe_inicial == "Mestre de Batalha":
+            self.posicao = self.definir_posicao()
+            self.zona_ativa = False
+            self.resistencia_extra = 5
+            self.passiva_forca_de_vanguarda_ativa = False
+            self.ativada = False
         self.dinheiro = self.definir_dinheiro()
         self.nivel = 1
         self.xp_atual = xp_atual
@@ -34,6 +40,7 @@ class Personagem: # Definição da classe Personagem
         self.pontos_negativos = 0  # Quantidade de pontos negativos acumulados
         self.corrompido = False  # Se o personagem está corrompido ou não
         self.iluminado = False
+        self.resistencia = 5
         self.faltando_para_proximo_nivel = calcular_faltando(self.nivel, self.xp_atual)
         self.quantidade_max_xp = calcular_xp_max(self.nivel)
         self.dano_max =  self.definir_dano() # dano base maximo 
@@ -43,6 +50,7 @@ class Personagem: # Definição da classe Personagem
         self.tipo_veneno = None
         self.turnos_veneno = 0
         self.em_chamas = False
+        self.bonus_dano = 0 
         self.tipo_fogo = None
         self.turnos_fogo = 0
         self.corrosivo = False
@@ -57,6 +65,17 @@ class Personagem: # Definição da classe Personagem
         self.habilidades_ativas = []  # herdadas da classe
         self.habilidades_passivas = []  # herdadas da classe
         self.habilidades_extra = []   # ganhas por quests, magias, etc
+        self.inimigos_ameacados = set()
+        if self.classe_inicial in ["Guerreiro", "Monge", "Berserker"]:
+            self.defesa = 10
+        elif self.classe_inicial in ["Arqueiro", "Assassino", "Monge"]:
+            self.defesa = 7
+        elif self.classe_inicial in ["Mago", "Feiticeiro", "Bruxo", "Bardo", "Druida"]:
+            self.defesa = 4
+        elif self.classe_inicial == "Clérigo":
+            self.defesa = 6
+        else:
+            self.defesa = 5  # valor padrão
         
         def tentar_multiclassificar(self, nova_classe):
             if nova_classe not in classes:
@@ -89,6 +108,13 @@ class Personagem: # Definição da classe Personagem
             self.classe = nova_classe
             self.classe_inicial = classe_nova_info["classe_inicial"]  # Atualiza a raiz da árvore
             print(f"✅ {self.nome} evoluiu para {self.classe}!")
+            
+        def aumentar_resistencia(self, valor):
+            self.resistencia += valor
+
+        def reduzir_resistencia(self, valor):
+            self.resistencia -= valor
+            
             
         def poder_habilidade(self, usar_habilidade):
             # Verifica se a habilidade existe no dicionário geral
@@ -196,27 +222,20 @@ class Personagem: # Definição da classe Personagem
                 print(f"{inimigo.nome} já está derrotado.")
                 return
 
-            dano = random.randint(1, self.dano_max) # atacar com chance de 1 a ao dano max
-            chance = random.randint(1, 100)
-
-            if chance <= 80:  # 80% de chance de acertar 
-                inimigo.vida -= dano #itrar vida do inimigo
-                inimigo.vida = max(0, inimigo.vida)  # evita que fique negativo
-                print(f"{self.nome} atacou {inimigo.nome} e causou {dano} de dano!") 
-                
-                # Chama o método sofrer_dano para o inimigo
-                inimigo.sofrer_dano(dano)  # O inimigo sofre dano e verifica os efeitos de sono (se houver)
-                
-            else: # caso erre o ataque
+            dano = random.randint(1, self.dano_max)  # Calcular dano aleatório
+            
+            if chance <= 80:  # 80% de chance de acertar
+                inimigo.vida -= dano  # Reduz a vida do inimigo
+                inimigo.vida = max(0, inimigo.vida)  # Garante que a vida não fique negativa
+                print(f"{self.nome} atacou {inimigo.nome} e causou {dano} de dano!")
+                inimigo.sofrer_dano(dano)  # Chama o método sofrer_dano para efeitos adicionais
+            else:  # Caso erre o ataque
                 print(f"{self.nome} errou o ataque contra {inimigo.nome}!")
-
-            if not inimigo.esta_vivo(): # se o inimigo está vivo 
-                print(f"{inimigo.nome} foi derrotado!")# se ele tiver morto
-            else:# se ele estiver vivo
-                print(f"{inimigo.nome} agora tem {inimigo.vida} de vida.\n")
-                
+            
         def sofrer_dano(self, dano):
-            self.vida -= dano  # Subtrai o dano da vida do personagem
+            dano_final = max(dano - self.resistencia, 0)  # Dano não pode ser negativo
+            self.vida -= dano_final
+            print(f"{self.nome} recebeu {dano_final} de dano! Vida restante: {self.vida}.")
             
             # Verifica se o personagem está adormecido
             if self.adormecido:
