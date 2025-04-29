@@ -75,3 +75,16 @@ def ataque_devastador(self, inimigos):
         if inimigo.vida < 0:
             inimigo.vida = 0
         print(f"💥 {inimigo.nome} sofreu {dano} de dano! Vida restante: {inimigo.vida}")
+        
+def grito_de_guerra_aprimorado(self, aliados, duracao_turnos=4):
+    """
+    Grito de Guerra Aprimorado:
+    Fornece bônus mais fortes e por mais tempo aos aliados.
+    """
+    if self.obter_classe_inicial() not in ["Comandante de Vanguarda"]:
+        print(f"{self.nome} não pode usar essa habilidade, ela é exclusiva do Comandante de Vanguarda!")
+        return
+    
+    print(f"⚔️ {self.nome} usa Grito de Guerra Aprimorado!")
+    for aliado in aliados:
+        aliado.receber_bonus_temporario(moral_bonus=8, ataque_bonus=5, duracao=duracao_turnos)
