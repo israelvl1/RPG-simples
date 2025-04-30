@@ -1,24 +1,29 @@
-import random  # importando a biblioteca random
-import os  # importando para o limpar tela
-import time  # time
-from Personagem import *  # puxar funções
-from Entrada import *  # puxar entradas
+import os        # Para limpar a tela
+import time      # Para pausar o programa
+import random    # Para gerar aleatoriedade
+import subprocess  # Para chamar scripts externos
+
+from Personagem import *  # Importa tudo do módulo Personagem
 
 
 def criar_personagem():  # criar personagem
     nome = input("Digite o nome do seu personagem: ").capitalize()  # escolhe nome
-    obs()
-    time.sleep(5)  # Espera 5 segundos
-    limpar_tela()
+    subprocess.run(["python3", "Interface.py", "--confirmado"])  # Chama Interface.py após escolher o nome
+    # Coloca uma pausa antes de perguntar o sexo
+    print("Aguarde um momento...")
+    time.sleep(2)  # Pausa por 2 segundos (você pode ajustar o tempo conforme necessário)
     sexo = input("Sexo do personagem: ").capitalize()  # escolhe sexo
+
+    # Verifica se o sexo está correto
     if sexo == "Masculino" or sexo == "Feminino":
-        print("")
+        print(f"O personagem {nome} é do sexo {sexo}.")
     else:
-        avisei()
-        exit()
+        subprocess.run(["python3", "Interface.py", "--erro"])  # Chama Interface.py com erro se o sexo for inválido
+        print("Sexo inválido. O programa será encerrado.")
+        exit()  # Encerra o programa se o sexo for inválido
 
     print("\nComo você quer definir a vida do personagem?")  # Menu inicial das opções
-    print("[F] Fixa (escolher entre 250, 150, 120, 1)")  # 1° opção
+    print("[F] Fixa (escolher entre 250, 170, 120, 1)")  # 1° opção
     print("[A] Aleatória (entre 1 e 250)")  # 2° opção
     print("[U] Usuário escolhe qualquer valor")  # 3° opção
 
@@ -27,7 +32,7 @@ def criar_personagem():  # criar personagem
     if modo == "f":  # se escolher F
         print("\nEscolha uma vida fixa:")
         print("1 - 250 (modo guerreiro)")  # 1° opção do f
-        print("2 - 150 (modo equilibrado)")  # 2° opção do f
+        print("2 - 170 (modo equilibrado)")  # 2° opção do f
         print("3 - 120 (modo padrão)")  # 3° opção do f
         print("4 - 1  (modo infernal)")  # 4° opção de f
         escolha = int(input("Digite 1, 2, 3 ou 4: "))  # escolha 1,2,3 ou 4
@@ -35,7 +40,7 @@ def criar_personagem():  # criar personagem
         if escolha == 1:
             vida = 250  # vai ter uma vida de 250
         elif escolha == 2:
-            vida = 150  # vai ter uma vida de 150
+            vida = 170  # vai ter uma vida de 170
         elif escolha == 3:
             vida = 120  # vai ter uma vida de 120
         elif escolha == 4:
@@ -45,11 +50,11 @@ def criar_personagem():  # criar personagem
             vida = 120  # vai ter uma vida de 120
 
     elif modo == "a":  # escolher modo a
-        vida = random.randint(1, 250)
+        vida = random.randint(1, 400)
 
     elif modo == "u":  # escolher modo u
-        vida = int(input("Digite a vida desejada: limite da vida 600!"))
-        if vida > 600:
+        vida = int(input("Digite a vida desejada: (limite da vida 400): "))
+        if vida > 400:
             exit()
 
     else:  # se escolhe algo errado
@@ -77,18 +82,32 @@ def tentar_desviar(porcentagem):  # chance de desviar do inimigo
     return random.randint(1, 100) <= porcentagem
 
 
+
+
+def chamar_interface():
+    # Chama o arquivo Interface.py e captura a saída
+    resultado = subprocess.run(
+        ["python3", "Interface.py"],
+        capture_output=True,   # Captura a saída do subprocesso
+        text=True,             # Garante que a saída seja tratada como texto (string)
+    )
+
+    # Verifica se o stdout não é None e remove quebras de linha
+    if resultado.stdout:
+        resposta_usuario = resultado.stdout.strip()  # Remove quebras de linha
+    else:
+        resposta_usuario = None  # Ou algum valor padrão caso não haja saída
+
+    return resposta_usuario
+
+
+
 def jogar():
     while True:
-        limpar_tela()  # limpa a tela logo no começo
-        Assinatura()
-        time.sleep(5)  # Espera 5 segundos
-        limpar_tela()
-        play()
-        escolha = input("").capitalize()
+        escolha = chamar_interface()
         if escolha == "Não":
             break
         elif escolha == "Sim":
-            time.sleep(5)  # Espera 5 segundos
             limpar_tela()
         heroi = criar_personagem()
         vida_inicial = heroi.nome
@@ -759,7 +778,7 @@ def jogar():
 
             # necromante ataca, se estiver vivo
             if necromante.esta_vivo():
-                if chance(20):         # 20% de chance de se curar
+                if chance(20):  # 20% de chance de se curar
                     cura = random.randint(5, 25)
                     necromante.vida += cura
                     print(f"{necromante.nome} se recuperou e ganhou {cura} de vida!")
@@ -1515,7 +1534,13 @@ def jogar():
             print(
                 "☁️ O vento soprou suavemente, levando as cinzas pelo ar — como se o próprio destino estivesse aceitando o fim."
             )
-            final()
+            subprocess.run(["python3", "Interface.py", "--fim"])  # Chama Interface.py após escolher o nome
+            print("-------------------------------------------")
+            print(f"|     STATUS FINAIS DE {heroi.nome}      |")
+            print(f"|          SEXO: {heroi.sexo}            |")
+            print(f"|          VIDA: {heroi.vida}            |")
+            print(f"|   DANO MAXÍMO: {heroi.dano_max}        |")
+            print("-------------------------------------------")
             break
         else:
             if heroi.sexo == "Feminino":  # se o sexo for Feminino
