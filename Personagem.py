@@ -83,7 +83,7 @@ class Personagem: # Definição da classe Personagem
         elif tipo_pocao <= 30:
             self.pocoes.append("poderosa")
             print(f"{self.nome} encontrou uma 🔥 poção poderosa!")
-        elif tipo_pocao <= 60:
+        elif tipo_pocao <= 80:
             self.pocoes.append("comum")
             print(f"{self.nome} encontrou uma 🧪 poção comum.")
         else:
@@ -99,6 +99,16 @@ class Personagem: # Definição da classe Personagem
         chance = random.randint(1, 100)
 
         print(f"\n🔍 {self.nome} está explorando em busca de espadas...")
+        if chance <= 1:
+            print(f"⬜ Você encontrou: Espada Branca(Lendária/Abençoada)!")
+            print("Ela irradia poder... mas há algo especial nela.")
+            self.dano_max += 50
+            dano_vida = random.randint(10, 40)
+            self.vida += dano_vida
+            self.vida = max(0, self.vida)
+            print("🗡️ Dano aumentado em +50!")
+            print(f"🌀 A benção deu {dano_vida} de vida!")
+            print(f"❤️ Vida atual: {self.vida}")
 
         if chance <= 10:
             print(f"🟨 Você encontrou: Espada Negra (Lendária/Maldita)!")
@@ -107,6 +117,7 @@ class Personagem: # Definição da classe Personagem
             dano_maldicao = random.randint(10, 40)
             self.vida -= dano_maldicao
             self.vida = max(0, self.vida)
+            print("🗡️ Dano aumentado em +40!")
             print(f"💀 A maldição causou {dano_maldicao} de dano!")
             print(f"❤️ Vida atual: {self.vida}")
 
