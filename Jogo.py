@@ -68,11 +68,9 @@ def criar_personagem():  # criar personagem
     )  # ficha do personagem
     return personagem
 
-
 def limpar_tela():  # Função limpa tela
     """Limpa a tela do terminal"""
     os.system("cls" if os.name == "nt" else "clear")
-
 
 def chance(p):  ##calcular depedendo de quanto a pessoa precisa
     return random.randint(1, 100) <= p
@@ -80,28 +78,7 @@ def chance(p):  ##calcular depedendo de quanto a pessoa precisa
 
 def tentar_desviar(porcentagem):  # chance de desviar do inimigo
     return random.randint(1, 100) <= porcentagem
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 def jogar():
     while True:
         limpar_tela()  # limpa a tela logo no começo
